@@ -6,7 +6,7 @@ The [The Deep Learning Specialization]([https://www.coursera.org/professional-ce
 This repository contains documentation and resources used to complete the certification, relevant notes and other code snippets, and proof of certification for each course.
 
 # 📑 Courses
-* ✅ [01. Neural Networks and Deep Learning]()
+* ✅ [01. Neural Networks and Deep Learning](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/tree/main/01.%20Neural%20Networks%20and%20Deep%20Learning)
 * [02. Improving Deep Neural Networks]()
 * [03. Structuring Machine Learning Project]()
 * [04. Convolutional Neural Networks (CNNs)]()
