@@ -1,2 +1,18 @@
 # 📄 Summary
-This course serves as an introduction to the basics of neural networks, covering topics such as logistic regression, neural network basics, activation functions, and backpropagation.
+If you want to break into cutting-edge AI, this course will help you do so. Deep learning engineers are highly sought after, and mastering deep learning will give you numerous new career opportunities. Deep learning is also a new "superpower" that will let you build AI systems that just weren't possible a few years ago.
+
+## You will learn the foundations of deep learning:
+
+* Understand the major technology trends driving Deep Learning
+* Be able to build, train and apply fully connected deep neural networks
+* Know how to implement efficient (vectorized) neural networks
+* Understand the key parameters in a neural network's architecture
+
+This course also teaches you how Deep Learning actually works, rather than presenting only a cursory or surface-level description. So after completing it, you will be able to apply deep learning to a your own applications. If you are looking for a job in AI, after this course you will also be able to answer basic interview questions.
+
+# 📂 Projects
+* Python Basics with Numpy
+* Logistic Regression with a Neural Network mindset
+* Planar data classification with a hidden layer
+* Building your Deep Neural Network - Step by Step
+* Deep Neural Network Application
