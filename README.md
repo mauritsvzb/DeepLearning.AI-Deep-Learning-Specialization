@@ -28,8 +28,6 @@ The following tools were used to complete this certification:
 # 📖 Libraries
 The following Python libraries were used throughout the certification:
 
-# 📂 Projects
-
 # 📄 Lecture Notes References
 Here are some references of lecture notes and reviews drawn by some communities, authors and editors:
 
