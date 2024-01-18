@@ -30,9 +30,9 @@ The following Python libraries were used throughout the certification:
 # 📄 Lecture Notes References
 Here are some references of lecture notes and reviews drawn by some communities, authors and editors:
 
-* https://www.deeplearning.ai/ai-notes/
-* https://www.slideshare.net/TessFerrandez/notes-from-coursera-deep-learning-courses-by-andrew-ng
-* https://towardsdatascience.com/deep-learning-specialization-by-andrew-ng-21-lessons-learned-15ffaaef627c
+* [AI Notes - NN initializiation and parameter optimization](https://www.deeplearning.ai/ai-notes/)
+* [Notes from Coursera Deep Learning courses by Andrew Ng](https://www.slideshare.net/TessFerrandez/notes-from-coursera-deep-learning-courses-by-andrew-ng)
+* [Deep Learning Specialization by Andrew Ng — 21 Lessons Learned](https://towardsdatascience.com/deep-learning-specialization-by-andrew-ng-21-lessons-learned-15ffaaef627c)
 
 # 🏆 Certificates
 To verify the certificates, click the images to follow the links:
