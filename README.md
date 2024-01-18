@@ -17,7 +17,7 @@ This repository contains documentation and resources used to complete the certif
 * [04. Convolutional Neural Networks (CNNs)](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/tree/main/04.%20Convolutional%20Neural%20Networks%20(CNNs))
   * Build a convolutional neural network (CNN) and apply it to detection and recognition tasks, use neural style transfer to generate art, and apply algorithms to image and video data
 * [05. Sequence Models](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/tree/main/05.%20Sequence%20Models)
-  * Build and train recurrent neural network (RNN), work with natural language processing (NLP) and Word Embeddings, and use HuggingFace tokenizers and transformer models to perform NER and Question Answering 
+  * Build and train recurrent neural network (RNN), work with natural language processing (NLP) and Word Embeddings, and use HuggingFace tokenizers and transformer models to perform NER and Question Answering
 
 # 🛠️ Tools
 The following tools were used to complete this certification:
@@ -26,6 +26,13 @@ The following tools were used to complete this certification:
 The following Python libraries were used throughout the certification:
 
 # 📂 Projects
+
+# 📄 Lecture Notes References
+Here are some references of lecture notes and reviews drawn by some communities, authors and editors:
+
+* https://www.deeplearning.ai/ai-notes/
+* https://www.slideshare.net/TessFerrandez/notes-from-coursera-deep-learning-courses-by-andrew-ng
+* https://towardsdatascience.com/deep-learning-specialization-by-andrew-ng-21-lessons-learned-15ffaaef627c
 
 # 🏆 Certificates
 To verify the certificates, click the images to follow the links:
