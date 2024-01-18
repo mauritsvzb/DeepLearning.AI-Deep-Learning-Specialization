@@ -37,7 +37,7 @@ Here are some references of lecture notes and reviews drawn by some communities,
 * [Notes from Coursera Deep Learning courses by Andrew Ng](https://www.slideshare.net/TessFerrandez/notes-from-coursera-deep-learning-courses-by-andrew-ng)
 * [Deep Learning Specialization by Andrew Ng — 21 Lessons Learned](https://towardsdatascience.com/deep-learning-specialization-by-andrew-ng-21-lessons-learned-15ffaaef627c)
 * [Distilled compilation of notes on all courses within this specialization](https://aman.ai/coursera-dl/)
-* [Detailed notes of all coursse within this specialization WIITH images](https://github.com/quanghuy0497/Deep-Learning-Specialization/tree/main)
+* [Detailed notes of all coursse within this specialization WITH images](https://github.com/quanghuy0497/Deep-Learning-Specialization/tree/main)
 
 # 🏆 Certificates
 To verify the certificates, click the images to follow the links:
