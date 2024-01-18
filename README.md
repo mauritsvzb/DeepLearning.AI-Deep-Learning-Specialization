@@ -1,3 +1,5 @@
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fmauritsvzb%2FDeepLearning.AI-Deep-Learning-Specialization%2Fblob%2Fmain%2FREADME.md&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Repo+views&edge_flat=false)](https://hits.seeyoufarm.com)
+
 ![image](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f18e7941-67dc-42ed-97d3-bc36f33736f3)
 
 # 📄 About
