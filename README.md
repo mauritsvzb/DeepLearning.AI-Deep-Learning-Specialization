@@ -1,6 +1,6 @@
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fmauritsvzb%2FDeepLearning.AI-Deep-Learning-Specialization%2Fblob%2Fmain%2FREADME.md&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Repo+views&edge_flat=false)](https://hits.seeyoufarm.com)
 
-![image](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f18e7941-67dc-42ed-97d3-bc36f33736f3)
+![image](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/cc1aa933-9054-42d3-b08c-a3dae6b6b82b)
 
 # 📄 About
 The [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) offered by [DeepLearning.AI](https://www.deeplearning.ai/) is a series of 5 online courses designed to provide a comprehensive introduction to the field of deep learning. Created by [Andrew Ng](https://www.andrewng.org/), a prominent figure in the field of artificial intelligence, this specialization covers a range of topics related to deep learning and neural networks.
@@ -39,4 +39,3 @@ Here are some references of lecture notes and reviews drawn by some communities,
 
 # 🏆 Certificates
 To verify the certificates, click the images to follow the links:
-
