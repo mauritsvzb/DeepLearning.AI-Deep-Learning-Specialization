@@ -19,25 +19,34 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
 * In NumPy we can make matrices and make operations on them in a fast and reliable time.
 
 ## Logistic regression
-* Algorithm is used for classification algorithm of 2 classes.
+* Algorithm is used for classification algorithm of 2 classes
 * Equations:
    * Simple equation: y = w * x + b
    * If x is a vector: y = w<sup>T</sup> * x + b
    * If we need y to be in between 0 and 1 (probability): y = sigmoid(w<sup>T</sup> * x + b)
    * In some notations this might be used: y = sigmoid(w<sup>T</sup> * x)
-      * While b is w<sub>0</sub> of w and we add x<sub>0</sub> = 1. But we won't use this notation in the course (Andrew said that the first notation is better).
-* In binary classification Y has to be between 0 and 1.
+      * While b is w<sub>0</sub> of w and we add x<sub>0</sub> = 1. But we won't use this notation in the course (Andrew said that the first notation is better)
+* In binary classification Y has to be between 0 and 1
 * In the last equation, w is a vector of N<sub>x</sub> and b is a real number
 
 ## Logistic regression cost function
-* First loss function would be the square root error: L(y',y&#x0302) = 1/2 (y' - y&#x0302)<sup>2</sup>
-* But we won't use this notation because it leads us to optimization problem which is non convex, means it contains local optimum points, and not a global optimum.
-* This is the function that we will use: L(y',y) = - (y*log(y^) + (1-y)*log(1-y^))
-To explain the last function lets see:
-if y = 1 ==> L(y',1) = -log(y') ==> we want y' to be the largest ==> y' biggest value is 1
-if y = 0 ==> L(y',0) = -log(1-y') ==> we want 1-y' to be the largest ==> y' to be smaller as possible because it can only has 1 value.
-Then the Cost function will be: J(w,b) = (1/m) * Sum(L(y'[i],y[i]))
-The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set.
+* First loss function would be the square root error: L(ŷ, y) = 1/2 (ŷ - y)<sup>2</sup>
+   * But we won't use this notation because it leads us to optimization problem which is non convex, means it contains multiple local optima instead of 1 global optimum
+* This is the function that we will use: L(ŷ, y) = - (y * log(ŷ) + (1 - y) * log(1 - ŷ))
+* To explain the last function lets see:
+   * if y = 1 ==> L(ŷ, 1) = - log(ŷ) ==> we want ŷ to be the largest ==> ŷ biggest value is 1
+   * if y = 0 ==> L(ŷ, 0) = - log(1 - ŷ) ==> we want 1 - ŷ to be the largest ==> ŷ to be smaller as possible because it can only has 1 value
+* Then the Cost function will be: J(w,b) = (1/m) * Sum( L (ŷ[i], y[i]))
+* The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set
 
-
-y&#x0302
+## Gradient Descent
+* We want to predict w and b that minimize the cost function
+* Our cost function is convex ie 1 global optimum (= minimum)
+* First we initialize w and b to 0,0 or initialize them to a random value in the convex function and then try to improve the values the reach minimum value
+* In Logistic regression people always use 0,0 instead of random
+* The gradient decent algorithm repeats: w = w - alpha * dw, where alpha is the learning rate and dw is the derivative of w (Change to w).
+   * The derivative is also the slope of w
+* Looks like greedy algorithms. the derivative give us the direction to improve our parameters
+* The actual equations we will implement:
+   * w = w - alpha * d(J(w,b) / dw) (how much the function slopes in the w direction)
+   * b = b - alpha * d(J(w,b) / db) (how much the function slopes in the b direction)
