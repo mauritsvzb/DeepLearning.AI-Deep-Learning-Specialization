@@ -30,7 +30,7 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
 * In the last equation, w is a vector of N<sub>x</sub> and b is a real number
 
 ## Logistic regression cost function
-* First loss function would be the square root error: L(y',y) = 1/2 (y' - y)<sup>2</sup>
+* First loss function would be the square root error: L(y',y&#x0302) = 1/2 (y' - y&#x0302)<sup>2</sup>
 * But we won't use this notation because it leads us to optimization problem which is non convex, means it contains local optimum points, and not a global optimum.
 * This is the function that we will use: L(y',y) = - (y*log(y^) + (1-y)*log(1-y^))
 To explain the last function lets see:
