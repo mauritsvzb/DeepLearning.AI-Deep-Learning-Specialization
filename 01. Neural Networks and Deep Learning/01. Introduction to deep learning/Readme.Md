@@ -1,7 +1,7 @@
 # Introduction to deep learning
 ## What is a neural network (NN)?
 * Single neuron = linear regression without applying activation(perceptron)
-* A single neuron will calculate weighted sum of input(W<sup>T</sup> * X) and then we can set a threshold to predict output in a perceptron. If weighted sum of input crosses the threshold, perceptron fires and if not then perceptron doesn't predict
+* A single neuron will calculate weighted sum of input(w<sup>T</sup> * X) and then we can set a threshold to predict output in a perceptron. If weighted sum of input crosses the threshold, perceptron fires and if not then perceptron doesn't predict
 *  Perceptron can take real values input or boolean values
 * Actually, when w * x + b = 0, the perceptron outputs 0
 * Disadvantage of perceptron is that it only outputs binary values and if we try to give small change in weight and bias then perceptron can flip the output. We need some system which can modify the output slightly according to small change in weight and bias. Enter sigmoid function.
