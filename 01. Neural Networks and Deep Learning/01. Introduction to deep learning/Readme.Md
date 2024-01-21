@@ -43,6 +43,3 @@ Deep learning is taking off for 3 reasons:
 3. Algorithm
    * Creative algorithms has appeared that changed the way NN works
    * For example using RELU function is so much better than using SIGMOID function in training a NN because it helps with the vanishing gradient problem
-
-# Neural Networks Basics
-
