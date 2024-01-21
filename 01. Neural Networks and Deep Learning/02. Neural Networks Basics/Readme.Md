@@ -67,4 +67,18 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
 * To conclude, Derivative is the slope and slope is different in different points in the function thats why the derivative is a function
 
 ## Computation graph
-Its a graph that organizes the computation from left to right.
+* Its a graph that organizes the computation from left to right
+   * <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3e924bac-01af-45bd-9617-a81d20e04063.png" width="600" />
+
+## Derivatives with a Computation Graph
+* Calculus chain rule says: If x -> y -> z (x effect y and y effects z) Then d(z) / d(x) = d(z) / d(y) * d(y) / d(x)
+* The video illustrates a big example
+   * <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e8f480cf-33b3-46d4-94c6-7e2891714fdc.png" width="600" />
+* We compute the derivatives on a graph from right to left and it will be a lot more easier
+* dvar means the derivatives of a final output variable with respect to various intermediate quantities
+
+## Logistic Regression Gradient Descent
+In the video he discussed the derivatives of gradient decent example for one sample with two features x1 and x2
+* <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/fa9f581b-981c-4be4-9377-19280f4c9fe5.png" width="600" />
+
+
