@@ -31,7 +31,7 @@
 Deep learning is taking off for 3 reasons:
 1. Data:
   * Using this image we can conclude:
-   * <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5466845b-a151-4427-a7a1-feccd8eff7ef.png" width="600" />
+   * <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5466845b-a151-4427-a7a1-feccd8eff7ef.png" width="700" />
   * For small data NN can perform as Linear regression or SVM (Support vector machine)
   * For big data a small NN is better that SVM
   * For big data a big NN is better that a medium NN is better that small NN.
