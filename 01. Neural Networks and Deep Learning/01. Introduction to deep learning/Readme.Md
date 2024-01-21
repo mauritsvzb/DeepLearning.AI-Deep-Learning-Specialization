@@ -35,3 +35,11 @@ Deep learning is taking off for 3 reasons:
   * For small data NN can perform as Linear regression or SVM (Support vector machine)
   * For big data a small NN is better that SVM
   * For big data a big NN is better that a medium NN is better that small NN.
+2. Computation:
+  * GPUs
+  * Powerful CPUs
+  * Distributed computing
+  * ASICs
+3. Algorithm
+  * Creative algorithms has appeared that changed the way NN works
+  * For example using RELU function is so much better than using SIGMOID function in training a NN because it helps with the vanishing gradient problem
