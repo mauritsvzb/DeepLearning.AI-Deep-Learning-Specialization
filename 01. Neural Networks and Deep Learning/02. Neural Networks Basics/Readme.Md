@@ -42,28 +42,28 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
 ## Gradient Descent
 * We want to predict w and b that minimize the cost function
 * Our cost function is convex ie 1 global optimum (= minimum)
-* First we initialize w and b to 0,0 or initialize them to a random value in the convex function and then try to improve the values the reach minimum value
+* First we initialize `w` and `b` to 0,0 or initialize them to a random value in the convex function and then try to improve the values the reach minimum value
 * In Logistic regression people always use 0,0 instead of random
-* The gradient decent algorithm repeats: w = w - alpha * dw, where alpha is the learning rate and dw is the derivative of w (Change to w).
-   * The derivative is also the slope of w
+* The gradient decent algorithm repeats: `w = w - alpha * dw`, where `alpha` is the learning rate and `dw` is the derivative of `w` (Change to w).
+   * The derivative is also the slope of `w`
 * Looks like greedy algorithms. the derivative give us the direction to improve our parameters
 * The actual equations we will implement:
-   * w = w - alpha * d(J(w,b) / dw) (how much the function slopes in the w direction)
-   * b = b - alpha * d(J(w,b) / db) (how much the function slopes in the b direction)
+   * `w = w - alpha * d(J(w,b) / dw)` (how much the function slopes in the w direction)
+   * `b = b - alpha * d(J(w,b) / db)` (how much the function slopes in the b direction)
 
 ## Derivatives
 * We will talk about some of required calculus
 * You don't need to be a calculus geek to master deep learning but you'll need some skills from it
 * Derivative of a linear line is its slope
-   * ex. f(a) = 3a d( f(a) ) / d(a) = 3
-   * if a = 2 then f(a) = 6
-   * if we move a a little bit a = 2.001 then f(a) = 6.003 means that we multiplied the derivative (slope) to the moved area and added it to the last result
+   * ex. `f(a) = 3a d( f(a) ) / d(a) = 3`
+   * if `a = 2` then `f(a) = 6`
+   * if we move a a little bit `a = 2.001` then `f(a) = 6.003` means that we multiplied the derivative (slope) to the moved area and added it to the last result
 * More Derivatives examples
-   * f(a) = a^2 ==> d(f(a))/d(a) = 2a
-   * a = 2 ==> f(a) = 4
-   * a = 2.0001 ==> f(a) = 4.0002 approx
-   * f(a) = a^3 ==> d( f(a) ) / d(a) = 3 * a<sup>2</sup>
-   * f(a) = log(a) ==> d( f(a) ) /d (a) = 1/a
+   * `f(a) = a<sup>2</sup>` ==> `d(f(a))/d(a) = 2a`
+   * `a = 2` ==> `f(a) = 4`
+   * `a = 2.0001` ==> `f(a) = 4.0002` approx
+   * `f(a) = a<sup>3</sup>` ==> `d( f(a) ) / d(a) = 3 * a<sup>2</sup>`
+   * `f(a) = log(a)` ==> `d( f(a) ) /d (a) = 1/a`
 * To conclude, Derivative is the slope and slope is different in different points in the function thats why the derivative is a function
 
 ## Computation graph
@@ -71,14 +71,14 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
    * <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3e924bac-01af-45bd-9617-a81d20e04063.png" width="600" />
 
 ## Derivatives with a Computation Graph
-* Calculus chain rule says: If x -> y -> z (x effect y and y effects z) Then d(z) / d(x) = d(z) / d(y) * d(y) / d(x)
+* Calculus chain rule says: If `x -> y -> z` (x effect y and y effects z) Then `d(z) / d(x) = d(z) / d(y) * d(y) / d(x)`
 * The video illustrates a big example
    * <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e8f480cf-33b3-46d4-94c6-7e2891714fdc.png" width="600" />
 * We compute the derivatives on a graph from right to left and it will be a lot more easier
-* dvar means the derivatives of a final output variable with respect to various intermediate quantities
+* `dvar` means the derivatives of a final output variable with respect to various intermediate quantities
 
 ## Logistic Regression Gradient Descent
-In the video he discussed the derivatives of gradient decent example for one sample with two features x1 and x2
+In the video he discussed the derivatives of gradient decent example for one sample with two features `x1` and `x2`
 * <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/fa9f581b-981c-4be4-9377-19280f4c9fe5.png" width="600" />
 
 
