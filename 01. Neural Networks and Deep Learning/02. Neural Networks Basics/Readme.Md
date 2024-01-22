@@ -151,5 +151,13 @@ In the video he discussed the derivatives of gradient decent example for one sam
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f9ba8b6e-ec4c-49e8-acd5-37eb0060bb32.png" width="600" />
 
+## Vectorizing Logistic Regression
+* We will implement Logistic Regression using a for loop then without any for loop.
 
+* As an input we have a matrix X (= [Nx, m]) and a matrix Y = ([Ny, m])
 
+* We will then compute at instance [z1,z2...zm] = W' * X + [b,b,...b]. This can be written in python as: `Z = np.dot(W.T,X) + b`    # Vectorization, then broadcasting, Z shape is (1, m) A = 1 / 1 + np.exp(-Z)   # Vectorization, A shape is (1, m)
+
+* Vectorizing Logistic Regression's Gradient Output: dz = A - Y                  # Vectorization, dz shape is (1, m) dw = np.dot(X, dz.T) / m    # Vectorization, dw shape is (Nx, 1) db = dz.sum() / m           # Vectorization, dz shape is (1, 1)
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b50e6c1f-bbc5-4c49-943a-4ac4ac044edc.png" width="600" />
