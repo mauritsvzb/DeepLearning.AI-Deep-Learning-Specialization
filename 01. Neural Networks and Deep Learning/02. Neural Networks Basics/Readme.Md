@@ -183,3 +183,18 @@ In sum:
 * It allows performing operations on matrices of different shapes efficiently
 * Copying smaller matrices or vectors before element-wise operations is a key principle.
 * The technique improves code efficiency and conciseness, eliminating the need for explicit for-loops
+
+##  Notes on Python and NumPy
+* Some tricks to eliminate all the strange bugs in the code:
+	* If you didn't specify the shape of a vector, it will take a shape of (m,) and the transpose operation won't work. You have to reshape it to (m, 1)
+	* Try to not use the rank one matrix in ANN
+	* Don't hesitate to use assert(a.shape == (5,1)) to check if your matrix shape is the required one.
+	* If you've found a rank one matrix try to run reshape on it.
+* Jupyter / IPython notebooks are so useful library in python that makes it easy to integrate code and document at the same time. It runs in the browser and doesn't need an IDE to run.
+* To open Jupyter Notebook, open the command line and call: jupyter-notebook It should be installed to work.
+* To Compute the derivative of Sigmoid:
+	s = sigmoid(x)
+	ds = s * (1 - s)       # derivative  using calculus
+* To make an image of (width,height,depth) be a vector, use this:
+	v = image.reshape(image.shape[0]*image.shape[1]*image.shape[2],1)  #reshapes the image.
+* Gradient descent converges faster after normalization of the input matrices.
