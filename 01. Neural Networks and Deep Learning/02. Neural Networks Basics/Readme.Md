@@ -43,7 +43,7 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
 * We want to predict w and b that minimize the cost function
 * Our cost function is convex ie 1 global optimum (= minimum)
 * First we initialize `w` and `b` to 0,0 or initialize them to a random value in the convex function and then try to improve the values the reach minimum value
-* In Logistic regression people always use 0,0 instead of random
+* In Logistic regression people always use 0,0 instead of random  (it doesn't matter where  you start, you'll always arrive at the global optimium or very close to it)
 * The gradient decent algorithm repeats: `w = w - alpha * dw`, where `alpha` is the learning rate and `dw` is the derivative of `w` (Change to w).
    * The derivative is also the slope of `w`
 * Looks like greedy algorithms. the derivative give us the direction to improve our parameters
