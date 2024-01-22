@@ -142,4 +142,14 @@ In the video he discussed the derivatives of gradient decent example for one sam
 
 * Vectorization is so important on deep learning to reduce loops. In the last code we can make the whole loop in one step using vectorization!
 
+## Vectorization
+* `for` loops will make you wait a long time to get a result due to iterating over rows and columns (aka 'indexing'. Vectorization circumvents the need for `for' loops and are much faster due to parallelization of computations; 'for' loops compute in series i.e., one computation at a time
+* NumPy library (dot) function is using vectorization by default.
+* The vectorization can be done on CPU or GPU thought the SIMD (Single Instruction Multiple Data) operation. But its faster on GPU.
+* Whenever possible avoid for loops (in general, not just in python)
+* Most of the NumPy library methods are vectorized versions.
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f9ba8b6e-ec4c-49e8-acd5-37eb0060bb32.png" width="600" />
+
+
 
