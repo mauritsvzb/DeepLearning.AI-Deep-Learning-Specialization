@@ -193,8 +193,10 @@ In sum:
 * Jupyter / IPython notebooks are so useful library in python that makes it easy to integrate code and document at the same time. It runs in the browser and doesn't need an IDE to run.
 * To open Jupyter Notebook, open the command line and call: jupyter-notebook It should be installed to work.
 * To Compute the derivative of Sigmoid:
-	s = sigmoid(x)
-	ds = s * (1 - s)       # derivative  using calculus
+	```python
+s = sigmoid(x)
+ds = s * (1 - s)       # derivative  using calculus
+```
 * To make an image of (width,height,depth) be a vector, use this:
-	v = image.reshape(image.shape[0]*image.shape[1]*image.shape[2],1)  #reshapes the image.
+	* v = image.reshape(image.shape[0]*image.shape[1]*image.shape[2],1)  #reshapes the image.
 * Gradient descent converges faster after normalization of the input matrices.
