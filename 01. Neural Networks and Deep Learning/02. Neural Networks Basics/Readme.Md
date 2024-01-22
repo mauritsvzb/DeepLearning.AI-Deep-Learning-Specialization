@@ -64,7 +64,7 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
 ## More Derivatives examples
 * f(a) = a<sup>2</sup> ==> d(f(a))/d(a) = 2a
 * a = 2 ==> f(a) = 4
-* a = 2.0001` ==> f(a) = 4.0002 approx
+* a = 2.0001` ==> f(a) = 4.0004 approx
 * f(a) = a<sup>3</sup> ==> d( f(a) ) / d(a) = 3 * a<sup>2</sup>
 * f(a) = log(a) ==> d( f(a) ) /d (a) = 1/a
 * To conclude, Derivative is the slope and slope is different in different points in the function thats why the derivative is a function
