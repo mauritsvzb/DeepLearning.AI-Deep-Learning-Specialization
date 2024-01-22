@@ -87,7 +87,7 @@ In the video he discussed the derivatives of gradient decent example for one sam
 * <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/fa9f581b-981c-4be4-9377-19280f4c9fe5.png" width="600" />
 
 ## Gradient Descent on m Examples
-Lets say we have these variables:
+* Lets say we have these variables:
 
 `	X1                  Feature
 	X2                  Feature
@@ -96,11 +96,12 @@ Lets say we have these variables:
 	B                   Logistic Regression parameter.
 	M                   Number of training examples
 	Y(i)                Expected output of i`
-So we have:
+
+* So we have:
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1722c109-4adf-482a-95c8-991dc797d5de.png" width="600" />
 
-Then from right to left we will calculate derivations compared to the result:
+* Then from right to left we will calculate derivations compared to the result:
 
 ```python	
    d(a)  = d(l)/d(a) = -(y/a) + ((1-y)/(1-a))
@@ -109,7 +110,7 @@ Then from right to left we will calculate derivations compared to the result:
 	d(W2) = X2 * d(z)
 	d(B)  = d(z)
 ```
-From the above we can conclude the logistic regression pseudo code:
+* From the above we can conclude the logistic regression pseudo code:
 
 ```python	
    J = 0; dw1 = 0; dw2 =0; db = 0;                 # Devs.
@@ -135,10 +136,10 @@ From the above we can conclude the logistic regression pseudo code:
 	w2 = w2 - alpha * dw2
 	b = b - alpha * db
 ```
-The above code should run for some iterations to minimize error.
+*  The above code should run for some iterations to minimize error.
 
-So there will be two inner loops to implement the logistic regression.
+* So there will be two inner loops to implement the logistic regression.
 
-Vectorization is so important on deep learning to reduce loops. In the last code we can make the whole loop in one step using vectorization!
+* Vectorization is so important on deep learning to reduce loops. In the last code we can make the whole loop in one step using vectorization!
 
 
