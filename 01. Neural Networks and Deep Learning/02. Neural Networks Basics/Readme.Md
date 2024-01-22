@@ -49,7 +49,7 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
 * The actual equations we will implement:
    * `w = w - alpha * d(J(w,b) / dw)` (how much the function slopes in the w direction)
    * `b = b - alpha * d(J(w,b) / db)` (how much the function slopes in the b direction)
-<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/9c5e09d1-6a5d-4a38-a319-b37d2e262d60.png" width="500" /><img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a008944b-cb8a-4d43-a56e-cf174533ac5a.png" width="500" />
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/9c5e09d1-6a5d-4a38-a319-b37d2e262d60.png" width="600" /><img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a008944b-cb8a-4d43-a56e-cf174533ac5a.png" width="600" />
 
 ## Derivatives
 * We will talk about some of required calculus
