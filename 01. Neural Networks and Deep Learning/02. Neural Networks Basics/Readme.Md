@@ -193,7 +193,8 @@ In sum:
 * Jupyter / IPython notebooks are so useful library in python that makes it easy to integrate code and document at the same time. It runs in the browser and doesn't need an IDE to run.
 * To open Jupyter Notebook, open the command line and call: jupyter-notebook It should be installed to work.
 * To Compute the derivative of Sigmoid:
-	```python
+	
+```python
 s = sigmoid(x)
 ds = s * (1 - s)       # derivative  using calculus
 ```
