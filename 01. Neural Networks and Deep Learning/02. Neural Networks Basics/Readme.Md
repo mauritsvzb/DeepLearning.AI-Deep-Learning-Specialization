@@ -66,6 +66,8 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
    * f(a) = log(a) ==> d( f(a) ) /d (a) = 1/a
 * To conclude, Derivative is the slope and slope is different in different points in the function thats why the derivative is a function
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/67e31110-f7f8-4044-920c-72fe6def61c9.png" width="600" />
+
 ## Computation graph
 * Its a graph that organizes the computation from left to right
    * <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3e924bac-01af-45bd-9617-a81d20e04063.png" width="600" />
