@@ -55,15 +55,15 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
 * We will talk about some of required calculus
 * You don't need to be a calculus geek to master deep learning but you'll need some skills from it
 * Derivative of a linear line is its slope
-   * ex. `f(a) = 3a d( f(a) ) / d(a) = 3`
-   * if `a = 2` then `f(a) = 6`
-   * if we move a a little bit `a = 2.001` then `f(a) = 6.003` means that we multiplied the derivative (slope) to the moved area and added it to the last result
+   * ex. f(a) = 3a d( f(a) ) / d(a) = 3
+   * if a = 2 then f(a) = 6
+   * if we move a a little bit a = 2.001 then f(a) = 6.003 means that we multiplied the derivative (slope) to the moved area and added it to the last result
 * More Derivatives examples
-   * `f(a) = a<sup>2</sup>` ==> `d(f(a))/d(a) = 2a`
-   * `a = 2` ==> `f(a) = 4`
-   * `a = 2.0001` ==> `f(a) = 4.0002` approx
-   * `f(a) = a<sup>3</sup>` ==> `d( f(a) ) / d(a) = 3 * a<sup>2</sup>`
-   * `f(a) = log(a)` ==> `d( f(a) ) /d (a) = 1/a`
+   * f(a) = a<sup>2</sup> ==> d(f(a))/d(a) = 2a
+   * a = 2 ==> f(a) = 4
+   * a = 2.0001` ==> f(a) = 4.0002 approx
+   * f(a) = a<sup>3</sup> ==> d( f(a) ) / d(a) = 3 * a<sup>2</sup>
+   * f(a) = log(a) ==> d( f(a) ) /d (a) = 1/a
 * To conclude, Derivative is the slope and slope is different in different points in the function thats why the derivative is a function
 
 ## Computation graph
