@@ -193,6 +193,7 @@ In sum:
 
  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2483b5d0-a0d5-4b76-a055-3e8276d51e86.png" width="600" />
 
+## Quick tour of Jupyter/iPython Notebooks
 * Jupyter / IPython notebooks are so useful library in python that makes it easy to integrate code and document at the same time. It runs in the browser and doesn't need an IDE to run.
 * To open Jupyter Notebook, open the command line and call: jupyter-notebook It should be installed to work.
 * To Compute the derivative of Sigmoid:
