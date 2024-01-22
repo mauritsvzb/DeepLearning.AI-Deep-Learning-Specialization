@@ -161,3 +161,8 @@ In the video he discussed the derivatives of gradient decent example for one sam
 * Vectorizing Logistic Regression's Gradient Output: dz = A - Y                  # Vectorization, dz shape is (1, m) dw = np.dot(X, dz.T) / m    # Vectorization, dw shape is (Nx, 1) db = dz.sum() / m           # Vectorization, dz shape is (1, 1)
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b50e6c1f-bbc5-4c49-943a-4ac4ac044edc.png" width="600" />
+
+## Vectorizing Logistic Regression's Gradient Output
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/36156e10-5263-4811-b7f8-0e4274e2f662.png" width="600" />
+
