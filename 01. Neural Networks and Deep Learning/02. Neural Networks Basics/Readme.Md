@@ -168,11 +168,18 @@ In the video he discussed the derivatives of gradient decent example for one sam
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/36156e10-5263-4811-b7f8-0e4274e2f662.png" width="600" />
 
 ## Broadcasting in Python
-* Broadcasting optimizes Python code for faster execution
-* It allows performing operations on matrices of different shapes efficiently
-* Copying smaller matrices or vectors before element-wise operations is a key principle.
-* The technique improves code efficiency and conciseness, eliminating the need for explicit for-loops
+* In NumPy, `obj.sum(axis = 0)` sums the columns while `obj.sum(axis = 1)` sums the rows.
+* In NumPy, `obj.reshape(1,4)` changes the shape of the matrix by broadcasting the values.
+* Reshape is cheap in calculations so put it everywhere you're not sure about the calculations.
+* Broadcasting works when you do a matrix operation with matrices that doesn't match for the operation, in this case NumPy automatically makes the shapes ready for the operation by broadcasting the values.
+* In general principle of broadcasting. If you have an (m,n) matrix and you add(+) or subtract(-) or multiply(*) or divide(/) with a (1,n) matrix, then this will copy it m times into an (m,n) matrix. The same with if you use those operations with a (m , 1) matrix, then this will copy it n times into (m, n) matrix. And then apply the addition, subtraction, and multiplication of division element wise.
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/33c33464-78a1-4c43-8b11-1003061a2616.png" width="600" />
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/ceaf8c5d-6a58-4b14-ac14-e21d4a212806.png" width="600" />
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a24e54b0-c163-4f32-bcde-f467e6c4f7c1.png" width="600" />
+
+In sum: 
+* Broadcasting optimizes Python code for faster execution
+* It allows performing operations on matrices of different shapes efficiently
+* Copying smaller matrices or vectors before element-wise operations is a key principle.
+* The technique improves code efficiency and conciseness, eliminating the need for explicit for-loops
