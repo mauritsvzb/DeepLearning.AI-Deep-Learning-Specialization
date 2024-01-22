@@ -1,5 +1,3 @@
-
-`w<sup>T</sup>`
 # Neural Networks Basics
 Learn to set up a machine learning problem with a neural network mindset. Learn to use vectorization to speed up your models
 
@@ -10,26 +8,26 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
 
 * He talked about an example of knowing if the current image contains a cat or not.
 * Here are some notations:
-    * `M` is the number of training vectors
-    * `N<sub>x</sub>` is the size of the input vector
-    * `N<sub>y</sub>` is the size of the output vector
-    * `X(1)` is the first input vector
-    * `Y(1)` is the first output vector
-    * `X` = [x(1) x(2).. x(M)]
-    * `Y` = (y(1) y(2).. y(M))
+    * M is the number of training vectors
+    * N<sub>x</sub> is the size of the input vector
+    * N<sub>y</sub> is the size of the output vector
+    * X(1) is the first input vector
+    * Y(1) is the first output vector
+    * X = [x(1) x(2).. x(M)]
+    * Y = (y(1) y(2).. y(M))
 * We will use python in this course.
 * In NumPy we can make matrices and make operations on them in a fast and reliable time.
 
 ## Logistic regression
 * Algorithm is used for classification algorithm of 2 classes
 * Equations:
-   * Simple equation: `y = w * x + b`
-   * If x is a vector: `y = w<sup>T</sup> * x + b`
-   * If we need `y` to be in between `0` and `1` (probability): `y = sigmoid(w<sup>T</sup> * x + b)`
-   * In some notations this might be used: `y = sigmoid(w<sup>T</sup> * x)`
-      * While `b` is `w<sub>0</sub>` of `w` and we add `x<sub>0</sub> = 1`. But we won't use this notation in the course (Andrew said that the first notation is better)
-* In binary classification `Y` has to be between 0 and 1
-* In the last equation, `w` is a vector of `N<sub>x</sub>` and `b` is a real number
+   * Simple equation: y = w * x + b
+   * If x is a vector: y = w<sup>T</sup> * x + b
+   * If we need y to be in between 0 and 1 (probability): y = sigmoid(w<sup>T</sup> * x + b)
+   * In some notations this might be used: y = sigmoid(w<sup>T</sup> * x)
+      * While b is w<sub>0</sub> of w and we add x<sub>0</sub> = 1. But we won't use this notation in the course (Andrew said that the first notation is better)
+* In binary classification Y has to be between 0 and 1
+* In the last equation, w is a vector of N<sub>x</sub> and b is a real number
 
 ## Logistic regression cost function
 * First loss function would be the square root error: L(ŷ, y) = 1/2 (ŷ - y)<sup>2</sup>
