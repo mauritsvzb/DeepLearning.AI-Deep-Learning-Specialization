@@ -86,4 +86,59 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
 In the video he discussed the derivatives of gradient decent example for one sample with two features `x1` and `x2`
 * <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/fa9f581b-981c-4be4-9377-19280f4c9fe5.png" width="600" />
 
+## Gradient Descent on m Examples
+Lets say we have these variables:
+
+`	X1                  Feature
+	X2                  Feature
+	W1                  Weight of the first feature.
+	W2                  Weight of the second feature.
+	B                   Logistic Regression parameter.
+	M                   Number of training examples
+	Y(i)                Expected output of i`
+So we have:
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1722c109-4adf-482a-95c8-991dc797d5de.png" width="600" />
+
+Then from right to left we will calculate derivations compared to the result:
+
+```python	
+   d(a)  = d(l)/d(a) = -(y/a) + ((1-y)/(1-a))
+	d(z)  = d(l)/d(z) = a - y
+	d(W1) = X1 * d(z)
+	d(W2) = X2 * d(z)
+	d(B)  = d(z)`
+
+From the above we can conclude the logistic regression pseudo code:
+
+```python	
+   J = 0; dw1 = 0; dw2 =0; db = 0;                 # Devs.
+	w1 = 0; w2 = 0; b=0;							# Weights
+	for i = 1 to m
+		# Forward pass
+		z(i) = W1*x1(i) + W2*x2(i) + b
+		a(i) = Sigmoid(z(i))
+		J += -(Y(i)*log(a(i)) + (1-Y(i))*log(1-a(i)))
+
+		# Backward pass
+		dz(i) = a(i) - Y(i)
+		dw1 += dz(i) * x1(i)
+		dw2 += dz(i) * x2(i)
+		db  += dz(i)
+	J /= m
+	dw1/= m
+	dw2/= m
+	db/= m
+
+	# Gradient descent
+	w1 = w1 - alpha * dw1
+	w2 = w2 - alpha * dw2
+	b = b - alpha * db`
+
+The above code should run for some iterations to minimize error.
+
+So there will be two inner loops to implement the logistic regression.
+
+Vectorization is so important on deep learning to reduce loops. In the last code we can make the whole loop in one step using vectorization!
+
 
