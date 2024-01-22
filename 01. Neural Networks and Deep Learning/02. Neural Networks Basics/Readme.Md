@@ -58,15 +58,16 @@ Learn to set up a machine learning problem with a neural network mindset. Learn 
    * ex. f(a) = 3a d( f(a) ) / d(a) = 3
    * if a = 2 then f(a) = 6
    * if we move a a little bit a = 2.001 then f(a) = 6.003 means that we multiplied the derivative (slope) to the moved area and added it to the last result
-* More Derivatives examples
-   * f(a) = a<sup>2</sup> ==> d(f(a))/d(a) = 2a
-   * a = 2 ==> f(a) = 4
-   * a = 2.0001` ==> f(a) = 4.0002 approx
-   * f(a) = a<sup>3</sup> ==> d( f(a) ) / d(a) = 3 * a<sup>2</sup>
-   * f(a) = log(a) ==> d( f(a) ) /d (a) = 1/a
-* To conclude, Derivative is the slope and slope is different in different points in the function thats why the derivative is a function
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/67e31110-f7f8-4044-920c-72fe6def61c9.png" width="600" />
+
+## More Derivatives examples
+* f(a) = a<sup>2</sup> ==> d(f(a))/d(a) = 2a
+* a = 2 ==> f(a) = 4
+* a = 2.0001` ==> f(a) = 4.0002 approx
+* f(a) = a<sup>3</sup> ==> d( f(a) ) / d(a) = 3 * a<sup>2</sup>
+* f(a) = log(a) ==> d( f(a) ) /d (a) = 1/a
+* To conclude, Derivative is the slope and slope is different in different points in the function thats why the derivative is a function
 
 ## Computation graph
 * Its a graph that organizes the computation from left to right
