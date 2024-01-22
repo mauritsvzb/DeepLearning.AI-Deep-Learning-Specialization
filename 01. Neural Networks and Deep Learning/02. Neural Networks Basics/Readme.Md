@@ -167,5 +167,7 @@ In the video he discussed the derivatives of gradient decent example for one sam
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5743e0e8-5f8e-4296-b9e6-6005b50811ca.png" width="600" />
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/36156e10-5263-4811-b7f8-0e4274e2f662.png" width="600" />
 
-
-
+## Broadcasting in Python
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/33c33464-78a1-4c43-8b11-1003061a2616.png" width="600" />
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/ceaf8c5d-6a58-4b14-ac14-e21d4a212806.png" width="600" />
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a24e54b0-c163-4f32-bcde-f467e6c4f7c1.png" width="600" />
