@@ -164,5 +164,8 @@ In the video he discussed the derivatives of gradient decent example for one sam
 
 ## Vectorizing Logistic Regression's Gradient Output
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5743e0e8-5f8e-4296-b9e6-6005b50811ca.png" width="600" />
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/36156e10-5263-4811-b7f8-0e4274e2f662.png" width="600" />
+
+
 
