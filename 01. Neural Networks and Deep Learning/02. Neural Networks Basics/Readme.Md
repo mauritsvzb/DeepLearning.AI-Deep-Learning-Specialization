@@ -107,8 +107,8 @@ Then from right to left we will calculate derivations compared to the result:
 	d(z)  = d(l)/d(z) = a - y
 	d(W1) = X1 * d(z)
 	d(W2) = X2 * d(z)
-	d(B)  = d(z)```
-
+	d(B)  = d(z)
+```
 From the above we can conclude the logistic regression pseudo code:
 
 ```python	
@@ -133,8 +133,8 @@ From the above we can conclude the logistic regression pseudo code:
 	# Gradient descent
 	w1 = w1 - alpha * dw1
 	w2 = w2 - alpha * dw2
-	b = b - alpha * db```
-
+	b = b - alpha * db
+```
 The above code should run for some iterations to minimize error.
 
 So there will be two inner loops to implement the logistic regression.
