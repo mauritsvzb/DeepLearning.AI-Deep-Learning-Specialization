@@ -11,7 +11,7 @@ If you want to break into cutting-edge AI, this course will help you do so. Deep
 This course also teaches you how Deep Learning actually works, rather than presenting only a cursory or surface-level description. So after completing it, you will be able to apply deep learning to a your own applications. If you are looking for a job in AI, after this course you will also be able to answer basic interview questions.
 
 # 📂 Projects
-* Python Basics with Numpy
+* [Python Basics with Numpy](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/01.%20Neural%20Networks%20and%20Deep%20Learning/02.%20Neural%20Networks%20Basics/Python_Basics_with_Numpy.ipynb)
 * Logistic Regression with a Neural Network mindset
 * Planar data classification with a hidden layer
 * Building your Deep Neural Network - Step by Step
