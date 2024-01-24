@@ -93,14 +93,24 @@ The code on the bottom right is the vectorized version of the code on the top ri
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c079da55-ffce-42ed-acd1-7e21ae15b9b4.png" width="700" />
 
 * One of the popular activation functions that solved the slow gradient decent is the RELU function:
-    * RELU = max(0,z) # so if z is negative the slope is 0 and if z is positive the slope remains linear.
-So here is some basic rule for choosing activation functions, if your classification is between 0 and 1, use the output activation as sigmoid and the others as RELU.
-Leaky RELU activation function different of RELU is that if the input is negative the slope will be so small. It works as RELU but most people uses RELU. Leaky_RELU = max(0.01z,z)  #the 0.01 can be a parameter for your algorithm.
+    * `RELU = max(0,z) # so if z is negative the slope is 0 and if z is positive the slope remains linear`
+* So here is some basic rule for choosing activation functions, if your classification is between 0 and 1, use the output activation as sigmoid
+    * RELU should be the default choice otherwise
+* Leaky RELU activation function is different form of RELU in that if the input is negative the slope will be slightly shallow. It works as RELU but most people uses RELU. 
+    * `Leaky_RELU = max(0.01z,z)  #the 0.01 can be a parameter for your algorithm`
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2dc0781b-59a1-45e8-a16c-0c7e1c636cad.png" width="700" />
+
 In NN you will decide a lot of choices like:
-No of hidden layers.
-No of neurons in each hidden layer.
-Learning rate. (The most important parameter)
-Activation functions.
-And others..
-It turns out there are no guide lines for that. You should try all activation functions for example.
+* No. hidden layers
+* No. neurons in each hidden layer
+* Learning rate (the most important parameter)
+* Activation functions
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2161e165-6cd6-4422-8878-2b6eac146788.png" width="700" />
+
+* And others...
+* It turns out there are no guide lines for choosing activation functions: You should try all to see which ones gives best results
+
+
 
