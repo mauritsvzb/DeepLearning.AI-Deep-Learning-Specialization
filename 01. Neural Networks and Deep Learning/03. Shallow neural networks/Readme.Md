@@ -18,4 +18,24 @@ The top graphical representation is the logistic regression treated as a simple 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/bf2e8ae2-5c41-46af-b61f-306f137a2eb9.png" width="700" />
 
 ## Computing a Neural Network's Output
+Equations of hidden layers
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/62fae21c-741a-4415-910e-5a391163b2ec.png" width="700" />
+
+* Here are some informations about the last image:
+* Number of hidden neurons = noOfHiddenNeurons = 4
+* Number of input features = Nx = 3
+
+* Shapes of the variables
+  * W<sup>[1]</sup> is the matrix of the first hidden layer, it has a shape of (noOfHiddenNeurons,nx)
+  * b<sup>[1]</sup> is the matrix of the first hidden layer, it has a shape of (noOfHiddenNeurons,1)
+  * z<sup>[1]</sup> is the result of the equation z<sup>[1]</sup> = W<sup>[1]</sup> * X + b<sup>[1]</sup>, it has a shape of (noOfHiddenNeurons,1)
+  * a<sup>[1]</sup> is the result of the equation a<sup>[1]</sup> = sigmoid(z<sup>[1]</sup>), it has a shape of (noOfHiddenNeurons,1)
+  * W<sup>[2]</sup> is the matrix of the second hidden layer, it has a shape of (1,noOfHiddenNeurons)
+  * b<sup>[2]</sup> is the matrix of the second hidden layer, it has a shape of (1,1)
+  * z<sup>[2]</sup> is the result of the equation z<sup>[2]</sup> = W<sup>[2]</sup> * a<sup>[1]</sup> + b<sup>[2]</sup>, it has a shape of (1,1)
+  * a<sup>[2]</sup> is the result of the equation a<sup>[2]</sup> = sigmoid(z<sup>[2]</sup>), it has a shape of (1,1)
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2d6329a8-fb2c-4277-ae94-636d77663623.png" width="700" />
+
+## Vectorizing across multiple examples
