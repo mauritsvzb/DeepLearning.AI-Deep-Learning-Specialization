@@ -22,9 +22,8 @@ Equations of hidden layers
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/62fae21c-741a-4415-910e-5a391163b2ec.png" width="700" />
 
-* Here are some informations about the last image:
 * Number of hidden neurons = noOfHiddenNeurons = 4
-* Number of input features = Nx = 3
+* Number of input features = N<sub>x</sub> = 3
 
 * Shapes of the variables
   * W<sup>[1]</sup> is the matrix of the first hidden layer; it has a shape of (noOfHiddenNeurons,nx)
