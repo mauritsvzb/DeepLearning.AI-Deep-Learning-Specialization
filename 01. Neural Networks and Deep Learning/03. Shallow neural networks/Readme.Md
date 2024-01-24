@@ -146,10 +146,12 @@ g'(z) = { 0  if z < 0
 ```
 * Derivation of leaky RELU activation function:
 
+```
 g(z)  = np.maximum(0.01 * z, z)
 g'(z) = { 0.01  if z < 0
           1     if z >= 0   }
 ```
+
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f4982ecc-3d45-4040-87d7-58fc0a7ba8c6.png" width="700" />
 
 ## Gradient descent for Neural Networks
