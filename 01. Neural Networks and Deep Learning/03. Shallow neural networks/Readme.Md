@@ -38,7 +38,7 @@ Equations of hidden layers
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/abbc2cf8-faa7-4067-b34b-64c2cd64866b.png" width="700" />
 
 ## Vectorizing across multiple examples
-Pseudo code for forward propagation for the 2 layers NN:
+Pseudo code for forward propagation for the 2 layers NN (unvectorized):
 
 ```
 for i = 1 to m:
@@ -48,3 +48,16 @@ for i = 1 to m:
   a[2](i) = sigmoid(z[2](i)            # shape of a[2](i) is (1,1)
 ```
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/464cea39-903c-4a27-a2dc-0b3f83b9bdb5.png" width="700" />
+
+Pseudo code for forward propagation for the 2 layers NN (vectorized):
+* Lets say we have X on shape (Nx,m). So the new pseudo code:
+
+```
+Z[1] = W[1] * X + b[1]        # shape of Z1 (noOfHiddenNeurons,m)
+A[1] = sigmoid(Z[1])          # shape of A1 (noOfHiddenNeurons,m)
+Z[2] = W[2] * A[1] + b[2]     # shape of Z[2] is (1,m)
+A[2] = sigmoid(Z[2])          # shape of  2 is (1,m)
+```
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/fb0cee6d-e136-41a7-aaf4-79b4622c4490.png" width="700" />
+
