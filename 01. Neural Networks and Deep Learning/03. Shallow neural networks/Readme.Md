@@ -35,6 +35,14 @@ Equations of hidden layers
   * z<sup>[2]</sup> is the result of the equation z<sup>[2]</sup> = W<sup>[2]</sup> * a<sup>[1]</sup> + b<sup>[2]</sup>; it has a shape of (1,1)
   * a<sup>[2]</sup> is the result of the equation a<sup>[2]</sup> = sigmoid(z<sup>[2]</sup>); it has a shape of (1,1)
 
-<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2d6329a8-fb2c-4277-ae94-636d77663623.png" width="700" />
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/464cea39-903c-4a27-a2dc-0b3f83b9bdb5.png" width="700" />
 
 ## Vectorizing across multiple examples
+Pseudo code for forward propagation for the 2 layers NN:
+```python
+for i = 1 to m:
+  z<sup>[1](i)</sup> = W<sup>[1]</sup> * x<sup>[i]</sup> + b<sup>[1]</sup>         # shape of z<sup>[1](i)</sup> is (noOfHiddenNeurons,1)
+  a<sup>[1](i)</sup> = sigmoid(z<sup>[1](i)</sup>)                                 # shape of a<sup>[1](i)</sup> is (noOfHiddenNeurons,1)
+  z<sup>[2](i)</sup> = W<sup>[2]</sup> * a<sup>[1](i)</sup> + b<sup>2</sup>        # shape of z<sup>[2](i)</sup> is (1,1)
+  a<sup>[2](i)</sup> = sigmoid(z<sup>[2](i)</sup>)                                 # shape of a<sup>[2](i)</sup> is (1,1)
+```
