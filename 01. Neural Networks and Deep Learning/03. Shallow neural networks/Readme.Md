@@ -112,5 +112,44 @@ In NN you will decide a lot of choices like:
 * And others...
 * It turns out there are no guide lines for choosing activation functions: You should try all to see which ones gives best results
 
+## Why do you need non-linear activation functions?
+* If we removed the activation function from our algorithm then we essentially have a linear activation function that is used
+* Linear activation function in the hidden layer(s) will output linear activations
+* Therefore, however many hidden layers you add, the activation will be always linear like logistic regression (So its useless in a lot of complex problems)
+* You might use linear activation function in one place - in the output layer if the output is real numbers (regression problem). But even in this case if the output value is non-negative you could use RELU instead.
 
+## Derivatives of activation functions
+* Derivation of Sigmoid activation function:
 
+```
+g(z)  = 1 / (1 + np.exp(-z))
+g'(z) = (1 / (1 + np.exp(-z))) * (1 - (1 / (1 + np.exp(-z))))
+g'(z) = g(z) * (1 - g(z))
+```
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/eeda5232-a175-4ba4-be33-7aa8b73592d2.png" width="700" />
+
+* Derivation of Tanh activation function:
+```
+g(z)  = (e^z - e^-z) / (e^z + e^-z)
+g'(z) = 1 - np.tanh(z)^2 = 1 - g(z)^2
+```
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f6ad00e2-58f0-455c-86b5-b6326f4af248.png" width="700" />
+
+* Derivation of RELU activation function:
+
+```
+g(z)  = np.maximum(0,z)
+g'(z) = { 0  if z < 0
+          1  if z >= 0  }
+```
+* Derivation of leaky RELU activation function:
+
+g(z)  = np.maximum(0.01 * z, z)
+g'(z) = { 0.01  if z < 0
+          1     if z >= 0   }
+```
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f4982ecc-3d45-4040-87d7-58fc0a7ba8c6.png" width="700" />
+
+## Gradient descent for Neural Networks
