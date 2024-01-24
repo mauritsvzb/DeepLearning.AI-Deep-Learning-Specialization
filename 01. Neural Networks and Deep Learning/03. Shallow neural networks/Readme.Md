@@ -76,6 +76,8 @@ A[2] = sigmoid(Z[2])           # shape of A[2] is (1,m)
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/02846c2a-0810-44c3-98b7-8bdeb929496a.png" width="700" />
 
+The code on the bottom right is the vectorized version of the code on the top right.
+
 ## Activation functions
 
 
