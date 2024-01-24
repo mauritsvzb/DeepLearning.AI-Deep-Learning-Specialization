@@ -11,7 +11,7 @@ The top graphical representation is the logistic regression treated as a simple 
 * NNs contain 1 input layer, 1 or more hidden layers, and 1 output layers
 * 'Hidden layer' comes from the fact that we can't see that layers in the training set, only the input and output
 * a<sup>[0]</sup> = x (= input layer)
-* a<sup>[1]</sup> will represent the activation of the hidden neurons i.e., the parameter values that are passed to the next layer
+* a<sup>[1]</sup> will represent the activation of the hidden neurons
 * a<sup>[2]</sup> will represent the output layer
 * This is a 2-layer NN: the input layer isn't counted
 
@@ -27,14 +27,14 @@ Equations of hidden layers
 * Number of input features = Nx = 3
 
 * Shapes of the variables
-  * W<sup>[1]</sup> is the matrix of the first hidden layer, it has a shape of (noOfHiddenNeurons,nx)
-  * b<sup>[1]</sup> is the matrix of the first hidden layer, it has a shape of (noOfHiddenNeurons,1)
-  * z<sup>[1]</sup> is the result of the equation z<sup>[1]</sup> = W<sup>[1]</sup> * X + b<sup>[1]</sup>, it has a shape of (noOfHiddenNeurons,1)
-  * a<sup>[1]</sup> is the result of the equation a<sup>[1]</sup> = sigmoid(z<sup>[1]</sup>), it has a shape of (noOfHiddenNeurons,1)
-  * W<sup>[2]</sup> is the matrix of the second hidden layer, it has a shape of (1,noOfHiddenNeurons)
-  * b<sup>[2]</sup> is the matrix of the second hidden layer, it has a shape of (1,1)
-  * z<sup>[2]</sup> is the result of the equation z<sup>[2]</sup> = W<sup>[2]</sup> * a<sup>[1]</sup> + b<sup>[2]</sup>, it has a shape of (1,1)
-  * a<sup>[2]</sup> is the result of the equation a<sup>[2]</sup> = sigmoid(z<sup>[2]</sup>), it has a shape of (1,1)
+  * W<sup>[1]</sup> is the matrix of the first hidden layer; it has a shape of (noOfHiddenNeurons,nx)
+  * b<sup>[1]</sup> is the matrix of the first hidden layer; it has a shape of (noOfHiddenNeurons,1)
+  * z<sup>[1]</sup> is the result of the equation z<sup>[1]</sup> = W<sup>[1]</sup> * X + b<sup>[1]</sup>; it has a shape of (noOfHiddenNeurons,1)
+  * a<sup>[1]</sup> is the result of the equation a<sup>[1]</sup> = sigmoid(z<sup>[1]</sup>); it has a shape of (noOfHiddenNeurons,1)
+  * W<sup>[2]</sup> is the matrix of the second hidden layer; it has a shape of (1,noOfHiddenNeurons)
+  * b<sup>[2]</sup> is the matrix of the second hidden layer; it has a shape of (1,1)
+  * z<sup>[2]</sup> is the result of the equation z<sup>[2]</sup> = W<sup>[2]</sup> * a<sup>[1]</sup> + b<sup>[2]</sup>; it has a shape of (1,1)
+  * a<sup>[2]</sup> is the result of the equation a<sup>[2]</sup> = sigmoid(z<sup>[2]</sup>); it has a shape of (1,1)
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2d6329a8-fb2c-4277-ae94-636d77663623.png" width="700" />
 
