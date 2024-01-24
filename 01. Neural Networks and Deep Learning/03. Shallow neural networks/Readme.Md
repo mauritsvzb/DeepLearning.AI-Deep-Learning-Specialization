@@ -60,5 +60,6 @@ A[2] = sigmoid(Z[2])          # shape of  2 is (1,m)
 ```
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/fb0cee6d-e136-41a7-aaf4-79b4622c4490.png" width="700" />
+
 Note: in the  X matrix, the vertical dimension corresponds to different input features (= different nodes of the input layer)
 
