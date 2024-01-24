@@ -63,3 +63,11 @@ A[2] = sigmoid(Z[2])          # shape of  2 is (1,m)
 
 Note: in the  X matrix, the vertical dimension corresponds to different input features (= different nodes of the input layer)
 
+* If you noticed, m is always the number of columns
+In the last example we can called X = A<sup>[0]</sup>. So the previous step can be rewritten as:
+```
+Z[1] = W[1]A[0] + b[1]         # shape of Z[1] (noOfHiddenNeurons,m)
+A[1] = sigmoid(Z[1])           # shape of A[1] (noOfHiddenNeurons,m)
+Z[2] = W[2] * A[1] + b[2]      # shape of Z[2] is (1,m)
+A[2] = sigmoid(Z[2])           # shape of A[2] is (1,m)
+```
