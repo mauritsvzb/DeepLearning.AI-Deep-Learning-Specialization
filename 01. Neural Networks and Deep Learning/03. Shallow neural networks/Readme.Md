@@ -79,5 +79,28 @@ A[2] = sigmoid(Z[2])           # shape of A[2] is (1,m)
 The code on the bottom right is the vectorized version of the code on the top right.
 
 ## Activation functions
+* So far we have used the sigmoid, but in some cases other activation functions may be a lot better
+* Sigmoid can lead us to gradient decent problem when the updates are very low
+* Sigmoid activation function range is [0,1] `A = 1 / (1 + np.exp(-z)) # Where z is the input matrix`
+* Tangent activation (hyperbolic: tan h) function range is [-1,1] (Shifted version of sigmoid function)
+  * In NumPy we can implement Tan h(z) using one of these methods: 
+    * `A = (np.exp(z) - np.exp(-z)) / (np.exp(z) + np.exp(-z))  # Where z is the input matrix` 
+    * `A = np.tanh(z)                                           # Where z is the input matrix`
+* It turns out that the tan h activation usually works better than sigmoid activation function for hidden units because the mean of its output is closer to zero, and so it centers the data better for the next layer
+    *  Only real good use of the sigmoid function is for the output layer when using classification where ŷ is between 0 and 1. Otherwise, use the tan h(z) function
+* Disadvantage of the sigmoid and tan h function is that if the input is very small or very high, the slope will be near zero which can slow down gradient descent (i.e., cause problems)
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c079da55-ffce-42ed-acd1-7e21ae15b9b4.png" width="700" />
+
+* One of the popular activation functions that solved the slow gradient decent is the RELU function:
+    * RELU = max(0,z) # so if z is negative the slope is 0 and if z is positive the slope remains linear.
+So here is some basic rule for choosing activation functions, if your classification is between 0 and 1, use the output activation as sigmoid and the others as RELU.
+Leaky RELU activation function different of RELU is that if the input is negative the slope will be so small. It works as RELU but most people uses RELU. Leaky_RELU = max(0.01z,z)  #the 0.01 can be a parameter for your algorithm.
+In NN you will decide a lot of choices like:
+No of hidden layers.
+No of neurons in each hidden layer.
+Learning rate. (The most important parameter)
+Activation functions.
+And others..
+It turns out there are no guide lines for that. You should try all activation functions for example.
 
