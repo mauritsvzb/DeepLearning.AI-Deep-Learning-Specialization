@@ -39,10 +39,10 @@ Equations of hidden layers
 
 ## Vectorizing across multiple examples
 Pseudo code for forward propagation for the 2 layers NN:
-```python
+
 for i = 1 to m:
   z<sup>[1](i)</sup> = W<sup>[1]</sup> * x<sup>[i]</sup> + b<sup>[1]</sup>         # shape of z<sup>[1](i)</sup> is (noOfHiddenNeurons,1)
   a<sup>[1](i)</sup> = sigmoid(z<sup>[1](i)</sup>)                                 # shape of a<sup>[1](i)</sup> is (noOfHiddenNeurons,1)
   z<sup>[2](i)</sup> = W<sup>[2]</sup> * a<sup>[1](i)</sup> + b<sup>2</sup>        # shape of z<sup>[2](i)</sup> is (1,1)
   a<sup>[2](i)</sup> = sigmoid(z<sup>[2](i)</sup>)                                 # shape of a<sup>[2](i)</sup> is (1,1)
-```
+
