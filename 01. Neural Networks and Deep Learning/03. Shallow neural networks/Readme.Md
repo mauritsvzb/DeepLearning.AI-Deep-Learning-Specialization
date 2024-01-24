@@ -71,3 +71,11 @@ A[1] = sigmoid(Z[1])           # shape of A[1] (noOfHiddenNeurons,m)
 Z[2] = W[2] * A[1] + b[2]      # shape of Z[2] is (1,m)
 A[2] = sigmoid(Z[2])           # shape of A[2] is (1,m)
 ```
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/99adb59d-bec1-4908-ae09-0a1b24ad002c.png" width="700" />
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/02846c2a-0810-44c3-98b7-8bdeb929496a.png" width="700" />
+
+## Activation functions
+
+
