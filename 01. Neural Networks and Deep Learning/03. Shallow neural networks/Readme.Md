@@ -155,3 +155,47 @@ g'(z) = { 0.01  if z < 0
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f4982ecc-3d45-4040-87d7-58fc0a7ba8c6.png" width="700" />
 
 ## Gradient descent for Neural Networks
+* In this section we will have the full back propagation of the neural network (Just the equations with no explanations = in next video)
+* Gradient descent algorithm:
+  * NN parameters:
+    * n[0] = Nx
+    * n[1] = NoOfHiddenNeurons
+    * n[2] = NoOfOutputNeurons = 1
+    * W1 shape is (n[1],n[0])
+    * b1 shape is (n[1],1)
+    * W2 shape is (n[2],n[1])
+    * b2 shape is (n[2],1)
+* Cost function I =  I(W1, b1, W2, b2) = (1/m) * Sum(L(Y,A2))
+* Then Gradient descent:
+```
+Repeat:
+		Compute predictions (y'[i], i = 0,...m)
+		Get derivatives: dW1, db1, dW2, db2
+		Update: W1 = W1 - LearningRate * dW1
+				b1 = b1 - LearningRate * db1
+				W2 = W2 - LearningRate * dW2
+				b2 = b2 - LearningRate * db2
+```
+
+* Forward propagation:
+```
+Z1 = W1A0 + b1    # A0 is X
+A1 = g1(Z1)
+Z2 = W2A1 + b2
+A2 = Sigmoid(Z2)      # Sigmoid because the output is between 0 and 1
+```
+
+Backpropagation (derivations):
+```
+dZ2 = A2 - Y      # derivative of cost function we used * derivative of the sigmoid function
+dW2 = (dZ2 * A1.T) / m
+db2 = Sum(dZ2) / m
+dZ1 = (W2.T * dZ2) * g'1(Z1)  # element wise product (*)
+dW1 = (dZ1 * A0.T) / m   # A0 = X
+db1 = Sum(dZ1) / m
+# Hint there are transposes with multiplication because to keep dimensions correct
+```
+
+## Backpropagation (intuition) 
+* How we derived the 6 equations of the backpropagation:
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/004c1d1c-22da-4dbf-808f-ea9809c335ea.png" width="700" />
