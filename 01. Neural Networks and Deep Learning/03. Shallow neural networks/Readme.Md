@@ -80,7 +80,7 @@ The code on the bottom right is the vectorized version of the code on the top ri
 
 ## Activation functions
 * So far we have used the sigmoid, but in some cases other activation functions may be a lot better
-* Sigmoid can lead us to gradient decent problem when the updates are very low
+* Sigmoid can lead us to gradient decent problem when the updates are very low  i.e., in  the extremes of the tails  (when z is almost 0 or  almost 1)
 * Sigmoid activation function range is [0,1] `A = 1 / (1 + np.exp(-z)) # Where z is the input matrix`
 * Tangent activation (hyperbolic: tan h) function range is [-1,1] (Shifted version of sigmoid function)
   * In NumPy we can implement Tan h(z) using one of these methods: 
