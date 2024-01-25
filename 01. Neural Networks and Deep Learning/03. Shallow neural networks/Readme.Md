@@ -199,3 +199,14 @@ db1 = Sum(dZ1) / m
 ## Backpropagation (intuition) 
 * How we derived the 6 equations of the backpropagation:
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/004c1d1c-22da-4dbf-808f-ea9809c335ea.png" width="700" />
+
+## Random Initialization
+* In logistic regression it wasn't important to initialize the weights randomly, but when using NN this is essential
+* Initializing all weights with zeros in NN won't work (initializing bias with zero is OK):
+	* All hidden units will be completely identical (symmetric) - compute exactly the same function
+	* On each gradient descent iteration, all hidden units will always update in the same way
+* To solve this, we initialize the W's with a small random numbers:
+	* `W1 = np.random.randn((2,2)) * 0.01    # 0.01 to make it small enough`
+	* `b1 = np.zeros((2,1))                  # its ok to have b as zero, it won't get us to the symmetry breaking problem`
+* We need small values because in sigmoid (or tanh), for example, if the weight is very large you are more likely to end up at the very start of training with very large values of Z. Which causes your tanh or your sigmoid activation function to be saturated, thus slowing down learning. If you don't have any sigmoid or tanh activation functions throughout your neural network, this is less of an issue e.g., when using a RELU function
+* Constant 0.01 is alright for a 1 hidden-layer network. But if the NN is deep, this number can be changed but it should always be a small number.
