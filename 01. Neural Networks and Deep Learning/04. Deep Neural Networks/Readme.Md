@@ -52,5 +52,7 @@ So we have:
 
 * Dimensions of Z<sup>[l]</sup>, A<sup>[l]</sup>, dZ<sup>[l]</sup>, and dA<sup>[l]</sup> is (n<sup>[l]</sup>, m)
 
-<img src=".png" width="700" />
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/8d07202f-9a2f-4e64-bb5e-eb62d14552c1.png" width="700" />
+
+## Why Deep representations?
 
