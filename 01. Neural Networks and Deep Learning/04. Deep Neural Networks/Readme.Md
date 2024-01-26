@@ -13,7 +13,7 @@ Analyze the key computations underlying deep learning, then use them to build an
 * Shallow NN is a NN with one or two layers
 * Deep NN is a NN with three or more layers
 
-<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a7285b13-1264-40b1-9686-adbe2239e162.png" width="600" />
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a7285b13-1264-40b1-9686-adbe2239e162.png" width="700" />
 
 * We will use the notation L to denote the number of layers in a NN
 * n[l] is the number of neurons in a specific layer l.
