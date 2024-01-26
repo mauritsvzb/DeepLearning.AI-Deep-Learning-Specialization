@@ -1,5 +1,5 @@
 # Shallow Neural Networks
-Learn to build a neural network with one hidden layer, using forward propagation and backpropagation.
+Goal: To learn to build a neural network with one hidden layer, and using forward propagation and backpropagation
 
 ## Neural Networks Overview
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/0dc9f2fe-d5fe-4a49-aafa-fe823afe8858.png" width="700" />
