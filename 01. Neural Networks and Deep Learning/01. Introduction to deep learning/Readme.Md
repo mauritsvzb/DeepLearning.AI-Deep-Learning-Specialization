@@ -26,14 +26,14 @@ Analyze the major trends driving the rise of deep learning, and give examples of
 * Supervised learning means we have the input(s) X and output(s) Y and we need to get the function that maps X to Y.
 
 ## Supervised learning with neural networks
-* Different types of neural networks for supervised learning which includes:
- * Convolutional neural networks or CNN (Useful in computer vision)
- * Recurrent neural networks or RNN(Useful in Speech recognition or NLP)
- * Standard NN (Useful for Structured data)
- * Hybrid/custom NN or a Collection of NNs types
-* Structured data is like the databases and tables.
-* Unstructured data is like images, video, audio, and text.
-* Structured data gives more money because companies relies on prediction on its big data.
+Different types of neural networks for supervised learning include:
+  * Convolutional neural networks or CNN (Useful in computer vision)
+  * Recurrent neural networks or RNN(Useful in Speech recognition or NLP)
+  * Standard NN (Useful for Structured data)
+  * Hybrid/custom NN or a Collection of NNs types
+  * Structured data is like the databases and tables
+  * Unstructured data is like images, video, audio, and text
+  * Structured data gives more money because companies relies on prediction on its big data
 
 ## Why is deep learning taking off?
 Deep learning is taking off for 3 reasons:
