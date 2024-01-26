@@ -56,11 +56,11 @@ So we have:
 
 ## Why Deep representations?
 * Deep NNs make relations from data by moving from simple to more complex as data moves through the NN from left to right. In each layer the NN tries to make a relation with the previous layer. 
- * E.g., face recognition application:
-   * Image ==> Edges ==> Face parts ==> Faces ==> desired face
- * Audio recognition application:
-   * Audio ==> Low level sound features like (sss,bb) ==> Phonemes ==> Words ==> Sentences
- * Neural Researchers think that deep neural networks "think" like brains (simple ==> complex) 
+   * E.g., face recognition application:
+     * Image ==> Edges ==> Face parts ==> Faces ==> desired face
+   * Audio recognition application:
+     * Audio ==> Low level sound features like (sss,bb) ==> Phonemes ==> Words ==> Sentences
+   * Neural Researchers think that deep neural networks "think" like brains (simple ==> complex) 
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/ff5eeb80-3ead-48e9-b880-8d13f9f92387.png" width="700" />
 
