@@ -1,4 +1,12 @@
 # Introduction to deep learning
+## Goals and Learning Objectives
+Analyze the major trends driving the rise of deep learning, and give examples of where and how it is applied today
+
+* Discuss the major trends driving the rise of deep learning.
+* Explain how deep learning is applied to supervised learning
+* List the major categories of models (CNNs, RNNs, etc.), and when they should be applied
+* Assess appropriate use cases for deep learning
+
 ## What is a neural network (NN)?
 * Single neuron = linear regression without applying activation(perceptron)
 * A single neuron will calculate weighted sum of input(w<sup>T</sup> * x) and then we can set a threshold to predict output in a perceptron. If weighted sum of input crosses the threshold, perceptron fires and if not then perceptron doesn't predict
