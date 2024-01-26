@@ -41,3 +41,16 @@ So we have:
 
 * We can't compute forward propagation for all layers without a for loop so its OK to have a for loop here
 * It's important to have the dimensions of the matrices right
+
+## Gettiing Your Matrix Dimensions Right
+* The best way to debug your matrices dimensions is by a pencil and paper
+* Dimension of W is (n<sup>[l]</sup>, n<sup>[l-1]</sup>)
+* Dimension of b is (n<sup>[l]</sup>, 1)
+* dw has the same shape as W, while db is the same shape as b
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7bc07611-e844-4595-8f6f-a58777ed5e03.png" width="700" />
+
+* Dimensions of Z<sup>[l]</sup>, A<sup>[l]</sup>, dZ<sup>[l]</sup>, and dA<sup>[l]</sup> is (n<sup>[l]</sup>, m)
+
+<img src=".png" width="700" />
+
