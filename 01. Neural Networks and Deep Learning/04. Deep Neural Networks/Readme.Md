@@ -36,3 +36,8 @@ So we have:
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/527f79fc-ba25-4020-8f1a-63f242cf5395.png" width="700" />
 
 ## Forward Propagation in a Deep Network
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3472c20d-ff9d-4c10-b1bd-3b1cc0bf6adf.png" width="700" />
+
+* We can't compute forward propagation for all layers without a for loop so its OK to have a for loop here
+* It's important to have the dimensions of the matrices right
