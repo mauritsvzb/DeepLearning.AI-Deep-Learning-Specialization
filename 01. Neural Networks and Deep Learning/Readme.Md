@@ -13,6 +13,6 @@ This course also teaches you how Deep Learning actually works, rather than prese
 # 📂 Projects
 * [Python Basics with Numpy](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/01.%20Neural%20Networks%20and%20Deep%20Learning/02.%20Neural%20Networks%20Basics/Python_Basics_with_Numpy.ipynb)
 * [Logistic Regression with a Neural Network mindset](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/01.%20Neural%20Networks%20and%20Deep%20Learning/02.%20Neural%20Networks%20Basics/Logistic_Regression_with_a_Neural_Network_mindset.ipynb)
-* Planar data classification with a hidden layer
+* [Planar data classification with a hidden layer](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/01.%20Neural%20Networks%20and%20Deep%20Learning/03.%20Shallow%20neural%20networks/Planar_data_classification_with_one_hidden_layer.ipynb)
 * Building your Deep Neural Network - Step by Step
 * Deep Neural Network Application
