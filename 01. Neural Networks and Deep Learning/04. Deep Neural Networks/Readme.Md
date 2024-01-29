@@ -77,5 +77,27 @@ So we have:
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/adbacb9c-755d-47cd-b29b-6d139e458a56.png" width="700" />
 
+## Forward and Backward Propagation
+* Pseudo code for forward propagation for layer l:
 
+```
+Input  A[l-1]
+Z[l] = W[l]A[l-1] + b[l]
+A[l] = g[l](Z[l])
+Output A[l], cache(Z[l])
+```
 
+Pseudo code for back propagation for layer l:
+```
+Input da[l], Caches
+dZ[l] = dA[l] * g'[l](Z[l])
+dW[l] = (dZ[l]A[l-1].T) / m
+db[l] = sum(dZ[l])/m                # Dont forget axis=1, keepdims=True
+dA[l-1] = w[l].T * dZ[l]            # The multiplication here are a dot product.
+Output dA[l-1], dW[l], db[l]
+```
+
+* If we have used our loss function then:
+```
+dA[L] = (-(y/a) + ((1-y)/(1-a)))
+```
