@@ -109,5 +109,5 @@ dA[L] = (-(y/a) + ((1-y)/(1-a)))
   * Number of iteration
   * Number of hidden layers L
   * Number of hidden units n
-*  Choice of activation functions.
+  * Choice of activation functions.
 * You have to try values yourself of hyper parameters.
