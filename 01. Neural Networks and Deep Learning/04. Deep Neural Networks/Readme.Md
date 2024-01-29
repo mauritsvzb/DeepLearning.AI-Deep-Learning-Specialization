@@ -75,7 +75,7 @@ So we have:
 
 * Deep NN blocks:
 
-<img src="(https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/adbacb9c-755d-47cd-b29b-6d139e458a56.png" width="700" />
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/adbacb9c-755d-47cd-b29b-6d139e458a56.png" width="700" />
 
 
 
