@@ -66,5 +66,15 @@ So we have:
 
 * Branding
 
+* Advice: When starting on an application don't start directly by dozens of hidden layers. Try the simplest solutions (e.g. Logistic Regression), then gradually increase complexity until satisfied
+
 ## Building Blocks of Deep Neural Networks
+* Forward and back propagation for a layer l:
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/bb94c552-d039-4ab9-aa94-5bfc225a2f65.png" width="700" />
+
+* Deep NN blocks:
+<img src="(https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/adbacb9c-755d-47cd-b29b-6d139e458a56.png" width="700" />
+
+
 
