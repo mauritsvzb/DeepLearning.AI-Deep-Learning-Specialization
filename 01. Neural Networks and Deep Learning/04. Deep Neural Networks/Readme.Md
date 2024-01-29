@@ -104,10 +104,10 @@ dA[L] = (-(y/a) + ((1-y)/(1-a)))
 
 ## Parameters vs Hyperparameters
 * Main parameters of the NN are W and b
-* Hyperparameters (parameters that control the algorithm) are like:
+* Hyperparameters (parameters that indirectly control the values of parameters W and b) are like:
   * Learning rate
   * Number of iteration
   * Number of hidden layers L
   * Number of hidden units n
-  * Choice of activation functions.
-* You have to try values yourself of hyper parameters.
+  * Choice of activation functions
+* You have to experiment with with values of hyperparameters
