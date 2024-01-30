@@ -16,3 +16,6 @@ This course also teaches you how Deep Learning actually works, rather than prese
 * [Planar Data Classification with One Hidden Layer](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/01.%20Neural%20Networks%20and%20Deep%20Learning/03.%20Shallow%20neural%20networks/Planar_data_classification_with_one_hidden_layer.ipynb)
 * [Building your Deep Neural Network - Step by Step](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/01.%20Neural%20Networks%20and%20Deep%20Learning/04.%20Deep%20Neural%20Networks/Building_your_Deep_Neural_Network_Step_by_Step.ipynb)
 * [Deep Neural Network Application](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/01.%20Neural%20Networks%20and%20Deep%20Learning/04.%20Deep%20Neural%20Networks/Deep%20Neural%20Network%20-%20Application.ipynb)
+
+# 🏆 Certificates
+To verify the certificates, click the images to follow the links:
