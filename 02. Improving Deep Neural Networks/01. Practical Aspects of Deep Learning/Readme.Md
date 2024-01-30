@@ -33,3 +33,18 @@
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c1317dcb-b358-47cc-beaa-24c504c10d18.png" width="700" />
 
 * These assumptions based on the idea that a human has 0% error in classifying images. If the problem that you're trying to solve isn't like that e.g., could be dealing with blurry images that even a human has difficulties with classifying, you'll need to use a different human error as baseline.
+
+## Basic Recipe for Machine Learning
+* If your algorithm has a high bias:
+  * Try to make your NN bigger (size of hidden units, number of layers)
+  * Try a different model that is suitable for your data
+  * Try to run it longer
+  * Different (advanced) optimization algorithms
+* If your algorithm has a high variance:
+  * More data
+  * Try regularization
+  * Try a different model that is suitable for your data
+* You should try the previous two points until you have a low bias and low variance
+* In the older days before deep learning, there was a "Bias/variance tradeoff". But because now you have more options/tools for solving the bias and variance problem its really helpful to use deep learning
+* Training a bigger neural network never hurts
+
