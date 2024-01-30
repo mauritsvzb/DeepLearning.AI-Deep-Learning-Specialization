@@ -15,7 +15,7 @@ Discover and experiment with a variety of different initialization methods, appl
 # 📂 Projects
 
 
-#📄 References
+# 📄 References
 
 
 # 🏆 Certificates
