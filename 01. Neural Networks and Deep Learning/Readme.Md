@@ -31,4 +31,4 @@ Week 4:
 # 🏆 Certificates
 To verify the certificates, click the images to follow the links:
 
-[<img src="https://github.com/mauritsvzb/IBM-Data-Science-Professional-Certificate/assets/13508894/b3ed2887-e6ab-4c45-81b3-4a14fc7bc158.png" width="550">](https://coursera.org/share/e6e8dacab832016856c8ca0c60bb2990)
+[<img src="https://github.com/mauritsvzb/IBM-Data-Science-Professional-Certificate/assets/13508894/b3ed2887-e6ab-4c45-81b3-4a14fc7bc158.png" width="700">](https://coursera.org/share/e6e8dacab832016856c8ca0c60bb2990)
