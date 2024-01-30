@@ -81,3 +81,23 @@ w[l] = w[l] - learning_rate * dw[l]         % original
 ```
 * In practice this penalizes large weights and effectively limits the freedom in your model.
 * The new term (learning_rate*lambda)/m is little bit less than 1 and causes the weight to decay in proportion to its size.
+
+## Why Regularization Reduces Overfitting?
+
+Explanation:
+* If we adapt regularization, then Loss increases, leading W decreases (through back propagation & gradient descent) through training
+* As 'W' parameter decreases, some w's will be close to zero
+* With w's close to zeros, the Neural Network becomes simpler, thus reducing overfitting
+* The below intuitions will discuss this matter in some specific cases
+
+Here are some intuitions:
+* Intuition 1:
+  * If lambda is very large, then a lot of w's will be close to zero (via subtracting the weight decay), which will make the NN simpler (you can think of it as it would behave closer to a logistic regression)
+  * If lambda is good enough it will just reduce some weights that makes the neural network not overfit but also not underfit.
+* Intuition 2 (with tanh activation function):
+  * If lambda is very large, w's will be small (close to zero) => then z will be small => e.g., will use the linear part of the tanh activation function, so we will go from non linear activation to roughly linear which would make the NN a roughly linear classifier.
+  * If lambda is good enough, it will just make some of tanh activations roughly linear which will prevent overfitting.
+
+Implementation tip: if you implement gradient descent, one of the steps to debug gradient descent is to plot the cost function J as a function of the number of iterations of gradient descent and you want to see that the cost function J decreases monotonically after every elevation of gradient descent with regularization. If you plot the old definition of J (no regularization) then you might not see it decrease monotonically.
+
+## Dropout Regularization
