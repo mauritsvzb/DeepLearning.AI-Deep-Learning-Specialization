@@ -17,5 +17,16 @@ This course also teaches you how Deep Learning actually works, rather than prese
 * [Building your Deep Neural Network - Step by Step](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/01.%20Neural%20Networks%20and%20Deep%20Learning/04.%20Deep%20Neural%20Networks/Building_your_Deep_Neural_Network_Step_by_Step.ipynb)
 * [Deep Neural Network Application](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/01.%20Neural%20Networks%20and%20Deep%20Learning/04.%20Deep%20Neural%20Networks/Deep%20Neural%20Network%20-%20Application.ipynb)
 
+# 📄 References
+Week 2:
+* [GitHub: Implementing a Neural Network from Scratch in Python – An Introduction  (Denny Britz, 2015)](https://github.com/dennybritz/nn-from-scratch)
+* [Why normalize images by subtracting dataset's image mean, instead of the current image mean in deep learning? (Stack Exchange)](https://stats.stackexchange.com/questions/211436/why-normalize-images-by-subtracting-datasets-image-mean-instead-of-the-current)
+
+Week 3:
+* [CS231n: Convolutional Neural Networks for Visual Recognition (Stanford University)](https://cs231n.github.io/neural-networks-case-study/)
+
+Week 4:
+* [Autoreload of modules in IPython (Stack Overflow)](https://stackoverflow.com/questions/1907993/autoreload-of-modules-in-ipython)
+
 # 🏆 Certificates
 To verify the certificates, click the images to follow the links:
