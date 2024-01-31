@@ -126,6 +126,8 @@ a3 = a3 / keep_prob
 * Vector d[l] is used for forward and back propagation and is the same for them, but it is different for each iteration (pass) or training example when you have m training examples.
 * At test time we don't use dropout; if you implement dropout at test time - it would add noise to predictions. However, you could do this and then take the average, but this would be computationally inefficient as the results are likely going to be similar.
 
+* Take home message: dropout regularization reduces the complexity of a NN (i.e., makes it smaller), which should have a regularizing effect
+
 ## Understanding Dropout
 
 
