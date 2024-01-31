@@ -162,3 +162,24 @@ a3 = a3 / keep_prob
 
 * Andrew prefers to use L2 regularization instead of early stopping because early stopping simultaneously tries to minimize the cost function and reduce/prevent overfitting (opposite of orthogonalization, which enables you to work on each of these 2 problems independently
 * But its advantage is that you don't need to search a hyperparameter like in other regularization approaches (like lambda in L2 regularization)
+
+## Normalizing inputs
+* If you normalize your inputs, then this will speed up the training process a lot
+* Normalization steps are as follows:
+  * Get the mean of the training set: `mean = (1/m) * sum(x(i))`
+  * Subtract the mean from each input: `X = X - mean`
+    * This makes your inputs centered around 0.
+  * Get the variance of the training set: `variance = (1/m) * sum(x(i)^2)`
+  * Normalize the variance: `X /= sqrt(variance)`
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/93e3badd-fc3b-4598-a009-3d2a1bfa53f4.png" width="700" />
+
+* These steps should be applied to training, dev, and testing sets (but using mean and variance of the train set)
+* Why normalize?
+  * If we don't normalize the inputs our cost function will be deep and its shape will be inconsistent (elongated) then optimizing it will take a long time.
+  * But if we normalize it the opposite will occur. The shape of the cost function will be consistent (look more symmetric like circle in 2D example) and we can use a larger learning rate alpha - the optimization will be 
+faster
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3749a2ad-60b8-48d3-892d-2c076bd75bbc.png" width="700" />
+
+## Vanishing / Exploding Gradients
