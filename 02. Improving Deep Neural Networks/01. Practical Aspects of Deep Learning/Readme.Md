@@ -146,4 +146,19 @@ a3 = a3 / keep_prob
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e9dc8f03-1276-43a7-a288-2acf3a88e785.png" width="700" />
 
 ## Other Regularization Methods
+* Data augmentation:
+  * For example in a computer vision:
+    * You can flip all your pictures horizontally, which will give you m more data instances
+    * You could also apply a random position and rotation to an image to get more data
+    * For example in OCR, you can impose random rotations and distortions to digits/letters
+  * New data obtained using this technique isn't as good as the real independent data, but still can be used as a regularization technique
 
+* Early stopping:
+  * In this technique we plot the training set and the dev set cost together for each iteration. At some iteration the dev set cost will stop decreasing and will start increasing (convex shape)
+  * We will pick the point at which the training set error and dev set error are best (i.e., lowest training cost with lowest dev cost)
+  * We will take these parameters as the best parameters.
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5f67060b-9842-44e2-9643-5b402d9c655e.png" width="700" />
+
+* Andrew prefers to use L2 regularization instead of early stopping because early stopping simultaneously tries to minimize the cost function and reduce/prevent overfitting (opposite of orthogonalization, which enables you to work on each of these 2 problems independently
+* But its advantage is that you don't need to search a hyperparameter like in other regularization approaches (like lambda in L2 regularization)
