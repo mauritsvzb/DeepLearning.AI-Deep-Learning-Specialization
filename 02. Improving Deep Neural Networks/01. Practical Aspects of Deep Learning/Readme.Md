@@ -105,6 +105,9 @@ Implementation tip: if you implement gradient descent, one of the steps to debug
 ## Dropout Regularization
 * Andrew Ng tells that in most cases he uses the L2 regularization
 * The dropout regularization eliminates some neurons/weights on each iteration based on a probability
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/9315a1a8-62d2-4f4f-aee3-c33abbb98815.png" width="700" />
+
 * A most common technique to implement dropout is called "Inverted dropout"
 * Code for Inverted dropout:
 
