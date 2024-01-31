@@ -95,9 +95,37 @@ Here are some intuitions:
   * If lambda is very large, then a lot of w's will be close to zero (via subtracting the weight decay), which will make the NN simpler (you can think of it as it would behave closer to a logistic regression)
   * If lambda is good enough it will just reduce some weights that makes the neural network not overfit but also not underfit.
 * Intuition 2 (with tanh activation function):
-  * If lambda is very large, w's will be small (close to zero) => then z will be small => e.g., will use the linear part of the tanh activation function, so we will go from non linear activation to roughly linear which would make the NN a roughly linear classifier.
-  * If lambda is good enough, it will just make some of tanh activations roughly linear which will prevent overfitting.
+  * If lambda is very large, w's will be small (close to zero) => then z will be small => e.g., will use the linear part of the tanh activation function, so we will go from non-linear activation to roughly linear which would make the NN a roughly linear classifier.
+  * If lambda is good enough, it will just make some of tanh activations roughly linear which will reduce overfitting.
 
 Implementation tip: if you implement gradient descent, one of the steps to debug gradient descent is to plot the cost function J as a function of the number of iterations of gradient descent and you want to see that the cost function J decreases monotonically after every elevation of gradient descent with regularization. If you plot the old definition of J (no regularization) then you might not see it decrease monotonically.
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/00bcc658-acc1-4f01-ae9d-0ecb80e1ecc0.png" width="700" />
+
 ## Dropout Regularization
+* Andrew Ng tells that in most cases he uses the L2 regularization
+* The dropout regularization eliminates some neurons/weights on each iteration based on a probability
+* A most common technique to implement dropout is called "Inverted dropout"
+* Code for Inverted dropout:
+
+```
+keep_prob = 0.8   # 0 <= keep_prob <= 1
+l = 3  # this code is only for layer 3
+
+# The generated number that are less than 0.8 will be dropped. 80% stay, 20% dropped
+d3 = np.random.rand(a[l].shape[0], a[l].shape[1]) < keep_prob # This is a boolean that returns True (think: 1) if a random number is below the threshold, otherwise return False (think: 0)
+
+# Keep only the values in d3; Think multiplying the old a3 activation parameters with either 1's or 0's from the d3 vector. Obviously multiplications with 0 return 0, hence 'dropping out those neurons/weights
+a3 = np.multiply(a3,d3)
+
+# Increase a3 to not reduce the expected value of output; because dividing by the keep_prob wil reduce a3 parameters. So first increase the values by an amount so that the net result of change will be 0 after division
+# (ensures that the expected value of a3 remains the same) - to solve the scaling problem
+a3 = a3 / keep_prob
+```
+
+* Vector d[l] is used for forward and back propagation and is the same for them, but it is different for each iteration (pass) or training example.
+* At test time we don't use dropout; if you implement dropout at test time - it would add noise to predictions. However, you could do this and then take the average, but this would be computationally inefficient as the results are likely going to be similar.
+
+## Understanding Dropout
+
+
