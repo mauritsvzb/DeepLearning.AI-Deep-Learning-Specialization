@@ -129,5 +129,18 @@ a3 = a3 / keep_prob
 * Take home message: dropout regularization reduces the complexity of a NN (i.e., makes it smaller), which should have a regularizing effect
 
 ## Understanding Dropout
+* Another intuition: the NN can't rely on any one feature, so have to spread out weights
+* It's possible to show that dropout has a similar effect to L2 regularization
+* Dropout can have different keep_probs for each layer
+* The input layer dropout has to be near 1 (or 1 - no dropout) because you don't want to eliminate a lot of features.
+* If you're more worried about some layers overfitting than others, you can set a lower keep_prob for some layers than others 
+   * The downside is that this gives you even more hyperparameters to search for using cross-validation. 
+* One other alternative might be to have some layers where you do apply dropout and some where you don't, and then you just have one hyperparameter, which is a keep_prob for the layers for which you do apply dropouts
+* A lot of researchers are using dropout with Computer Vision (CV) because they have a very big input size and almost never have enough data, so overfitting is the usual problem. And dropout is a regularization technique to prevents overfitting
+* A downside of dropout is that the cost function J is not well defined and so it will be hard to debug (plot J by iteration)
+    * To solve that you'll need to turn off dropout, set all the keep_probs to 1, and then run the code and check that it monotonically decreases J and then turn on the dropouts again
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e9dc8f03-1276-43a7-a288-2acf3a88e785.png" width="700" />
+
+## Other Regularization Methods
 
