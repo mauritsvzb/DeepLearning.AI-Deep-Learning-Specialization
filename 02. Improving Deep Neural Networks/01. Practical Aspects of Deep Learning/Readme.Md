@@ -249,5 +249,12 @@ or variation of this (Bengio et al.):
    * if it is >= 10^-3 - bad, probably there is a bug in backpropagation implementation
 
 ## Gradient checking implementation notes
+* Don't use the gradient checking algorithm at training time because it's very slow
+* Use gradient checking only for debugging
+* If algorithm fails grad check, look at components to try to identify the bug
+* Don't forget to add `lamda/(2m) * sum(W[l])` to J if you are using L1 or L2 regularization
+* Gradient checking doesn't work with dropout because J is not consistent i.e., some neurons are randomly deactivated during each iteration
+  * You can first turn off dropout (set keep_prob = 1.0), run gradient checking and then turn on dropout again
+* Run gradient checking at random initialization and train the network for a while maybe there's a bug which can be seen when w's and b's become larger (further from 0) and can't be seen on the first iteration (when w's and b's are very small)
 
 
