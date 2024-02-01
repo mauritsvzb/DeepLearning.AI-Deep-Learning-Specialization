@@ -13,7 +13,7 @@ This is the second course of the Deep Learning Specialization.
 # 📂 Projects
 * [Initialization](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/02.%20Improving%20Deep%20Neural%20Networks/01.%20Practical%20Aspects%20of%20Deep%20Learning/Initialization.ipynb)
 * Regularization
-* Gradient Checking
+* [Gradient Checking](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/02.%20Improving%20Deep%20Neural%20Networks/01.%20Practical%20Aspects%20of%20Deep%20Learning/Gradient_Checking.ipynb)
 * Optimization Methods
 * TensorFlow Tutorial
 
