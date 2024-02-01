@@ -208,3 +208,21 @@ Y' = W[L] [0.5  0]^(L-1) X = 0.5^L  # which will be very small (exponentially sm
 * There is a partial solution that doesn't completely solve this problem but it helps a lot - careful choice of how you initialize the weights (next video)
 
 ## Weight Initialization for Deep Networks
+* A partial solution to the Vanishing / Exploding gradients in NN is a better or more careful choice of the random initialization of weights
+* In a single neuron (Perceptron model): Z = w<sup>1</sup>x<sup>1</sup> + w<sup>2</sup>x<sup>2</sup> + ... + w<sup>n</sup>x<sup>n</sup>
+  * So if N<sub>x</sub> is large, we want W's to be smaller to not explode the cost
+* So it turns out that we need the variance which equals 1/n<sub>x</sub> to be the range of W's
+* So let's say when we initialize W's like this (better to use with tanh activation):
+  * `np.random.rand(shape) * np.sqrt(1/n[l-1])`
+
+or variation of this (Bengio et al.):
+
+`np.random.rand(shape) * np.sqrt(2/(n[l-1] + n[l]))`
+
+* Setting initialization part inside sqrt to 2/n<sup>[l-1]</sup> for ReLU is better:
+`np.random.rand(shape) * np.sqrt(2/n[l-1])`
+* Number 1 or 2 in the numerator can also be a hyperparameter to tune (but shouldn't be the first hyperparameter to start with)
+* This is one of the best partial solutions to the Vanishing / Exploding gradients (ReLU + Weight Initialization with variance), which will help gradients not to vanish/explode too quickly
+* The initialization in this video is called "He Initialization / Xavier Initialization" and has been published in 2015 paper
+
+## Numerical Approximation of Gradients
