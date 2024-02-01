@@ -226,3 +226,28 @@ or variation of this (Bengio et al.):
 * The initialization in this video is called "He Initialization / Xavier Initialization" and has been published in 2015 paper
 
 ## Numerical Approximation of Gradients
+* There is a technique called gradient checking which tells you if your implementation of backpropagation is correct
+* There's a numerical way to calculate the derivative:
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5779c7ea-366e-4070-841a-7e22655d8cf1.png" width="700" />
+
+* Gradient checking approximates the gradients and is very helpful for finding any errors in your backpropagation implementation. But it's slower than gradient descent (so use only for debugging)
+* Implementation of this is very simple
+* Gradient checking:
+   * First take `W[1],b[1],...,W[L],b[L]`, reshape and concatenate it into one big vector `theta`
+   * The cost function will be `J(theta)`
+   * Then take `dW[1],db[1],...,dW[L],db[L]`, reshape and concatenate it into one big vector `d_theta`
+   * Algorithm:
+    ```
+    eps = 10^-7   # small number`
+    for i in len(theta):
+      d_theta_approx[i] = (J(theta[1],...,theta[i] + eps) -  J(theta[1],...,theta[i] - eps)) / 2*eps
+    ```
+* Finally we evaluate this formula `(||d_theta_approx - d_theta||) / (||d_theta_approx||+||d_theta||)` (|| - Euclidean vector norm) and check (with eps = 10<sup>-7</sup>):
+   * if it is < 10^-7 - great, very likely the backpropagation implementation is correct
+   * if around 10^-5 - can be OK, but need to inspect if there are no particularly big values in d_theta_approx - d_theta vector
+   * if it is >= 10^-3 - bad, probably there is a bug in backpropagation implementation
+
+## Gradient checking implementation notes
+
+
