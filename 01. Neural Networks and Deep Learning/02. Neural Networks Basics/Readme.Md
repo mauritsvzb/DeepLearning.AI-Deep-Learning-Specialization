@@ -217,17 +217,17 @@ ds = s * (1 - s)       # derivative  using calculus
 * Gradient descent converges faster after normalization of the input matrices
 
 ## What you need to remember:
-* np.exp(x) works for any np.array x and applies the exponential function to every coordinate
+* `np.exp(x)` works for any np.array x and applies the exponential function to every coordinate
 * the sigmoid function and its gradient (derivative)
-* image2vector is commonly used in deep learning
-* np.reshape is widely used: In the future, you'll see that keeping your matrix/vector dimensions straight will go toward eliminating a lot of bugs
-* numpy has efficient built-in functions e.g., np.sum(..., ...), np.divide(..., ...), np.multiply(..., ...), np.dot(..., ...), np.maximum(..., ...), etc.
+* `image2vector` is commonly used in deep learning
+* `np.reshape()` is widely used: In the future, you'll see that keeping your matrix/vector dimensions straight will go toward eliminating a lot of bugs
+* numpy has efficient built-in functions e.g., `np.sum(..., ...)`, `np.divide(..., ...)`, `np.multiply(..., ...)`, `np.dot(..., ...)`, `np.maximum(..., ...)`, etc.
 * broadcasting is extremely useful
 * Vectorization is very important in deep learning: it provides computational efficiency and clarity
 * Common steps for pre-processing a new dataset are:
 	* Figure out the dimensions and shapes of the problem (m_train, m_test, num_px, ...)
 	* Reshape the datasets such that each example is now a vector of size (num_px * num_px * 3, 1)
-	* "Standardize" the data (e.g., divide by 255 for images)
+	* "Standardize" the data (e.g., divide by 255 for images; there are 256 color intensities per color channel R, B, and G)
 * You've implemented several functions that:
 	* Initialize (w,b) (i.e., to 0's)
 	* Optimize the loss iteratively to learn parameters (w,b):
