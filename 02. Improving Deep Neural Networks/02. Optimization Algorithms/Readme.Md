@@ -104,8 +104,36 @@ Repeat
 ```
 
 ## Bias correction in exponentially weighted averages
+* The bias correction helps make the exponentially weighted averages more accurate
+* Because v(0) = 0, the bias of the weighted averages is shifted and the accuracy suffers at the start
+* To solve the bias issue we have to use this equation:
+   * `v(t) = (beta * v(t-1) + (1-beta) * theta(t)) / (1 - beta^t)`
+* As t becomes larger, the (1 - beta^t) becomes close to 1
+* Note that bias correction usingg exponentially weighted averages is not that common: it's easier to treat the initial period as a 'warmup' rather than part of the analysis
 
+## Gradient descent with momentum
+* The momentum algorithm almost always works faster than standard gradient descent
+* The simple idea is to calculate the exponentially weighted averages for your gradients and then update your weights with these new values
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c4a7ad51-f600-4f4f-a03a-bafff151703e.png" width="700" />
+
+* Pseudo code:
+```
+vdW = 0, vdb = 0
+on iteration t:
+  # can be mini-batch or batch gradient descent
+  compute dw, db on current mini-batch                
+      
+  vdW = beta * vdW + (1 - beta) * dW
+  vdb = beta * vdb + (1 - beta) * db
+  W = W - learning_rate * vdW
+  b = b - learning_rate * vdb
+```
+* Momentum helps the cost function to go to the minimum point in a more fast and consistent way
+* beta is another hyperparameter. beta = 0.9 is very common and works very well in most cases
+* In practice people don't bother implementing bias correction
+
+## RMSprop
 
 
 
