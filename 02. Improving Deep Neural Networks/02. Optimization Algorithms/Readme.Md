@@ -151,7 +151,7 @@ on iteration t:
 
 * RMSprop will make the cost function move slower in the vertical direction and faster on the horizontal direction in the following example
 
-<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7fd1e674-949d-4fd7-a89f-350210486db6.png" width="700" />
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2fda83ae-6822-4ac0-854e-219a1c3cdd4d.png" width="700" />
 
 * Ensure that `sdW` is not zero by adding a small value epsilon (e.g. epsilon = 10^-8) to it:
    `W = W - learning_rate * dW / (sqrt(sdW) + epsilon)`
