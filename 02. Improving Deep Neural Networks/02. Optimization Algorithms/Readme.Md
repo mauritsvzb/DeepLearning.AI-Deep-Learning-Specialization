@@ -191,6 +191,26 @@ on iteration t:
    * epsilon: 10<sup>-8</sup> is recommended by default
 
 ## Learning rate decay
+* Slowly reduce learning rate
+* As mentioned before, mini-batch gradient descent won't reach the optimum point (converge). But by making the learning rate decay with iterations it will be much closer to it because the steps (and possible oscillations) near the optimum are smaller
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/9a104be1-9b37-405e-a059-0466b09c4ed7.png" width="700" />
+
+* One technique equation: `learning_rate = (1 / (1 + decay_rate * epoch_num)) * learning_rate_0`
+   `epoch_num` is over all data (not a single mini-batch)
+* Other learning rate decay methods (continuous):
+   * `learning_rate = (0.95 ^ epoch_num) * learning_rate_0`
+   * `learning_rate = (k / sqrt(epoch_num)) * learning_rate_0`
+* Some people perform learning rate decay discretely - repeatedly decrease after some number of epochs
+* Some people are making changes to the learning rate manually
+* `decay_rate` is another hyperparameter
+* For Andrew Ng, learning rate decay has less priority
+
+## The problem of local optima
+* The normal local optima is not likely to appear in a deep neural network because data is usually high dimensional. For a point to be a local optimum it has to be a local optimum for each of the dimensions which is highly unlikely
+* Therefore, it's unlikely to get stuck in a bad local optimum in high dimensions. But it is much more likely to get to the saddle point rather to the local optimum, which is not a problem
+* Plateaus can make learning slow:
+   * Plateau is a region where the derivative is close to zero for a long time
+   * This is where algorithms like momentum, RMSprop or Adam can help
 
 
