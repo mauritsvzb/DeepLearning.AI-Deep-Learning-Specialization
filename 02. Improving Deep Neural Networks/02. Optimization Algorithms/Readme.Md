@@ -134,7 +134,27 @@ on iteration t:
 * In practice people don't bother implementing bias correction
 
 ## RMSprop
+* Stands for Root mean square prop
+* This algorithm speeds up the gradient descent
+```
+Pseudo code:
+sdW = 0, sdb = 0
+on iteration t:
+  # can be mini-batch or batch gradient descent
+  compute dw, db on current mini-batch
+  
+  sdW = (beta * sdW) + (1 - beta) * dW^2  # squaring is element-wise
+  sdb = (beta * sdb) + (1 - beta) * db^2  # squaring is element-wise
+  W = W - learning_rate * dW / sqrt(sdW)
+  b = B - learning_rate * db / sqrt(sdb)
+```
 
+* RMSprop will make the cost function move slower in the vertical direction and faster on the horizontal direction in the following example
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7fd1e674-949d-4fd7-a89f-350210486db6.png" width="700" />
 
+* Ensure that `sdW` is not zero by adding a small value epsilon (e.g. epsilon = 10^-8) to it:
+   `W = W - learning_rate * dW / (sqrt(sdW) + epsilon)`
+* With RMSprop you can increase your learning rate
 
+## Adam optimization algorithm
