@@ -158,3 +158,39 @@ on iteration t:
 * With RMSprop you can increase your learning rate
 
 ## Adam optimization algorithm
+* Stands for Adaptive Moment Estimation
+* Adam optimization and RMSprop are among the optimization algorithms that worked very well with a lot of NN architectures
+* Adam optimization simply puts RMSprop and momentum together!
+```
+Pseudo code:
+vdW = 0, vdb = 0
+sdW = 0, sdb = 0
+on iteration t:
+  # can be mini-batch or batch gradient descent
+  compute dw, db on current mini-batch                
+      
+  vdW = (beta1 * vdW) + (1 - beta1) * dW     # momentum
+  vdb = (beta1 * vdb) + (1 - beta1) * db     # momentum
+      
+  sdW = (beta2 * sdW) + (1 - beta2) * dW^2   # RMSprop
+  sdb = (beta2 * sdb) + (1 - beta2) * db^2   # RMSprop
+      
+  vdW = vdW / (1 - beta1^t)      # fixing bias
+  vdb = vdb / (1 - beta1^t)      # fixing bias
+      
+  sdW = sdW / (1 - beta2^t)      # fixing bias
+  sdb = sdb / (1 - beta2^t)      # fixing bias
+          
+  W = W - learning_rate * vdW / (sqrt(sdW) + epsilon)
+  b = B - learning_rate * vdb / (sqrt(sdb) + epsilon)
+```
+* Hyperparameters for Adam:
+   * Learning rate: needed to be tuned
+   * beta1: parameter of the momentum - 0.9 is recommended by default
+   * beta2: parameter of the RMSprop - 0.999 is recommended by default
+   * epsilon: 10<sup>-8</sup> is recommended by default
+
+## Learning rate decay
+
+
+
