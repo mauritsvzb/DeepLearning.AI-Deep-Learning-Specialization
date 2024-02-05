@@ -82,13 +82,16 @@
 ## Fitting Batch Normalization into a neural network
 * Using batch norm in 3 hidden layers NN: 
 
-<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/06d18cc8-05e2-4eb2-80a7-2681bea2a8f3.png" width="700" />
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/06d18cc8-05e2-4eb2-80a7-2681bea2a8f3.png" width="800" />
 
 * Our NN parameters will be:
   * W<sup>[1]</sup>, b<sup>[1]</sup>, ..., W<sup>[L]</sup>`, b<sup>[L]</sup>, beta<sup>[1]</sup>, gamma<sup>[1]</sup>, ..., beta<sup>[L]</sup>, gamma<sup>[L]</sup>
   * beta<sup>[1]</sup>, gamma<sup>[1]</sup>, ..., beta<sup>[L]</sup>, gamma<sup>[L]</sup> are updated using any optimization algorithms (like GD, RMSprop, Adam)
 * If you are using a deep learning framework, you won't have to implement batch norm yourself:
   * E.g., in Tensorflow you can add this line: `tf.nn.batch-normalization()`
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/50364d22-44e8-48dd-895c-0001a1674383.png" width="700" />
+
 * Batch normalization is usually applied with mini-batches
 * If we are using batch normalization parameters b<sup>[1]</sup>, ..., b<sup>[L]</sup> doesn't count because they will be eliminated after mean subtraction step, so:
   * ```
