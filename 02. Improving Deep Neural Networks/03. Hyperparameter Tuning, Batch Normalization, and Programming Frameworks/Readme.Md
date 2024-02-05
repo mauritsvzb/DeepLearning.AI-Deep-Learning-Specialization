@@ -82,7 +82,7 @@
 ## Fitting Batch Normalization into a neural network
 * Using batch norm in 3 hidden layers NN: 
 
-<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/06d18cc8-05e2-4eb2-80a7-2681bea2a8f3.png" width="800" />
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/06d18cc8-05e2-4eb2-80a7-2681bea2a8f3.png" width="900" />
 
 * Our NN parameters will be:
   * W<sup>[1]</sup>, b<sup>[1]</sup>, ..., W<sup>[L]</sup>`, b<sup>[L]</sup>, beta<sup>[1]</sup>, gamma<sup>[1]</sup>, ..., beta<sup>[L]</sup>, gamma<sup>[L]</sup>
