@@ -4,7 +4,7 @@
 
 * Hyperparameter tuning is important to optimize NN performance
 * Hyperparameters importance ranked (according to Andrew Ng (might differ per case)):
- * most:
+  * most:
     * Learning rate
   * medium:
     * Momentum beta (~ 0.9)
