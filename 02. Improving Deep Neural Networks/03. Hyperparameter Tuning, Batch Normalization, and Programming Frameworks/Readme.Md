@@ -34,7 +34,7 @@
   * Calculate: `b_log = log(b)`  # e.g. `b = 1`  then `b_log = 0`
   * Then:
     * ```
-       r = (a_log - b_log) * np.random.rand() + b_log`
+       r = (a_log - b_log) * np.random.rand() + b_log
        # In the example the range would be from [-4, 0] because rand range [0, 1]
        result = 10^r
      ```
