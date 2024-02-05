@@ -49,3 +49,18 @@
       beta = 1 - 10^r   # because 1 - beta = 10^r
       ```
 
+## Hyperparameters tuning in practice: Pandas vs. Caviar
+* Intuitions about hyperparameter settings from one application area may or may not transfer to a different one
+* If you don't have much computational resources you can use the "babysitting model":
+  * Day 0 you might initialize your parameter as random and then start training
+  * Then you watch your learning curve gradually decrease over the day
+  * And each day you nudge your parameters a little during training.
+  * Called 'panda approach'
+* If you have enough computational resources, you can run some models in parallel and at the end of the day(s) you check the results
+  * Called 'caviar approach'
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6a467010-1932-4a08-86ea-a747667f2f43.png" width="700" />
+
+## Normalizing activations in a network
+
+
