@@ -62,5 +62,22 @@
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6a467010-1932-4a08-86ea-a747667f2f43.png" width="700" />
 
 ## Normalizing activations in a network
+* With the rise of deep learning, one of the most important ideas has been an algorithm called 'batch normalization'
+* Batch Normalization speeds up learning
+* Before, we normalized input by subtracting the mean and dividing by square root of variance; this helped a lot for the shape of the cost function and for reaching the minimum point faster
+* The question is: <i>for any hidden layer, can we normalize A<sup>[l]</sup> to train W<sup>[l+1]</sup>, b<sup>[l+1]</sup> faster</i>? This is what batch normalization is about
+* There are some debates in the deep learning literature about whether you should normalize values before applying the activation function Z<sup>[l]</sup> or after applying the activation function A[l]. In practice, normalizing Z<si[>[l]</sup> is done much more often and that is what Andrew Ng presents
+* Algorithm:
+  * Given `Z[l] = [z(1), ..., z(m)]`, i = 1 to m (for each input)
+  * Compute `mean = 1/m * sum(z[i])`
+  * Compute `variance = 1/m * sum((z[i] - mean)^2)`
+  * Then `Z_norm[i] = (z[i] - mean) / np.sqrt(variance + epsilon)` (add epsilon for numerical stability if variance = 0)
+    * Forcing the inputs to a distribution with zero mean and variance of 1.
+  * Then `Z_tilde[i] = gamma * Z_norm[i] + beta`
+    * To make inputs belong to other distribution (with other mean and variance).
+    * gamma and beta are learnable parameters of the model.
+    * Making the NN learn the distribution of the outputs.
+  * Note: if `gamma = sqrt(variance + epsilon)` and `beta = mean then Z_tilde[i] = z[i]`
 
+## Fitting Batch Normalization into a neural network
 
