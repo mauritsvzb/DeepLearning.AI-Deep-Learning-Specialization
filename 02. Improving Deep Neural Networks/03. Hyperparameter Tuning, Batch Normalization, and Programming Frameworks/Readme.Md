@@ -37,7 +37,7 @@
        r = (a_log - b_log) * np.random.rand() + b_log
        # In the example the range would be from [-4, 0] because rand range [0, 1]
        result = 10^r
-     ```
+      ```
   * It uniformly samples values in log scale from [a, b]
 * If we want to use the last method on exploring on the "momentum beta":
   * Beta best range is from 0.9 to 0.999.
