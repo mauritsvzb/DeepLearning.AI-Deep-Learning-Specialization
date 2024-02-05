@@ -85,7 +85,7 @@
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/06d18cc8-05e2-4eb2-80a7-2681bea2a8f3.png" width="900" />
 
 * Our NN parameters will be:
-  * W<sup>[1]</sup>, b<sup>[1]</sup>, ..., W<sup>[L]</sup>`, b<sup>[L]</sup>, beta<sup>[1]</sup>, gamma<sup>[1]</sup>, ..., beta<sup>[L]</sup>, gamma<sup>[L]</sup>
+  * W<sup>[1]</sup>, b<sup>[1]</sup>, ..., W<sup>[L]</sup>, b<sup>[L]</sup>, beta<sup>[1]</sup>, gamma<sup>[1]</sup>, ..., beta<sup>[L]</sup>, gamma<sup>[L]</sup>
   * beta<sup>[1]</sup>, gamma<sup>[1]</sup>, ..., beta<sup>[L]</sup>, gamma<sup>[L]</sup> are updated using any optimization algorithms (like GD, RMSprop, Adam)
 * If you are using a deep learning framework, you won't have to implement batch norm yourself:
   * E.g., in Tensorflow you can add this line: `tf.nn.batch-normalization()`
@@ -99,9 +99,9 @@
     1Z_norm[l] = ...
     Z_tilde[l] = gamma[l] * Z_norm[l] + beta[l]
     ```
-  * Taking the mean of a constant b<sup>[1]</sup> will eliminate the b<sup>[1]</sup>
-*  So if you are using batch normalization, you can remove b<sup>[1]</sup> or make it always zero
-* So the parameters will be W<sup>[1]</sup>, beta<sup>[1]</sup>, and alpha<sup>[1]</sup>
+  * Taking the mean of a constant b<sup>[l]</sup> will eliminate the b<sup>[l]</sup>
+* So if you are using batch normalization, you can remove b<sup>[l]</sup> or make it always zero
+* So the parameters will be W<sup>[l]</sup>, beta<sup>[l]</sup>, and alpha<sup>[l]</sup>
 * Shapes:
   ```
   Z[l]       - (n[l], m)
