@@ -110,5 +110,21 @@
   ```
 
 ## Why does Batch normalization work?
+* The first reason is the same reason as why we normalize X
+* The second reason is that batch normalization reduces the problem of input values changing (shifting)
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1c0b7d12-b64c-4b70-b43e-a6eda2dbbe5d.png" width="700" />
+
+* Why is this a problem with NN?
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/ab8bc300-23ed-4d55-9321-571f0b695527.png" width="700" />
+
+* Batch normalization does some regularization:
+  * Each mini batch is scaled by the mean/variance computed of that mini-batch.
+  * This adds some noise to the values Z[l] within that mini batch. So similar to dropout it adds some noise to each hidden layer's activations.
+  * This has a slight regularization effect: 
+  * Using bigger size of the mini-batch you are reducing noise and therefore regularization effect.
+* Don't rely on batch normalization as a regularization. It's intended for normalization of hidden units, activations and therefore speeding up learning. For regularization use other regularization techniques (L2 or dropout).
+
+## Batch Norm at Test Time
 
