@@ -127,4 +127,34 @@
 * Don't rely on batch normalization as a regularization. It's intended for normalization of hidden units, activations and therefore speeding up learning. For regularization use other regularization techniques (L2 or dropout).
 
 ## Batch Norm at Test Time
+* When we train a NN with Batch normalization, we compute the mean and the variance of the mini-batch
+* During testing, we might need to process examples one at a time; the mean and the variance of one example won't make sense
+* We have to compute an estimated value of the mean and variance to use it for testing
+* We can use the weighted average across the mini-batches
+* We will use the estimated mean and variance to test
+* This method is also sometimes called "Running average"
+* In practice most often you will use a deep learning framework and it will contain some default implementation of doing such a thing
+
+## Softmax Regression
+* In every example we have used so far we were talking about binary classification
+* There is a generalization of logistic regression called <i>Softmax regression</i> that is used for multiclass classification/regression
+* For example if we are classifying by classes dog, cat, baby chick and none of that e.g., dog: class = 1, cat: class = 2, baby chick: class = 3, none: class = 0 to represent a dog vector y = [0 1 0 0], to represent a cat vector y = [0 0 1 0], to represent a baby chick vector y = [0 0 0 1], or to represent a none vector y = [1 0 0 0]
+* Notations:
+  * C = no. of classes
+  * Range of classes is (0, ..., C-1) e.g., (0, ..., 3)
+  * In output layer N<sub>y</sub> = C
+* Each of C values in the output layer will contain a probability of the example to belong to each of the classes
+* In the last layer we will have to activate the Softmax activation function instead of the sigmoid activation
+  * Softmax activation equations:
+    ```
+    t = e^(Z[L])                      # shape(C, m)
+    A[L] = e^(Z[L]) / sum(t)          # shape(C, m), sum(t) - sum of t's for each example (shape (1, m))
+    ````
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/303f476f-9c07-4775-a027-8740ba6bf7d2.png" width="700" />
+
+## Training a Softmax classifier
+
+
+
+
 
