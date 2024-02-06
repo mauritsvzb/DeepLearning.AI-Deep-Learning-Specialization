@@ -153,6 +153,38 @@
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/303f476f-9c07-4775-a027-8740ba6bf7d2.png" width="700" />
 
 ## Training a Softmax classifier
+* There's an activation which is called hard max, which gets 1 for the maximum value and zeros for the others; if you are using NumPy, its np.max over the vertical axis
+* The Softmax name came from softening the values and not harding them like hard max
+* Softmax is a generalization of logistic activation function to C classes. If C = 2 softmax reduces to logistic regression
+* The loss function used with softmax:
+  * `L(y, y_hat) = - sum(y[j] * log(y_hat[j])) # j = 0 to C-1`
+* The cost function used with softmax:
+  * `J(w[1], b[1], ...) = - 1 / m * (sum(L(y[i], y_hat[i]))) # i = 0 to m`
+* Back propagation with softmax:
+  * `dZ[L] = Y_hat - Y`
+* Note that programming frameworks like TensorFlow will implement the back propagation for you (note that in order for the back prop to be correct, the forward prop needs to be correct too)
+
+## Deep Learning Frameworks
+* It's impractical to implement everything from scratch; the numpy manual implementations provided a good mathematical basis on how NNs work
+* Here are some of the many leading deep learning frameworks:
+  * Caffe/ Caffe2
+  * CNTK
+  * DL4j
+  * Keras
+  * Lasagne
+  * mxnet
+  * PaddlePaddle
+  * TensorFlow
+  * Theano
+  * Torch/Pytorch
+* These frameworks are getting better month by month. Comparison between them can be found [here](https://en.wikipedia.org/wiki/Comparison_of_deep_learning_software)
+* How to choose deep learning framework:
+  * Ease of programming (development and deployment)
+  * Running speed
+  * Truly open (open source with good governance): some open-source packages become closed-source over time
+* Programming frameworks can not only shorten your coding time but sometimes also perform optimizations that speed up your code
+
+## TensorFlow
 
 
 
