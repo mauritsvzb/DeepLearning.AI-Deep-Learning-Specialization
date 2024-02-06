@@ -189,7 +189,7 @@
   * Example function: `J(w) = w^2 - 10w + 25`
   * The result should be `w = 5` as the function is `(w-5)^2 = 0`
   * Code v.1:
-    ```{python}
+    ```python
     import numpy as np
     import tensorflow as tf
     
