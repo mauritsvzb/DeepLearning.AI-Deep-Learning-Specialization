@@ -30,4 +30,14 @@
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/90ef567d-76c9-45fd-969c-081092eaa325.png" width="700" />
 
 ## Single Number Evaluation Metric
-
+* It' s better and faster to set a single number evaluation metric for your project before you start it
+* Difference between precision and recall (in cat classification example):
+  * Suppose we run the classifier on 10 images which are 5 cats and 5 non-cats. The classifier identifies that there are 4 cats, but it identified 1 wrong cat.
+  * Confusion matrix:
+    |___|___|___|
+Predicted cat	Predicted non-cat
+Actual cat	3	2
+Actual non-cat	1	4
+Precision: percentage of true cats in the recognized result: P = 3/(3 + 1)
+Recall: percentage of true recognition cat of the all cat predictions: R = 3/(3 + 2)
+Accuracy: (3+4)/10
