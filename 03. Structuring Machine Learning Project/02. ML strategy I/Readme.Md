@@ -34,8 +34,9 @@
 * Difference between precision and recall (in cat classification example):
   * Suppose we run the classifier on 10 images which are 5 cats and 5 non-cats. The classifier identifies that there are 4 cats, but it identified 1 wrong cat.
   * Confusion matrix:
-    |___|___|___|
-Predicted cat	Predicted non-cat
+    |---|---|---|
+    |   |Predicted cat	| Predicted non-cat |
+
 Actual cat	3	2
 Actual non-cat	1	4
 Precision: percentage of true cats in the recognized result: P = 3/(3 + 1)
