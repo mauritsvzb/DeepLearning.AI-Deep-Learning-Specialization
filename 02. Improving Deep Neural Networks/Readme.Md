@@ -19,9 +19,9 @@ This is the second course of the Deep Learning Specialization.
 
 # 📄 References
 Week 3:
-[Introduction to gradients and automatic differentiation (TensorFlow Documentation)](https://www.tensorflow.org/guide/autodiff)
 
-[tf.GradientTape (TensorFlow Documentation)](https://www.tensorflow.org/api_docs/python/tf/GradientTape)
+* [Introduction to gradients and automatic differentiation (TensorFlow Documentation)](https://www.tensorflow.org/guide/autodiff)
+* [tf.GradientTape (TensorFlow Documentation)](https://www.tensorflow.org/api_docs/python/tf/GradientTape)
 
 # 🏆 Certificates
 To verify the certificates, click the images to follow the links:
