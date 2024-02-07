@@ -48,7 +48,7 @@
 * Using a precision/recall for evaluation is good in a lot of cases, but separately they don't tell you which algothims is better. E.g.,
 
 | Classifier	| Precision	| Recall
-|---| --- |   |
+|---| --- | --- |
 | A	| 95%	| 90% |
 | B	 | 98%	| 85% |
 
