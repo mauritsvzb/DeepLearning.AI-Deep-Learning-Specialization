@@ -45,3 +45,17 @@
     * Accuracy: (3+4)/10
 
 
+* Using a precision/recall for evaluation is good in a lot of cases, but separately they don't tell you which algothims is better. E.g.,
+| Classifier	| Precision	| Recall
+|---| --- |   |
+| A	| 95%	| 90% |
+| B	 | 98%	| 85% |
+
+* A better thing is to combine precision and recall in one single (real) number evaluation metric. There a metric called F1 score, which combines them
+  * You can think of F1 score as an average of precision and recall F1 = 2 / ((1/P) + (1/R))
+
+## Satisficing and Optimizing Metric
+
+
+
+
