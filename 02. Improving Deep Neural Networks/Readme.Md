@@ -18,7 +18,11 @@ This is the second course of the Deep Learning Specialization.
 * [TensorFlow Tutorial](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/02.%20Improving%20Deep%20Neural%20Networks/03.%20Hyperparameter%20Tuning%2C%20Batch%20Normalization%2C%20and%20Programming%20Frameworks/Tensorflow_introduction.ipynb)
 
 # 📄 References
+Week 3:
+[Introduction to gradients and automatic differentiation (TensorFlow Documentation)](https://www.tensorflow.org/guide/autodiff)
 
+[tf.GradientTape (TensorFlow Documentation)](https://www.tensorflow.org/api_docs/python/tf/GradientTape)
 
 # 🏆 Certificates
 To verify the certificates, click the images to follow the links:
+[<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6b4f67e4-659c-45e2-a383-c2dcd790732c.png" width="700">](https://coursera.org/share/30f08a37a9653f33786e47b92e8f431c)
