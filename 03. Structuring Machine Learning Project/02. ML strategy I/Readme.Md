@@ -37,9 +37,11 @@
     
     |  | Predicted cat | Predicted non-cat |
     |---|---	| --- |
+    | Actual cat	| 3	| 2 |
+    | Actual non-cat	| 1	| 4 |
 
-Actual cat	3	2
-Actual non-cat	1	4
-Precision: percentage of true cats in the recognized result: P = 3/(3 + 1)
-Recall: percentage of true recognition cat of the all cat predictions: R = 3/(3 + 2)
-Accuracy: (3+4)/10
+    * Precision: percentage of true cats in the recognized result: P = 3/(3 + 1)
+    * Recall: percentage of true recognition cat of the all cat predictions: R = 3/(3 + 2)
+    * Accuracy: (3+4)/10
+
+
