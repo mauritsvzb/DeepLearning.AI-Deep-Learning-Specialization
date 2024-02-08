@@ -95,8 +95,22 @@ In the modern deep learning era, if you have a million or more examples a reason
 * Conclusion: if doing well on your metric + dev/test set doesn't correspond to doing well in your application, change your metric and/or dev/test set.
 
 ## Why human-level performance?
+* We compare to human-level performance because of two main reasons:
+  * Because of advances in deep learning, machine learning algorithms are suddenly working much better and so it has become much more feasible in a lot of application areas for machine learning algorithms to actually become competitive with human-level performance
+  * It turns out that the workflow of designing and building a machine learning system is much more efficient when you're trying to do something that humans can also do
+* After an algorithm reaches the human level performance the progress and accuracy slow down
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/8c0d7371-b995-43cb-98a8-6b0d05fe7537.png" width="700" />
 
+* You won't surpass an error that's called "Bayes optimal error"
+* There may be 2 reasons why accuracy rate slows down once human-level performance is exceeded:
+  1. The range between human-level error and Bayes optimal error is small
+  2. The techniques available to increase accuracy when ML performance is worse than human-level performance don't work well when human-level performance is exceeded
 
+* Humans are quite good at a lot of tasks. So as long as Machine learning is worse than humans, you can:
+  * Get labeled data from humans.
+  * Gain insight from manual error analysis: why did a person get it right?
+  * Better analysis of bias/variance.
 
+## 
 
