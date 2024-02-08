@@ -112,5 +112,5 @@ In the modern deep learning era, if you have a million or more examples a reason
   * Gain insight from manual error analysis: why did a person get it right?
   * Better analysis of bias/variance.
 
-## 
+## Avoidable Bias
 
