@@ -66,5 +66,14 @@
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7f6d8481-1eb5-40ab-85ff-c7c41af9226e.png" width="700" />
 
 ## Train/Dev/Test Distributions
+* Dev and test sets need to come from the same distribution, in order to stay accurate even when the target changes
+* Choose dev set and test set to reflect data you expect to get in the future and consider important to do well on
+* Setting up the dev set, as well as the validation metric, is really defining what target you want to aim at
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4b57442e-ec25-4720-bac0-f15f07db0fd7.png" width="700" />
+
+## Size of the Dev and Test Sets
+
+
 
 
