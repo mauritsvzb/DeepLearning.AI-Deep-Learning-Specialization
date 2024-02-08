@@ -162,6 +162,6 @@ Suppose that the cat classification algorithm gives these results:
   * If variance is large you have these options:
     * Get more training data
     * Regularization (L2, Dropout, data augmentation)
-* Find better NN architecture/hyperparameters search
+    * Find better NN architecture/hyperparameters search
 
 
