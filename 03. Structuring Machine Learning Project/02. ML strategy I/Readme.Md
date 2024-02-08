@@ -113,4 +113,29 @@ In the modern deep learning era, if you have a million or more examples a reason
   * Better analysis of bias/variance.
 
 ## Avoidable Bias
+Suppose that the cat classification algorithm gives these results:
+
+<img src=".png" width="700" />
+
+* In the left example, because the human level error is 1% then we have to focus on the bias
+* In the right example, because the human level error is 7.5% then we have to focus on the variance
+* The human-level error as a proxy (estimate) for Bayes optimal error. Bayes optimal error is always less (better), but human-level in most cases is not far from it
+  * You can't do better than Bayes error unless you are overfitting
+* Avoidable bias = Training error - Human (Bayes) error
+* Variance problem (= Dev error - Training error) when you want to reduce your dev set error to the levevel of the training error
+
+## Understanding human-level performance
+* When choosing human-level performance, it has to be chosen in the terms of what you want to achieve with the system
+* You might have multiple human-level performances based on the human experience. Then you choose the human-level performance (proxy for Bayes error) that is more suitable for the system you're trying to build
+* Improving deep learning algorithms is harder once you reach a human-level performance
+* Summary of bias/variance with human-level performance:
+  * human-level error (proxy for Bayes error)
+    * Calculate avoidable bias = training error - human-level error
+    * If avoidable bias difference is the bigger, then it's bias problem and you should use a strategy for bias resolving
+  * training error
+    * Calculate variance = dev error - training error
+    * If variance difference is bigger, then you should use a strategy for variance resolving
+  * Dev error
+* So having an estimate of human-level performance gives you an estimate of Bayes error. And this allows you to more quickly make decisions as to whether you should focus on trying to reduce a bias or trying to reduce the variance of your algorithm
+* These techniques will tend to work well until you surpass human-level performance, whereupon you might no longer have a good estimate of Bayes error that still helps you make this decision really clearly
 
