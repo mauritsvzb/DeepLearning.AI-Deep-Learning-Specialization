@@ -66,13 +66,36 @@
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7f6d8481-1eb5-40ab-85ff-c7c41af9226e.png" width="700" />
 
 ## Train/Dev/Test Distributions
-* Dev and test sets need to come from the same distribution, in order to stay accurate even when the target changes
-* Choose dev set and test set to reflect data you expect to get in the future and consider important to do well on
-* Setting up the dev set, as well as the validation metric, is really defining what target you want to aim at
+* Dev and test sets NEED to come from the SAME distribution, in order to stay accurate even when the target changes
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4b57442e-ec25-4720-bac0-f15f07db0fd7.png" width="700" />
 
+* Choose dev set and test set to reflect data you expect to get in the future and consider important to do well on
+* Setting up the dev set, as well as the validation metric, is really defining what target you want to aim at
+
 ## Size of the Dev and Test Sets
+* An old way of splitting the data was 70% training, 30% test or 60% training, 20% dev, 20% test
+* The old way was valid for a number of examples ~ <10,000
+In the modern deep learning era, if you have a million or more examples a reasonable split would be 98% training, 1% dev, 1% test; the dev/test set just needs to be big enough e.g., 10k and NN models nowadays require huge amounts of data to train on
+
+## When to change dev/test sets and metrics
+* Let's take an example. In a cat classification example we have these metric results:
+
+| Metric	| Classification error |
+| --- | --- |
+| Algorithm A	| 3% error (But a lot of porn images are treated as cat images here) |
+| Algorithm B	| 5% error |
+
+* In the last example, if we choose the best algorithm by metric it would be "A", but if the users decide it will be "B": Thus in this case, we want and need to change our metric
+* `OldMetric = (1/m) * sum(y_pred[i] != y[i] ,m)` where m is the number of Dev set items
+* `NewMetric = (1/sum(w[i])) * sum(w[i] * (y_pred[i] != y[i]) ,m)` where `w[i] = 1` if x[i] is not porn and w[i] = 10 if x[i] is porn
+* This is actually an example of an orthogonalization where you should take a machine learning problem and break it into distinct steps:
+  1. Figure out how to define a metric that captures what you want to do - place the target
+  2. Worry about how to actually do well on this metric - how to aim/shoot accurately at the target
+* Conclusion: if doing well on your metric + dev/test set doesn't correspond to doing well in your application, change your metric and/or dev/test set.
+
+## Why human-level performance?
+
 
 
 
