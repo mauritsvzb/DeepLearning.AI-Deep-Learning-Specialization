@@ -149,6 +149,19 @@ Suppose that the cat classification algorithm gives these results:
 * It's harder for machines to surpass human-level performance in natural perception task. But there are already some systems that achieved it
 
 ## Improving your model performance
-
+* The two fundamental asssumptions of supervised learning:
+  * You can fit the training set pretty well. This is roughly saying that you can achieve low avoidable bias
+  * The training set performance generalizes pretty well to the dev/test set. This is roughly saying that variance is not too bad
+* To improve your deep learning supervised system follow these guidelines:
+  * Look at the difference between human level error and the training error - avoidable bias
+  * Look at the difference between the dev/test set and training set error - Variance
+  * If avoidable bias is large you have these options:
+    * Train bigger model
+    * Train longer/better optimization algorithm (like Momentum, RMSprop, Adam)
+    * Find better NN architecture/hyperparameters search
+  * If variance is large you have these options:
+    * Get more training data
+    * Regularization (L2, Dropout, data augmentation)
+* Find better NN architecture/hyperparameters search
 
 
