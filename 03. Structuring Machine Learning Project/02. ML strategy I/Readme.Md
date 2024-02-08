@@ -56,7 +56,15 @@
   * You can think of F1 score as an average of precision and recall F1 = 2 / ((1/P) + (1/R))
 
 ## Satisficing and Optimizing Metric
+* Its hard sometimes to get a single number evaluation metric, especially when you have many metrics at your disposal
+* We can solve that by choosing a single optimizing metric and decide that other metrics are satisficing i.e., just good enough
 
+* So as a general rule:
+  * Maximize 1     # optimizing metric (one optimizing metric)
+  * subject to N-1 # satisficing metric (N-1 satisficing metrics)
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7f6d8481-1eb5-40ab-85ff-c7c41af9226e.png" width="700" />
+
+## Train/Dev/Test Distributions
 
 
