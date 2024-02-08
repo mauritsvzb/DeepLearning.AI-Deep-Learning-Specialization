@@ -139,3 +139,16 @@ Suppose that the cat classification algorithm gives these results:
 * So having an estimate of human-level performance gives you an estimate of Bayes error. And this allows you to more quickly make decisions as to whether you should focus on trying to reduce a bias or trying to reduce the variance of your algorithm
 * These techniques will tend to work well until you surpass human-level performance, whereupon you might no longer have a good estimate of Bayes error that still helps you make this decision really clearly
 
+## Surpassing Human-level Performance
+* In some problems, deep learning has surpassed human-level performance, like:
+  * Online advertising
+  * Product recommendation
+  * Loan approval
+* These examples are not natural perception tasks, but rather learn on structured data
+* Humans are far better in natural perception tasks like computer vision and speech recognition
+* It's harder for machines to surpass human-level performance in natural perception task. But there are already some systems that achieved it
+
+## Improving your model performance
+
+
+
