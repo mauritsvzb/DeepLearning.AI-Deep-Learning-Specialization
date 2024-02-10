@@ -25,3 +25,22 @@ Develop time-saving error analysis procedures to evaluate the most worthwhile op
 * This quick counting procedure, which you can often do in, at most, small numbers of hours can really help you make much better prioritization decisions, and understand how promising different approaches are to work on.
 
 ## Cleaning up incorrectly labeled data
+* DL algorithms are quite robust to random errors in the training set but less robust to systematic errors; it's OK to go and fix these labels if you can
+* If you want to check for mislabeled data in dev/test set, you should also try error analysis with the mislabeled column e.g., 
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/45bf1476-7637-47d4-99d4-bfe82c4b5204.png" width="700" />
+
+  * Then:
+    * If overall dev set error: 10%
+      * Then errors due to incorrect data: 0.6%
+      * Then errors due to other causes: 9.4%
+    * Then you should focus on the 9.4% error rather than the incorrect data.
+* Consider these guidelines while correcting the dev/test mislabeled examples:
+  * Apply the same process to your dev and test sets to make sure they continue to come from the same distribution
+  * Consider examining examples your algorithm got right as well as ones it got wrong. (Not always done if you reached a good accuracy)
+  * Train and (dev/test) data may now come from a slightly different distributions
+  * It's very important to have dev and test sets to come from the same distribution, but it could be OK for a train set to come from slightly other distribution
+
+## Build your first system quickly, then iterate
+
+
