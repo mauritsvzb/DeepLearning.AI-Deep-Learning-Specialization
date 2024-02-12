@@ -115,5 +115,37 @@ Example 2: speech recognition
     * Be cautious and bear in mind whether or not you might be accidentally simulating data only from a tiny subset of the space of all possible examples because your NN might overfit these generated data (like particular car noise or a particular design of 3D graphics cars)
 
 ## Transfer Learning
+* Apply the knowledge you took in a task A and apply it to another task B
+* For example, you have trained a cat classifier with a lot of data, you can use the part of the trained NN it to solve x-ray classification problem
+* To do transfer learning, delete the last layer of NN and it's weights and:
+   1. Option 1: If you have a small data set - keep all the other weights as a fixed weights. Add a new last layer(-s) and initialize the new layer weights and feed the new data to the NN and learn the new weights
+   2. Option 2: If you have enough data, you can retrain all the weights
+* Option 1 and 2 are called fine-tuning and training on task A called pretraining
+* When transfer learning make sense, if:
+  * Task A and B have the same input X (e.g. image, audio)
+  * You have a lot of data for the task A you are transferring from and relatively less data for the task B your transferring to (assuming task B is what you want to do well on)
+  * Low level features from task A could be helpful for learning task B
 
+## Multi-task learning
+* Whereas in transfer learning, you have a sequential process where you learn from task A and then transfer that to task B. In multi-task learning, you start off simultaneously, trying to have one neural network do several things at the same time. And then each of these tasks helps hopefully all of the other tasks.
+* Example:
+  * You want to build an object recognition system that detects pedestrians, cars, stop signs, and traffic lights (image has multiple labels)
+  * Then Y shape will be (4,m) because we have 4 classes and each one is a binary one
+* Then `Cost = (1/m) * sum(sum(L(y_hat(i)_j, y(i)_j)))`, i = 1..m, j = 1..4, where
+  `L = - y(i)_j * log(y_hat(i)_j) - (1 - y(i)_j) * log(1 - y_hat(i)_j)`
+* In the last example you could have trained 4 neural networks separately but if some of the earlier features in neural network can be shared between these different types of objects, then you find that training one neural network to do four things results in better performance than training 4 completely separate neural networks to do the four tasks separately
+* Multi-task learning will also work if y isn't complete for some labels. For example:
+  `Y = [1 ? 1 ...]
+       [0 0 1 ...]
+       [? 1 ? ...]`
+  * And in this case it will do good with the missing data, just the loss function will be different:
+    `Loss = (1/m) * sum(sum(L(y_hat(i)_j, y(i)_j)` for all j which y(i)_j != ?))
+* Multi-task learning makes sense:
+  * Training on a set of tasks that could benefit from having shared lower-level features
+  * Usually, amount of data you have for each task is quite similar
+  * Can train a big enough network to do well on all the tasks
+* If you can train a big enough NN, the performance of the multi-task learning compared to splitting the tasks is better
+* Today transfer learning is used more often than multi-task learning
+
+## What is end-to-end deep learning?
 
