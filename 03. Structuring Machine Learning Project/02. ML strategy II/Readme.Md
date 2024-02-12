@@ -104,5 +104,16 @@ Example 2: speech recognition
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/772c5f84-f1be-4293-b314-d4e4f81e9d9e.png" width="700" />
 
 ## Addressing Data Mismatch
+* There aren't completely systematic solutions to this, but there some things you could try:
+  * Carry out manual error analysis to try to understand the difference between training and dev/test sets
+  * Make training data more similar, or collect more data similar to dev/test sets
+    * If your goal is to make the training data more similar to your dev set, one of the techniques you can use Artificial Data Synthesis that can help you make more training data
+      * Combine some of your training data with something that can convert it to the dev/test set distribution
+      * Examples:
+        * Combine normal audio with car noise to get audio with car noise example
+        * Generate cars using 3D graphics in a car classification example
+    * Be cautious and bear in mind whether or not you might be accidentally simulating data only from a tiny subset of the space of all possible examples because your NN might overfit these generated data (like particular car noise or a particular design of 3D graphics cars)
+
+## Transfer Learning
 
 
