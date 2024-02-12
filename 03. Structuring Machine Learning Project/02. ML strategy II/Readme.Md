@@ -50,12 +50,12 @@ Develop time-saving error analysis procedures to evaluate the most worthwhile op
 ## Training and Testing on Different Distributions
 * A lot of teams are working with deep learning applications that have training sets that are different from the dev/test sets due to the hunger of deep learning to data
 * There are some strategies to follow when the training set distribution differs from dev/test sets distribution
-1. (not recommended): shuffle all the data together and extract randomly training and dev/test sets
-  * Advantages: all the sets now come from the same distribution
-  * Disadvantages: the other (real world) distribution will only constitute a very small fraction of the data in the dev/test sets which causes the model to primarily train on the data from the wrong distribution, and this is not what you want
-2. Put all the data from the 'wrong' distribution only in the training set, and add (some of) the data from the target distribution to the dev/test set
-  * Advantages: the distribution you care about is your target now
-  * Disadvantage: the distributions in training and dev/test sets are now different. But you will get a better performance over a long time
+  1. (not recommended): shuffle all the data together and extract randomly training and dev/test sets
+    * Advantages: all the sets now come from the same distribution
+    * Disadvantages: the other (real world) distribution will only constitute a very small fraction of the data in the dev/test sets which causes the model to primarily train on the data from the wrong distribution, and this is not what you want
+  2. Put all the data from the 'wrong' distribution only in the training set, and add (some of) the data from the target distribution to the dev/test set
+    * Advantages: the distribution you care about is your target now
+    * Disadvantage: the distributions in training and dev/test sets are now different. But you will get a better performance over a long time
 
 Example 1:
 
