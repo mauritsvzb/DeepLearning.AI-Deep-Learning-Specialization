@@ -51,17 +51,17 @@ Develop time-saving error analysis procedures to evaluate the most worthwhile op
 * A lot of teams are working with deep learning applications that have training sets that are different from the dev/test sets due to the hunger of deep learning to data
 * There are some strategies to follow when the training set distribution differs from dev/test sets distribution
   1. (not recommended): shuffle all the data together and extract randomly training and dev/test sets
-    * Advantages: all the sets now come from the same distribution
-    * Disadvantages: the other (real world) distribution will only constitute a very small fraction of the data in the dev/test sets which causes the model to primarily train on the data from the wrong distribution, and this is not what you want
+     * Advantages: all the sets now come from the same distribution
+     * Disadvantages: the other (real world) distribution will only constitute a very small fraction of the data in the dev/test sets which causes the model to primarily train on the data from the wrong distribution, and this is not what you want
   2. Put all the data from the 'wrong' distribution only in the training set, and add (some of) the data from the target distribution to the dev/test set
-    * Advantages: the distribution you care about is your target now
-    * Disadvantage: the distributions in training and dev/test sets are now different. But you will get a better performance over a long time
+     * Advantages: the distribution you care about is your target now
+     * Disadvantage: the distributions in training and dev/test sets are now different. But you will get a better performance over a long time
 
-Example 1:
+Example 1: cat identifier
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/60b160ab-3af6-42b6-8fd0-ee23367b3cda.png" width="700" />
 
-Example 2:
+Example 2: speechh recognition
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5ade867b-e6d1-4d8a-9c52-ce5c1152b9bb.png" width="700" />
 
