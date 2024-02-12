@@ -73,32 +73,32 @@ Example 2: speech recognition
   * Dev error: 10%
 * In this example, you'll think that this is a variance problem, but because the distributions aren't the same you can't tell for sure. Because it could be that train set was easy to train on, but the dev set was more difficult.
 * To solve this issue we create a new set called train-dev set as a random subset of the training set (so it has the same distribution) and we get:
-  * Human error: 0%
-  * Train error: 1%
-  * Train-dev error: 9%
-  * Dev error: 10%
+   * Human error: 0%
+   * Train error: 1%
+   * Train-dev error: 9%
+   * Dev error: 10%
 * Now we are sure that this is a high variance problem (the model doesn't generalize enough)
 * Suppose we have a different situation:
-  * Human error: 0%
-  * Train error: 1%
-  * Train-dev error: 1.5%
-  * Dev error: 10%
+   * Human error: 0%
+   * Train error: 1%
+   * Train-dev error: 1.5%
+   * Dev error: 10%
 * In this case we have something called Data mismatch problem
 * Conclusions:
   1. Human-level error (proxy for Bayes error)
   2. Train error
-    * Calculate avoidable bias = training error - human level error
-    * If the difference is big then it's avoidable bias problem and you should use a strategy to counter high bias
+     * Calculate avoidable bias = training error - human level error
+     * If the difference is big then it's avoidable bias problem and you should use a strategy to counter high bias
   3. Train-dev error
-    * Calculate variance = training-dev error - training error
-    * If the difference is big then it's high variance problem and you should use a strategy for solving that
+     * Calculate variance = training-dev error - training error
+     * If the difference is big then it's high variance problem and you should use a strategy for solving that
   4. Dev error
-    * Calculate data mismatch = dev error - train-dev error
-    * If difference is much bigger then train-dev error, then it's a data mismatch problem
+     * Calculate data mismatch = dev error - train-dev error
+     * If difference is much bigger then train-dev error, then it's a data mismatch problem
   5. Test error
-    * Calculate degree of overfitting to dev set = test error - dev error
-    * If the difference is big (positive) then maybe you need to find a bigger dev set
-      * dev set and test set come from the same distribution, so the only way for there to be a huge gap here, for it to do much better on the dev set than the test set, is if you somehow managed to overfit the dev set
+     * Calculate degree of overfitting to dev set = test error - dev error
+     * If the difference is big (positive) then maybe you need to find a bigger dev set
+       * dev set and test set come from the same distribution, so the only way for there to be a huge gap here, for it to do much better on the dev set than the test set, is if you somehow managed to overfit the dev set
 * Unfortunately, there aren't many systematic ways to deal with data mismatch, but there are some things to try about this in the next section
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/772c5f84-f1be-4293-b314-d4e4f81e9d9e.png" width="700" />
