@@ -135,12 +135,11 @@ Example 2: speech recognition
   `L = - y(i)_j * log(y_hat(i)_j) - (1 - y(i)_j) * log(1 - y_hat(i)_j)`
 * In the last example you could have trained 4 neural networks separately but if some of the earlier features in neural network can be shared between these different types of objects, then you find that training one neural network to do four things results in better performance than training 4 completely separate neural networks to do the four tasks separately
 * Multi-task learning will also work if y isn't complete for some labels. For example:
-
-  ```Y = [1 ? 1 ...]
+   ```
+   Y = [1 ? 1 ...]
        [0 0 1 ...]
        [? 1 ? ...]
-  ```
-
+   ```
   * And in this case it will do good with the missing data, just the loss function will be different:
     `Loss = (1/m) * sum(sum(L(y_hat(i)_j, y(i)_j)` for all j which y(i)_j != ?))
 * Multi-task learning makes sense:
