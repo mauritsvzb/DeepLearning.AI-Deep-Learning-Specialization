@@ -20,3 +20,4 @@ There are no projects for this course. But this course comes with very interesti
 
 🏆 Certificates
 To verify the certificates, click the images to follow the links:
+[<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/bf2a5d9e-c73b-437d-be1a-60a4cc126333.png" width="700">](https://coursera.org/share/6a18841674e19850714bb97e1319d628)
