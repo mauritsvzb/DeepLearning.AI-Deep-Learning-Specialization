@@ -150,4 +150,42 @@ Example 2: speech recognition
 * Today transfer learning is used more often than multi-task learning
 
 ## What is end-to-end deep learning?
+* Some systems have multiple stages to implement. An end-to-end deep learning system implements all these stages with a single NN
+* Example 1:
+  * Speech recognition system:
+    ```
+    Audio ---> Features --> Phonemes --> Words --> Transcript    # non-end-to-end system
+    Audio ---------------------------------------> Transcript    # end-to-end deep learning system
+    ```
+  * End-to-end deep learning gives data more freedom, it might skip the use of 'features' or 'phonemes' for training
+* To build the end-to-end deep learning system that works well, we need a big dataset (more data then in non end-to-end system). If we have a small dataset the ordinary implementation could work just fine.
+* Example 2:
+  * Face recognition system:
+    ```
+    Image ---------------------> Face recognition    # end-to-end deep learning system
+    Image --> Face detection --> Face recognition    # deep learning system - best approach for now
+    ```
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4004afba-85b3-47e0-b84a-a6579a14578e.png" width="700" />
+
+  * In practice, the best approach is the second one for now
+  * In the second implementation, it's a two steps approach where both parts are implemented using deep learning
+  * It's working well because it's harder to get a lot of pictures with people in front of the camera than getting faces of people and compare them
+  * In the second implementation at the last step, the NN takes two faces as an input and outputs if the two faces are the same person or not
+* Example 3:
+  * Machine translation system:
+    ```
+    English --> Text analysis --> ... --> French    # non-end-to-end system
+    English ----------------------------> French    # end-to-end deep learning system - best approach
+    ```
+  * Here end-to-end deep leaning system works better because we have enough data to build it
+* Example 4:
+  * Estimating child's age from the x-ray picture of a hand:
+    ```
+    Image --> Bones --> Age    # non-end-to-end system - best approach for now
+    Image ------------> Age    # end-to-end system
+    ```
+    * In this example non-end-to-end system works better because we don't have enough data to train end-to-end system
+
+## Whether to use End-to-end Deep Learning
 
