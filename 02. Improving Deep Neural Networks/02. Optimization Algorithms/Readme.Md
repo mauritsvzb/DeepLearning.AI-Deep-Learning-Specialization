@@ -1,5 +1,10 @@
-# Optimization Algorithms
+# Goals and Learning Objectives
+Develop your deep learning toolbox by adding more advanced optimizations, random minibatching, and learning rate decay scheduling to speed up your models
+* Apply optimization methods such as (Stochastic) Gradient Descent, Momentum, RMSProp and Adam
+* Use random minibatches to accelerate convergence and improve optimization
+* Describe the benefits of learning rate decay and apply it to your optimization
 
+# Optimization Algorithms
 ## Mini-batch Gradient Descent
 * Training NN with a large data is slow. So to find an optimization algorithm that runs faster is a good idea.
 * Suppose we have m = 5 million examples. To train these data it will take a huge processing time for one step
