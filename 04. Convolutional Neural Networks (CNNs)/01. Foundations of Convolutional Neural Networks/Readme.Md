@@ -104,7 +104,21 @@ Implement the foundational layers of CNNs (pooling, convolutions) and stack them
  When `s = 1` ==> `P = (f-1) / 2`
 
 ## Convolutions over Volume
+* Let's see if we want to convolve 3D images (RGB image)
+* We will convolve an image of height, width, # of channels with a filter of a height, width, same # of channels
+  * Note that the image number of channels and the filter number of channels are the same
+  * We just do the convolutional on the 3D filter similar to the 2D filter
+    * Suppose the filter is 3x3x3, which are 27 blocks
+    * Do a wise-multiply matrix between the filter and corresponded position of input, then add-up the 27 results numbers together
+    * We can call this as stacked filters for each channel
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/801f0c1d-dbb0-4ab7-85a7-8063ed35ecca.png" width="700" />
+
+  * We can use multiple filters to detect multiple features or edges:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5076a0fd-982b-40c8-929d-6fed28222a5e.png" width="700" />
+
+## One Layer of a Convolutional Network
 
 
 
