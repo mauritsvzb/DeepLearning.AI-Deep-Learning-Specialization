@@ -138,6 +138,15 @@ Implement the foundational layers of CNNs (pooling, convolutions) and stack them
 
 ## A simple convolution network example
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6bc159d2-41e1-4209-bc55-76ef7adb10e6.png" width="700" />
+
+* In this cNN, and CNNs more genearlly, the dimensions of the image trends down as you go deeper into the cNN, whereas the number of channels (N<sub>C</sub>) will generally increase
+* Types of layer in a convolutional network:
+  * Convolution (Conv)
+  * Pooling (Pool)
+  * Fully connected (FC)
+
+## Pooling Layers
 
 
 
