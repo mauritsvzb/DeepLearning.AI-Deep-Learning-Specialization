@@ -119,6 +119,27 @@ Implement the foundational layers of CNNs (pooling, convolutions) and stack them
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5076a0fd-982b-40c8-929d-6fed28222a5e.png" width="700" />
 
 ## One Layer of a Convolutional Network
+* First we convolve some filters to a given input and then add a bias to each filter output and then get ReLU of the result e.g., 
+  * Input image: 6x6x3 # a0
+  * 10 Filters: 3x3x3 # W1
+  * Result image: 4x4x10 # W1a0
+  * Add b (bias) with 10x1 will get us : 4x4x10 image # W1a0 + b
+  * Apply ReLU will get us: 4x4x10 image # A1 = ReLU(W1a0 + b)
+  * In the last result p=0, s=1
+  * Hint number of parameters here are: (3x3x3x10) + 10 = 280
+  * The last example forms a layer in the CNN
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d0da7d69-e0a3-44af-ac02-19a0d7d7b391.png" width="700" />
+
+* Note: no matter the size of the input, the number of the parameters is same if filter size is same, which makes model less prone to overfitting
+* Here are some notations we will use. If layer l is a conv layer:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/8f386cfe-67ec-4585-9dc6-bf13b97bc07d.png" width="700" />
+
+## A simple convolution network example
+
+
+
 
 
 
