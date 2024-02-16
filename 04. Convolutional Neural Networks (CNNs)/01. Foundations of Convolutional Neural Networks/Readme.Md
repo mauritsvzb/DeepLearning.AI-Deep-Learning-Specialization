@@ -185,9 +185,25 @@ Implement the foundational layers of CNNs (pooling, convolutions) and stack them
 * A CNN usually consists of one or more convolution (Not just one as the shown examples) followed by a pooling.
 * Fully connected layers has the most parameters in the network
 * To consider using these blocks together you should look at other working examples firsts to get some intuitions
+* See https://towardsdatascience.com/understanding-and-calculating-the-number-of-parameters-in-convolution-neural-networks-cnns-fc88790d530d on how to calculate the number of parameters in each layer
+  * ((shape of width of filter * shape of height filter * number of filters in the previous layer + 1) * number of filters in  current layer)
 
 ## 
+* Two main advantages of Convs are:
+  * Parameter sharing
+    * A feature detector (such as a vertical edge detector) that's useful in one part of the image is probably useful in another part of the image
+  * Sparsity of connections
+    * In each layer, each output value depends only on a small number of inputs which makes it translation invariance
+* These advantages help ConvNet
+  * Has a lot fewer parameters => smaller training set => less prone to be overfitting
+  * Good at capturing translation invariance
+  * Like cat picture shifted a couple of pixels to the right is still recognized clearly a cat picture
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/9818749e-63f7-420c-a889-dc42dee717ae.png" width="700" />
+
+Putting it all together:
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/73afa6f7-a8ae-4c3f-b8e5-66cee993aa5d.png" width="700" />
 
 
 
