@@ -147,11 +147,46 @@ Implement the foundational layers of CNNs (pooling, convolutions) and stack them
   * Fully connected (FC)
 
 ## Pooling Layers
+* Other than the conv layers, CNNs often uses pooling layers to:
+  1. Reduce the size of the inputs, 
+  2. Speed up computation, and 
+  3. Make some of the features it detects more robust
+* Max pooling example:
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/26b3f633-83a3-4b91-bdd8-d8ca4bb3ab20.png" width="700" />
 
+* The above example has f = 2, s = 2, and p = 0 hyperparameters
+* The max pooling is saying that if the feature is detected anywhere in this filter then keep a high number (But the main reason why people are using pooling because its works well in practice and reduce computations)
+* Max pooling has no parameters to learn
+* Max pooling on 3D input: computating max pooling independently on each channels
+* Example of Max pooling on 3D input:
+  * Input: 4x4x10
+  * Max pooling size = 2 and stride = 2
+  * Output: 2x2x10
+* Average pooling is taking the averages of the values instead of taking the max values
+* Max pooling is used more often than average pooling in practice
+* Hyperparameters summary
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/775a27c1-8eb3-449a-b445-2bad95d2883d.png" width="700" />
 
+## CNN Example
+* This example is something like the LeNet-5 that was invented by Yann Lecun
 
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2ab3b795-abd9-45c3-b354-df17bc40ed28.png" width="700" />
+
+* FC stands for: Fully Connected
+* 2 conflicting conventions in NN: some count each seperate component as a layer, while others only count only layers weights e.g., a 'max pool' layer doesn't contain weights so is not counted seperately and thus belongs to the same layer as the previous component which does contain weights.
+* Note: we follow the second convention here: Conv1 and Pool1 are treated as one layer
+
+<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f0c30db0-cb11-4364-b569-812c3d068ac7.png" width="700" />
+
+* There are a lot of hhyperparameters. For choosing the value of each, you should follow the guideline that we will discuss later or check the literature and takes some ideas and numbers from it
+* Usually the input size decreases as you go deeper into the NN while at the same time the number of filters increases
+* A CNN usually consists of one or more convolution (Not just one as the shown examples) followed by a pooling.
+* Fully connected layers has the most parameters in the network
+* To consider using these blocks together you should look at other working examples firsts to get some intuitions
+
+## 
 
 
 
