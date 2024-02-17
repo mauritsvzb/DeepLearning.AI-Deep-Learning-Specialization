@@ -63,7 +63,7 @@ Implement the foundational layers of CNNs (pooling, convolutions) and stack them
 ## Padding
 * In order to use deep neural networks we really need to use paddings
 * In the last section, we saw that a 6x6 matrix convolved with 3x3 filter/kernel gives us a 4x4 matrix
-* To provide a general rule: if a matrix n x n is convolved with f x f filter/kernel, we get a n - f + 1, n - f + 1 matrix
+* To provide a general rule: if a matrix n x n is convolved with f x f filter/kernel, we get a `n - f + 1` x `n - f + 1` matrix
 * There are 2 problems with this:
   * The convolution operation shrinks the matrix if f > 1
     * We want to apply convolution operation multiple times, but if the image shrinks at each step we will lose a lot of data on this process
@@ -71,7 +71,7 @@ Implement the foundational layers of CNNs (pooling, convolutions) and stack them
     * Throws away a lot of information that are in the edges
 * To solve these problems, we can pad the input image before convolution by adding some rows and columns to it. We will call the padding amount p the number of layers (row/columns) that we will inserted around the image
 * In almost all the cases the padding values are zeros
-* The general rule now is that if a matrix n x n is convolved with f x f filter/kernel and padding p give us n + 2 p - f + 1, n + 2 p - f + 1 matrix
+* The general rule now is that if a matrix n x n is convolved with f x f filter/kernel and padding p give us `n + 2 p - f + 1`, `n + 2 p - f + 1` matrix
   * If n = 6, f = 3, and p = 1, then the output image will have n + 2 p - f + 1 = 6 + 2 - 3 + 1 = 6, and therefore we maintain the initial size of the image
 
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/9517fcdc-48ac-47aa-b96f-16727e08a421.png" width="700" />
