@@ -12,6 +12,15 @@ You will:
 * Learn to implement the foundational layers of CNNs (pooling, convolutions) and to stack them properly in a deep network to solve multi-class image classification problems.
 
 # 📂 Projects
+* [Week 1 - PA 1 - Convolutional Model: step by step](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/01.%20Foundations%20of%20Convolutional%20Neural%20Networks/Convolution_model_Step_by_Step_v1.ipynb)
+* [Week 1 - PA 2 - Convolutional Neural Networks: Application](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/01.%20Foundations%20of%20Convolutional%20Neural%20Networks/Convolution_model_Application.ipynb)
+* Week 2 - PA 1 - Keras - Tutorial - Happy House
+* Week 2 - PA 2 - Residual Networks
+* Week 2 - PA 2 - Transfer Learning with MobileNet
+* Week 3 - PA 1 - Car detection with YOLO for Autonomous Driving
+* Week 3 - PA 2 - Image Segmentation Unet
+* Week 4 - PA 1 - Art Generation with Neural Style Transfer
+* Week 4 - PA 2 - Face Recognition
 
 # 📄 References
 
