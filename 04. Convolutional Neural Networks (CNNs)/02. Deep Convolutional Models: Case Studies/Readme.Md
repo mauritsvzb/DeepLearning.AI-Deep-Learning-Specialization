@@ -30,24 +30,24 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
 * This model was published in 1998
 * The last layer wasn't using softmax back then, but we would do that now
 * It has 60k parameters
-* The dimensions of the image decrease as the number of channels increase
+* The dimensions of the image decrease as the number of channels increases
 * Conv ==> Pool ==> Conv ==> Pool ==> FC ==> FC ==> softmax this type of arrangement is quite common
 * The activation function used in the paper was Sigmoid and Tanh. Modern implementation uses ReLU in most of the cases
-Paper: [LeCun et al., 1998. Gradient-based learning applied to document recognition](https://ieeexplore.ieee.org/document/726791?reload=true)
+* Paper: [LeCun et al., 1998. Gradient-based learning applied to document recognition](https://ieeexplore.ieee.org/document/726791?reload=true)
 
 ### AlexNet
 * Named after Alex Krizhevsky who was the first author of this paper
 * The goal for the model was the ImageNet challenge which classifies images into 1,000 classes 
-Here are the drawing of the model:
+* Here are the drawing of the model:
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/65f33c17-69fa-4295-9480-81499b46cfe3.png" width="700" />
 
 * Summary:
   * Conv => Max-pool => Conv => Max-pool => Conv => Conv => Conv => Max-pool ==> Flatten ==> FC ==> FC ==> Softmax
   * Similar to LeNet-5, but bigger
-  * Has 60 Million parameter compared to 60k parameter of LeNet-5
+  * Has 60 Million parameters compared to 60k parameters of LeNet-5
   * It used the ReLU activation function
-  * The original paper contains Multiple GPUs and Local Response normalization (LRN)
+  * The original paper contains multiple GPUs and Local Response Normalization (LRN)
   * Multiple GPUs were used because the GPUs were not so fast back then
   * Researchers proved that Local Response Normalization doesn't help much (so for now don't bother yourself for understanding or implementing it)
   * This paper convinced the computer vision researchers that deep learning is so important
@@ -64,9 +64,9 @@ Here are the drawing of the model:
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6233028b-998e-48ac-94df-5697be5cf5e5.png" width="700" />
 
 * This network is large even by modern standards
-*  It has around 138 M parameters
+* It has around 138 M parameters
 * Most of the parameters are in the fully connected layers
-* It has a total memory of 96MB per image for only forward propagation!
+* It has a total memory of 96 MB per image for only forward propagation!
 * Most memory are in the earlier layers
 * Number of filters increases from 64 to 128 to 256 to 512; 512 was made twice
 * Pooling was the only layer responsible for shrinking the dimensions
@@ -76,13 +76,13 @@ Here are the drawing of the model:
 
 ## Residual Networks (ResNets)
 * Very, very deep NNs are difficult to train because of vanishing and exploding gradients problems
-* In this section we will learn about skip connections, which make you take the activation from one layer and feed it to another layer deeper in the NN, allowing you to train large NNs with layers > 100
+* Skip connections, which make you take the activation from one layer and feed it to another layer deeper in the NN, circumvent this problem, enabling the training of large NNs with > 100 layers 
 * <b>Residual block</b>
   * ResNets are constructed from residual blocks
 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/61020df0-3850-4728-bb4d-0957329acaa3.png" width="700" />
 
-  * They add a short cut/skip connection before the second activation
+  * Add a short cut/skip connection before the second activation
   * The authors of this block find that you can train a deeper NNs using stacking this block
   * Paper: [He et al., 2015. Deep residual networks for image recognition](https://arxiv.org/abs/1512.03385)
 * <b>Residual Network</b>
