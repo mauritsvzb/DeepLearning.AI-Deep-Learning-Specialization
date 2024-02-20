@@ -132,4 +132,24 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
   * The solid line is the case when the dimensions are 'same'
   * The dotted lines is the case when the dimensions are different. To solve then they down-sample the input by 2 and then pad zeros to match the two dimensions. There's another trick which is called bottleneck which we will explore later
 
-## 
+## Networks in Networks and 1x1 Convolutions
+*  A 1 x 1 convolution - We also call it Network in Network - is so useful in many CNN models
+* What does a 1 x 1 convolution do? Isn't it just multiplying by a number?
+  * Lets first consider an example:
+    * Input: 6x6x32
+    * Conv: 1x1x32 one filter. # The 1 x 1 Conv
+    * Output: 6x6x32
+  * Another example:
+    * Input: 6x6x32
+    * Conv: 1x1x32 5 filters. # The 1 x 1 Conv
+    * Output: 6x6x5
+* Paper: [Lin et al., 2013. Network in network]
+  * It has been used in a lot of modern CNN implementations like ResNet and Inception models
+* A 1 x 1 convolution is useful when:
+  * We want to shrink the number of channels (we also call this feature transformation)
+    * In the second discussed example above we have shrinked the input from 32 to 5 channels
+  * We will later see that by shrinking it we can save a lot of computations
+  * If we have specified the number of 1 x 1 Conv filters to be the same as the input number of channels (like the first example) then the output will maintain the same number of channels. Then the 1 x 1 Conv will act like a non linearity operator.
+
+## Inception Network Motivation
+
