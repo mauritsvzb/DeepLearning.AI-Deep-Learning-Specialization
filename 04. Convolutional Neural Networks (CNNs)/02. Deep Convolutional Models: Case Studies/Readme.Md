@@ -74,4 +74,31 @@ Here are the drawing of the model:
 * VGG paper is attractive as it tries to make some rules regarding using CNNs
 * Paper: [Simonyan & Zisserman 2015. Very deep convolutional networks for large-scale image recognition](https://arxiv.org/abs/1512.03385)
 
-## 
+## Residual Networks (ResNets)
+* Very, very deep NNs are difficult to train because of vanishing and exploding gradients problems
+* In this section we will learn about skip connections, which make you take the activation from one layer and feed it to another layer deeper in the NN, allowing you to train large NNs with layers > 100
+* <b>Residual block</b>
+  * ResNets are constructed from residual blocks
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/61020df0-3850-4728-bb4d-0957329acaa3.png" width="700" />
+
+  * They add a short cut/skip connection before the second activation
+  * The authors of this block find that you can train a deeper NNs using stacking this block
+  * Paper: [He et al., 2015. Deep residual networks for image recognition](https://arxiv.org/abs/1512.03385)
+* <b>Residual Network</b>
+  * NNs that consist of some residual blocks
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3ac507f0-e604-444b-ae78-03307c77cd0b.png" width="700" />
+
+  * These networks can go deeper without hurting performance; in the normal NN ("Plain networks") the theory tells us that if we go deeper we will get a better solution to our problem, but because of the vanishing and exploding gradients problems the performance of the network suffers as it goes deeper
+  * Thanks to Residual Network we can go as deep as we want now, although you can likely experience diminishing returns (plateau)
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/99e94ad9-2dac-488b-99fa-7d9e1614f0c0.png" width="700" />
+
+  * On the left is the normal NN and on the right is the ResNet: the performance of ResNet increases as the network goes deeper
+  * In some cases going deeper won't further improve the performance (the point at which this happens depends on the problem on your hand)
+  * Some people are experimenting now with 1000 layer ResNets but this isn't used in practice
+
+## Why ResNets work
+
+
