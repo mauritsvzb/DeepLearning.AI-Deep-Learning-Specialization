@@ -114,7 +114,7 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
     ```
   * Then if we are using L2 regularization for example, `W[l+2]` will be zero. Lets say that `b[l+2]` will be zero too
   * Then `a[l+2] = g( a[l] ) = a[l]` with no negative values
-  * This show that identity function is easy for a residual block to learn. And that why it can train deeper NNs
+  * This shows that the <b>identity function is easy for a residual block to learn. And that why it can train deeper NNs</b>
   * Also that the two layers we added doesn't hurt the performance of big NN we made
   * Note: dimensions of `z[l+2]` and `a[l]` have to be the same in resNets. In case they have different dimensions what we put a matrix parameters (Which can be learned or fixed)
     * `a[l+2] = g( z[l+2] + ws * a[l] ) # The added Ws should make the dimensions equal`
@@ -129,7 +129,7 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
   * Keep it simple in design of the network
   * spatial size /2 => # filters x2
   * Two main types of blocks are used in a ResNet, depending mainly on whether the input/output dimensions are same or different
-  * The solid line is the case when the dimensions are same
+  * The solid line is the case when the dimensions are 'same'
   * The dotted lines is the case when the dimensions are different. To solve then they down-sample the input by 2 and then pad zeros to match the two dimensions. There's another trick which is called bottleneck which we will explore later
 
 ## 
