@@ -60,10 +60,16 @@ Implement the foundational layers of CNNs (pooling, convolutions) and stack them
 
 * What we learned in deep learning is that we don't need to hand pick these numbers: we can treat them as weights and then learn them. It can learn horizontal, vertical, angled, or any edge type automatically rather than getting them by hand.
 
+
+
+
 ## Padding
 * In order to use deep neural networks we really need to use paddings
 * In the last section, we saw that a 6x6 matrix convolved with 3x3 filter/kernel gives us a 4x4 matrix
 * To provide a general rule: if a matrix n x n is convolved with f x f filter/kernel, we get a `n - f + 1` x `n - f + 1` matrix
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/69dba0ac-7b04-420d-8d12-fa6f845da460.png" width="700" />
+
 * There are 2 problems with this:
   * The convolution operation shrinks the matrix if f > 1
     * We want to apply convolution operation multiple times, but if the image shrinks at each step we will lose a lot of data on this process
