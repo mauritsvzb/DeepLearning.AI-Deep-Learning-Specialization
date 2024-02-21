@@ -122,7 +122,7 @@ Implement the foundational layers of CNNs (pooling, convolutions) and stack them
 
   * We can use multiple filters to detect multiple features or edges:
 
-    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5076a0fd-982b-40c8-929d-6fed28222a5e.png" width="700" />
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7f908996-6e85-454a-bd9e-fc2a7d55cae8.png" width="700" />
 
 ## One Layer of a Convolutional Network
 * First we convolve some filters to a given input and then add a bias to each filter output and then get ReLU of the result e.g., 
