@@ -192,7 +192,7 @@ Implement the foundational layers of CNNs (pooling, convolutions) and stack them
 * Fully connected layers has the most parameters in the network
 * To consider using these blocks together you should look at other working examples firsts to get some intuitions
 * See https://towardsdatascience.com/understanding-and-calculating-the-number-of-parameters-in-convolution-neural-networks-cnns-fc88790d530d on how to calculate the number of parameters in each layer
-  * ((shape of width of filter * shape of height filter * number of filters in the previous layer + 1) * number of filters in  current layer)
+  * ((shape of width of filter * shape of height filter * number of channels in the previous layer + 1) * number of filters in  current layer)
 
 ## 
 * Two main advantages of Convs are:
