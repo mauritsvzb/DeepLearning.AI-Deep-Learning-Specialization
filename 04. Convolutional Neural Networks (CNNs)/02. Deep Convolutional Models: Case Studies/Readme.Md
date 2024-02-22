@@ -166,7 +166,7 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
   * Let's illustrate the issue using the 5 x 5 Conv from last example:
     * There are 32 'same convolution' filters of dimensions 5 x 5 (x 192), and the input is of dimensions 28 x 28 x 192
     * Given an output of 28 x 28 x 32 (32 = number of filters), the total number of multiplications required is:
-      output dimensional volume * filter dimensional volume = (28 * 28 * 32) * (5 * 5 * 192) = 120 Mil
+      output dimensional volume * filter dimensional volume = (28 * 28 * 32) * (5 * 5 * 192) = 120 M
 
       <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6963dc68-c04c-44df-a931-057503efe083.png" width="700" />
 
