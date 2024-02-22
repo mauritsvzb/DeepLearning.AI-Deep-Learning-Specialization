@@ -112,10 +112,11 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
     a[l+2] = g( z[l+2] + a[l] )
            = g( W[l+2] a[l+1] + b[l+2] + a[l] )
     ```
-  * Then if we are using L2 regularization for example, `W[l+2]` will be zero. Lets say that `b[l+2]` will be zero too
+  * Then if we are using L2 regularization for example, and assume that `W[l+2]` will be 0 and `b[l+2]` will be 0 too, 
   * Then `a[l+2] = g( a[l] ) = a[l]` with no negative values
   * This shows that the <b>identity function is easy for a residual block to learn. And that why it can train deeper NNs</b>
-  * Also that the two layers we added doesn't hurt the performance of big NN we made
+  * Also that the two layers we added doesn't hurt the performance of big NN we made, and can even improve performance if they learn something better than the identity function (even identity functions are difficult to learn for a deep plain network!)
+    * To summarize: it's very easy for ResNets to learn the identity function (that doesn't increase nor decrease perforamnce), but you can get lucky with the ResNet learning something better that does improve perforance; i.o.w., performance can only be the same or get better!
   * Note: dimensions of `z[l+2]` and `a[l]` have to be the same in resNets. In case they have different dimensions what we put a matrix parameters (Which can be learned or fixed)
     * `a[l+2] = g( z[l+2] + ws * a[l] ) # The added Ws should make the dimensions equal`
    * `Ws` also can be a zero padding
@@ -143,13 +144,13 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
     * Input: 6x6x32
     * Conv: 1x1x32 5 filters. # The 1 x 1 Conv
     * Output: 6x6x5
-* Paper: [Lin et al., 2013. Network in network]
+* Paper: [Lin et al., 2013. Network in network](https://arxiv.org/abs/1312.4400)
   * It has been used in a lot of modern CNN implementations like ResNet and Inception models
 * A 1 x 1 convolution is useful when:
   * We want to shrink the number of channels (we also call this feature transformation)
     * In the second discussed example above we have shrinked the input from 32 to 5 channels
   * We will later see that by shrinking it we can save a lot of computations
-  * If we have specified the number of 1 x 1 Conv filters to be the same as the input number of channels (like the first example) then the output will maintain the same number of channels. Then the 1 x 1 Conv will act like a non linearity operator.
+  * If we have specified the number of 1 x 1 Conv filters to be the same as the input number of channels (like the first example) then the output will maintain the same number of channels. Then the 1 x 1 Conv will act like a non linearity operator allowing for more complex function to be learned in your NN through adding another layer.
 
 ## Inception Network Motivation
 
