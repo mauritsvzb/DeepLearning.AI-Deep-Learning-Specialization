@@ -180,9 +180,30 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
     * For the first Conv: 28 * 28 * 16 * 1 * 1 * 192 = 2.5 M
     * For the second Conv: 28 * 28 * 32 * 5 * 5 * 16 = 10 M
     * So the total number is 12.5 M approx, which is a factor 10 lower than without the 1 x 1 Conv!
+  
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/11d7b190-2e57-4211-8b85-4ebece233e85.png" width="700" />
+
   * A 1 x 1 Conv here is called 'Bottleneck'
   * It turns out that the 1 x 1 Conv won't hurt the performance, as long as you use it within reason
 
-    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/11d7b190-2e57-4211-8b85-4ebece233e85.png" width="700" />
+## Inception Network
+* Inception module, dimensions reduction version:
 
-## 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1681c979-d857-463f-b4f0-798aa3b70b7d.png" width="700" />
+
+* Inception network (GooLeNet)
+  * The Inception network consist of repeated concatenated blocks of the Inception module:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/66c01c7d-1689-4acc-8237-569b623a4738.png" width="700" />
+
+  * The paper mentions 2 additional side branches that also terminate in a 'softmax' function, that takes some hidden layer and tries to use that to make a prediction
+    * Helps ensure that the features computed, even at intermediate layers, are not 'too bad' for predicting  the output cost of an image, which appears to have a regularizing effect on the inception network i.e.,  prevents the network from overfitting
+
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/dba69b80-7613-44e2-83e8-ae8b9c93e421.png" width="700" />
+
+* The name inception was taken from a meme image which was taken from Inception movie
+
+## MobileNet
+
+
+
