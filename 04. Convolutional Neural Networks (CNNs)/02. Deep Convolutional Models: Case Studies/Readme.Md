@@ -153,4 +153,36 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
   * If we have specified the number of 1 x 1 Conv filters to be the same as the input number of channels (like the first example) then the output will maintain the same number of channels. Then the 1 x 1 Conv will act like a non linearity operator allowing for more complex function to be learned in your NN through adding another layer.
 
 ## Inception Network Motivation
+* When you design a CNN you have to decide which layers to include yourself: will you pick a 3 x 3 Conv or 5 x 5 Conv or maybe a max pooling layer (there are so many choices!)
+* What inception tells us is, why not use all of them at once?
+* Inception module, naive version:
+    
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d727d4b1-4213-460f-a1cc-4a42965a7894.png" width="700" />
 
+  * Note that max-pool here are of the form 'same convolution'
+  * Input to the inception module is a 28 x 28 x 192 dimensional volume and the output is a 28 x 28 x 256 dimensional volume
+  * Paper: [Szegedy et al. 2014. Going deeper with convolutions](https://arxiv.org/abs/1409.4842)
+* The problem of computational cost in Inception model:
+  * Let's illustrate the issue using the 5 x 5 Conv from last example:
+    * There are 32 'same convolution' filters of dimensions 5 x 5 (x 192), and the input is of dimensions 28 x 28 x 192
+    * Given an output of 28 x 28 x 32 (32 = number of filters), the total number of multiplications required is:
+      output dimensional volume * filter dimensional volume = (28 * 28 * 32) * (5 * 5 * 192) = 120 Mil
+
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6963dc68-c04c-44df-a931-057503efe083.png" width="700" />
+
+    * 120 M multiplications is still computationally expensive using modern-day computers
+  * Using a 1 x 1 Conv we can reduce 120 M to just 12 M computations
+* Using 1 X 1 Conv reduces the computational cost as follows:
+  * Let's use the input shape again from last example (28, 28, 192)
+  * We then convolve the input with 16 (1 x 1 (x 192)) convolution to produce a shape of 28 x 28 x 16 dimensional volume (reducing the dimensions to 16 filters from 192)
+  * Then apply 32 (5 x 5 Convolution) producing a shape (28, 28, 32)
+  * Now lets calculate the number of multiplications:
+    * For the first Conv: 28 * 28 * 16 * 1 * 1 * 192 = 2.5 M
+    * For the second Conv: 28 * 28 * 32 * 5 * 5 * 16 = 10 M
+    * So the total number is 12.5 M approx, which is a factor 10 lower than without the 1 x 1 Conv!
+  * A 1 x 1 Conv here is called 'Bottleneck'
+  * It turns out that the 1 x 1 Conv won't hurt the performance, as long as you use it within reason
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/11d7b190-2e57-4211-8b85-4ebece233e85.png" width="700" />
+
+## 
