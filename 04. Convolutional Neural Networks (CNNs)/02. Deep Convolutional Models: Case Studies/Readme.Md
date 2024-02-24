@@ -260,5 +260,17 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
     * MobileNet v2 has better performance than v1 by using a small amount of compute & memory resources
 
 ## EfficientNet
+* Helps scale up or down NNs (MobileNet) for a specific device (different brand of mobile phone with different amounts of computational budget)
+  * [Tan and Le, 2019, EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks](https://arxiv.org/abs/1905.11946)
+* Architecture:
+  * Baseline NN architecture with image resolution `r`, depth `d`, weight `w`
+  * We can modify `r`, `d`, and `w` to scaling the NN for fitting the particular device
+  * We can even use compount scaling to modify all three parameters at same time
 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7bc34a11-cd82-4d2f-aea7-6fadcd5dc4f7.png" width="700" />
+
+* What's a good choice of modifying these parameters? What's a good trade-off When modify a parameter but fixing the other two?
+* You can looks up for some open-source implementations of EfficientNet to help choose a good trade-off between r, d, and w
+
+## Using Open-Source Implementation
 
