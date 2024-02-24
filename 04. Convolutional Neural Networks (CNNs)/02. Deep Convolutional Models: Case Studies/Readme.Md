@@ -253,13 +253,11 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
 
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/dd00f0cd-77ee-4dbe-afa3-02b45a20e110.png" width="700" />
 
-  * As the output of Pointwise is as same as the input of the bottleneck, the Pointwise is also called the Projection
+  * As the output of Pointwise is as same as the input of the bottleneck, the Pointwise function is also called the Projection
   * The reason of using Bottleneck:
-    * The Expansion increases the size of representation within the bottleneck
-    * Learn richer, more complex features
-    * The Projection keeps the memories small throughout the network
-    * More suitable for mobile devices
-    * MobileNet v2 has better performance than v2 while keep using a small amount of compute & memory resources
+    * The Expansion increases the size of representation within the bottleneck, which enables the learning of richer, more complex features
+    * The Projection keeps the memories small throughout the network, making this NN more suitable for mobile devices
+    * MobileNet v2 has better performance than v1 by using a small amount of compute & memory resources
 
 ## EfficientNet
 
