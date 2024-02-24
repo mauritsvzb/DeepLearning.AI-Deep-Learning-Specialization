@@ -204,6 +204,63 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
 * The name inception was taken from a meme image which was taken from Inception movie
 
 ## MobileNet
+* Motivation for MobileNet
+  * Low computation cost at deployment
+  * Useful for mobile and embedded vision applications
+  * Key idea: Normal vs. Depthwise Separate convolutions
+* Normal Convolution:
+  * Normaly, we just do a volume Conv operation on a f x f x n<sub>c</sub> block of filter
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/9d136e5a-977c-4742-a6b7-cf50b8d51db6.png" width="700" />
+
+* Depthwise Separable Convolution
+* Consists of 2 steps/parts, a depthwise Conv followed by a pointwise Conv
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/79f0ce5a-e37c-4a18-8141-6031d011202a.png" width="700" />
+
+  * Depthwise Conv: does a conv computation separately on each channel, then stack their outputs 
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e243db93-7713-4f04-a86c-8edfb4319a18.png" width="700" />
+
+  * Pointwise Conv: works similarly to the normal convolution operation but with 1x1 size filter
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4c9a2dae-c430-4994-a886-b771f0fe9607.png" width="700" />
+
+* Cost summary (with 6x6x3 input, 5 3x3x3 filters and 4x4x5 output)
+  * Normal Conv: 2160
+  * Depthwise Separable Conv
+    * Depthwise: 432
+    * Pointwise: 240
+    * Total: 672
+      672 / 2160 = 0.31 => ~2/3 time cheaper than the normal Conv cost!
+* In the general case: Cost_normal / Cost_depth = 1/n<sub>c</sub>' * 1/(f<sup>2</sup>)
+  * Example: if the output has 512 channels and the filter size is 3, then using depth separable conv may reduce 1/512 + 1/9 ~= 1/9 ~= 10 times cheaper than using the normal one
+
+## MobileNet Architecture
+* The idea of MobileNet: rather than use the expensive conv operation, we can use the Depthwise Separable Conv (DS Conv) with the depthwise and pointwise sub-functions
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a89fa4d9-7d24-431b-82e4-240233e353fb.png" width="700" />
+
+* MobileNet v1:
+  * `Input => 13 x DS Conv => Pool => FC => Softmax => Output`
+    * [Howard et al. 2017, MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](https://arxiv.org/abs/1704.04861)
+* MobileNet v2:
+  * `Input => Residual Connection[Expansion => Depthwise => Projection (Pointwise)] x 17 => Pool => FC => Softmax => Output`
+  * The Residual Connection block is also called the Bottleneck
+    * [Sandler et al. 2019, MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381)
+
+* MobileNet v2 BottleNeck:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/dd00f0cd-77ee-4dbe-afa3-02b45a20e110.png" width="700" />
+
+  * As the output of Pointwise is as same as the input of the bottleneck, the Pointwise is also called the Projection
+  * The reason of using Bottleneck:
+    * The Expansion increases the size of representation within the bottleneck
+    * Learn richer, more complex features
+    * The Projection keeps the memories small throughout the network
+    * More suitable for mobile devices
+    * MobileNet v2 has better performance than v2 while keep using a small amount of compute & memory resources
+
+## EfficientNet
 
 
