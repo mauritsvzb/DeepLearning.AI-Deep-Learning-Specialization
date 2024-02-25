@@ -273,4 +273,39 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
 * You can looks up for some open-source implementations of EfficientNet to help choose a good trade-off between r, d, and w
 
 ## Using Open-Source Implementation
+* We have learned a lot of NNs and ConvNets architectures
+* It turns out that a lot of these NN are difficult to replicate, because there are often details that may not presented on its papers e.g., 
+  * Learning rate decay
+  * Parameter tuning
+* A lot of deep learning researchers are opening sourcing their code onto internet on sites like Github
+* If you see a research paper and you want to build over it, the first thing you should do is to look for an open source implementation for this paper
+* Some advantage of doing this is that you might download the network implementation along with its parameters/weights (transfer learning). The author might have used multiple GPUs and spent some weeks to reach this result and its right in front of you after you download it
+
+## Transfer Learning
+* If you are using a specific NN architecture that has been trained before, you can use this pretrained parameters/weights instead of random initialization to solve your problem
+* It can help you boost the performance of the NN
+* The pretrained models might have trained on a large datasets like ImageNet, Ms COCO, or pascal and took a lot of time to learn those parameters/weights with optimized hyperparameters, which can save you a lot of time
+* Example 1:
+  * Lets say you have a cat classification problem which contains 3 classes Tigger, Misty and neither
+  * You don't have much a lot of data to train a NN on these images
+  * Andrew recommends to go online and download a good NN with its weights, remove the softmax activation layer and put your own softmax one and make the network learn only the new layer while other layer weights are fixed/frozen
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a91b77ca-9269-440b-8a12-684f6ec7ebbd.png" width="700" />
+
+    * Frameworks have options to make the parameters frozen in some layers using `trainable = 0` or `freeze = 0`
+  * One of the tricks that can speed up your training, is to run the pretrained NN without final softmax layer and get an intermediate representation of your images and save them to disk. And then use these representations to a shallow NN network, which can save you the time needed to run an image through all the layers
+  * Its like converting your images into vectors
+* Example 2:
+  * What if in the last example you have a lot of pictures (dataset) for your cats
+  * One thing you can do is to freeze few layers from the beginning of the pretrained network and learn the other weights in the network
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/8d73829e-2d68-4459-aec6-27b491812d3a.png" width="700" />
+
+  * Some other idea is to throw away the layers that aren't frozen and developed your own layers there
+* Example 3:
+  * If you have enough data, you can fine-tune all the layers in your pretrained network but don't random initialize the parameters, leave the learned parameters as it is and learn from there
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/0c6e4815-b4de-4c02-b167-9fc19e2144f4.png" width="700" />
+
+## Data Augmentation
 
