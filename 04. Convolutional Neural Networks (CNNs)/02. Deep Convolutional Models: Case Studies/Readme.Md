@@ -337,4 +337,40 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/dd800cf9-e6ed-44a4-ad71-63905a08777a.png" width="700" />
 
 ## State of Computer Vision
+* For a specific problem we may have either little data or a lot of data
+  * E.g., speech recognition problems have a big amount of data, while image recognition/classification has a medium amount of data; the object detection has a small amount of data
+* If your problem has a large amount of data, researchers tend to:
+  * Use simpler algorithms
+  * Less hand engineering
+* If you don't have that much data, researcher tend to:
+  * Try more hand engineering for the problem ("Hacks") e.g., choosing a more complex NN architecture
+* Two sources of knowledge:
+  * Labeled data (x,y)
+    * Use for supervised learning => building up the learning system
+  * Hand engineered features/network architecture/other components:
+    * Very difficult, very skillful task that requires a lot of insight
+* Because we haven't got that much data in a lot of computer vision problems (but the latest problems are getting more difficult and complex), we rely more on hand engineering
+  * As object detection has less data than image recognition, a more complex NN architectures will be applied for this topic
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c3f8ef9d-b039-4230-9b92-76f2b2488d35.png" width="700" />
+
+* Tips for doing well on benchmarks/winning competitions:
+  * Ensembling
+    * Train several networks independently and average their outputs (y_hat); requires lot of memory due to the requirement of storing each NN
+    * After you decide the best architecture for your problem, initialize some of that randomly and train them independently
+    * This can give you a push by 2%
+    * But this will slow down your production by the number of the ensembles
+    * People use this in competitions but few uses this in a real production
+  * Multi-crop at test time
+    * Run classifier on multiple versions of test versions (i.e. applying augmentation) and average results
+    * There is a technique called 10 crops that uses this
+    * This can give you a better result in the production
+
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/eead6ec1-4a9f-4c93-83f9-9b962325d9b2.png" width="700" />
+
+* Use open source code
+  * Use architectures of networks published in the literature
+  * Use open source implementations if possible
+  * Use pretrained models and fine-tune on your dataset
+
+## 
