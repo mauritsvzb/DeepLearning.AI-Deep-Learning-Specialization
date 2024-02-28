@@ -372,5 +372,3 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
   * Use architectures of networks published in the literature
   * Use open source implementations if possible
   * Use pretrained models and fine-tune on your dataset
-
-## 
