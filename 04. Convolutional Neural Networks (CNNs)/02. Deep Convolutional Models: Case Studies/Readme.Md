@@ -308,4 +308,33 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/0c6e4815-b4de-4c02-b167-9fc19e2144f4.png" width="700" />
 
 ## Data Augmentation
+* If data is increased, your deep NN will perform better. Data augmentation is one of the techniques that deep learning uses to increase the performance of a deep NN
+* The majority of computer vision applications requires more data
+* Some data augmentation methods that are used for computer vision tasks include:
+  * Mirroring (flip horizontal or vertical)
+  * Random cropping
+    * An issue with this technique is that you might take a wrong crop
+    * The solution to this would be to make your crops big enough
+  * Rotation
+  * Shearing
+  * Local warping
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2ea462dd-5983-4516-b683-e6a315f3ddeb.png" width="700" />
+
+  * Color shifting
+    * For example, we add to R, G, and B some distortions that will make the image identified as the same for the human but is different for the computer
+    * In practice the added value are pulled from some probability distributions
+    * Makes your algorithm more robust to changes of colors in images
+    * There is an algorithm which is called <b>PCA color augmentation</b> and decides the shifts needed automatically (detailed are in the AlexNet paper)
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/65aa7a58-6863-45c2-bd57-74232defef2e.png" width="700" />
+
+* Implementing distortions during training:
+  * You can use a different CPU thread to create distorted mini batches while you are training your NN
+* Data Augmentation also has some hyperparameters
+  * A good place to start is to find an open source data augmentation implementation and then use it or fine tune these hyperparameters
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/dd800cf9-e6ed-44a4-ad71-63905a08777a.png" width="700" />
+
+## State of Computer Vision
 
