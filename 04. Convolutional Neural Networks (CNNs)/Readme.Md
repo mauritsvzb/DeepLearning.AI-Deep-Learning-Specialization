@@ -14,8 +14,7 @@ You will:
 # 📂 Projects
 * [Week 1 - PA 1 - Convolutional Model: step by step](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/01.%20Foundations%20of%20Convolutional%20Neural%20Networks/Convolution_model_Step_by_Step_v1.ipynb)
 * [Week 1 - PA 2 - Convolutional Neural Networks: Application](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/01.%20Foundations%20of%20Convolutional%20Neural%20Networks/Convolution_model_Application.ipynb)
-* Week 2 - PA 1 - Keras - Tutorial - Happy House
-* Week 2 - PA 2 - Residual Networks
+* [Week 2 - PA 1 - Residual Networks](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/02.%20Deep%20Convolutional%20Models%3A%20Case%20Studies/Residual_Networks.ipynb)
 * Week 2 - PA 2 - Transfer Learning with MobileNet
 * Week 3 - PA 1 - Car detection with YOLO for Autonomous Driving
 * Week 3 - PA 2 - Image Segmentation Unet
