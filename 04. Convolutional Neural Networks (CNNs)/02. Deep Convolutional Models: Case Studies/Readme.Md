@@ -372,3 +372,25 @@ Discover some powerful practical tricks and methods used in deep CNNs, straight 
   * Use architectures of networks published in the literature
   * Use open source implementations if possible
   * Use pretrained models and fine-tune on your dataset
+
+## What you should remember:
+* Very deep "plain" networks don't work in practice because vanishing gradients make them hard to train
+* Skip connections help address the Vanishing Gradient problem and also make it easy for a ResNet block to learn an identity function
+* There are two main types of blocks: 
+  * Identity block
+  * Convolutional block
+* Very deep Residual Networks are built by stacking these blocks together
+* When calling image_data_set_from_directory(), specify the train/val subsets and match the seeds to prevent overlap
+* Use prefetch() to prevent memory bottlenecks when reading from disk
+* Give your model more to learn from with simple data augmentations like rotation and flipping
+* When using a pretrained model, it's best to reuse the weights it was trained on
+* MobileNetV2's unique features are
+  * <b>Depthwise separable convolutions</b> that provide lightweight feature filtering and creation
+  * <b>Input and output bottlenecks</b> that preserve important information on either end of the block
+* Depthwise separable convolutions deal with both spatial and depth (number of channels) dimensions
+* To adapt the classifier to new data: 
+  * Delete the top layer, 
+  * add a new classification layer, and 
+  * train only on that layer
+*  When freezing layers, avoid keeping track of statistics (like in the batch normalization layer)
+* Fine-tune the final layers of your model to capture high-level details near the end of the network and potentially improve accuracy
