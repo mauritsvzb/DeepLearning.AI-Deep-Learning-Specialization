@@ -55,7 +55,7 @@ Apply your new knowledge of CNNs to one of the hottest (and most challenging!) f
 ```
   * When object isn't presented:
     ```{python}
-Y = [
+    Y = [
            0   # Object isn't presented
            ?   # ? means we dont care with other values
            ?
