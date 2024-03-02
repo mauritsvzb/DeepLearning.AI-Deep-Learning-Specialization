@@ -52,7 +52,7 @@ Apply your new knowledge of CNNs to one of the hottest (and most challenging!) f
           1
           0
         ]
-```
+  ```
   * When object isn't presented:
     ```{python}
     Y = [
@@ -65,15 +65,15 @@ Apply your new knowledge of CNNs to one of the hottest (and most challenging!) f
            ?
            ?
          ]
-```
+    ```
 
 * The loss function for the Y we have created (Example of the square error):
-```{python}
-L(y',y) = {
-              (y1'-y1)^2 + (y2'-y2)^2 + ...     #if y1 = 1
-              (y1'-y1)^2      #if y1 = 0
-           }
-```
+  ```{python}
+  L(y',y) = {
+                (y1'-y1)^2 + (y2'-y2)^2 + ...     #if y1 = 1
+                (y1'-y1)^2      #if y1 = 0
+             }
+  ```
 
 * In practice we use logistic regression for Pc, log likely hood loss for classes, and squared error for the bounding box
 
