@@ -41,18 +41,18 @@ Apply your new knowledge of CNNs to one of the hottest (and most challenging!) f
       ]
 ```
   * When object is presented:
-  ```{python}
-  Y = [
-          1     # Object is present
-          0
-          0
-          100
-          100
-          0
-          1
-          0
-        ]
-  ```
+    ```{python}
+    Y = [
+            1     # Object is present
+            0
+            0
+            100
+            100
+            0
+            1
+            0
+          ]
+    ```
   * When object isn't presented:
     ```{python}
     Y = [
