@@ -80,4 +80,21 @@ Apply your new knowledge of CNNs to one of the hottest (and most challenging!) f
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a03fdcaa-fcaa-46e2-b056-b275c435b988.png" width="700" />
 
 ## Landmark Detection
+* In some of the computer vision problems you will need to output some points, a process called landmark detection
+* e.g., if you are working on a face-recognition problem, you might want some points on the face like corners of the eyes, corners of the mouth, and corners of the nose and so on. This can help in a lot of application like detecting the pose of the face.
+```{python}
+Y shape for the face recognition problem that needs to output 64 landmarks:
+  Y = [
+        THere_Is_A_face  # Probability of face is presented 0 or 1
+        l1x,
+        l1y,
+        ...
+        l64x,
+        l64y
+      ]
+```
+* Another application is when you need to get the skeleton of the person using different landmarks/points in the person which helps in some applications
+* Note: in your labeled data, if l1x,l1y is the left corner of left eye, all other l1x,l1y of the other examples has to be the same i.e., consistent!
+
+## Object Detection
 
