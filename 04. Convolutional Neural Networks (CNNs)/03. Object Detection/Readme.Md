@@ -142,11 +142,32 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 
   * This example has a total of 16 sliding windows that share computations
   * Paper: [Sermanet et al., 2014, OverFeat: Integrated recognition, localization and detection using convolutional networks](https://arxiv.org/abs/1312.6229)
+
+
+## Bounding Box Predictions
 * The weakness of the algorithm is that the position of the rectangle wont be so accurate. Maybe none of the rectangles is exactly on the object you want to recognize.
 
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6b4f2491-3673-48f7-a82a-7985c0cd1160.png" width="700" />
 
   * In red, the rectangle we want and in blue is the required car rectangle
+* A better algorithm than the one described in the last section is the YOLO algorithm
+  * Paper: [Redmon et al., 2015, You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/abs/1506.02640)
+* YOLO (You Only Look Once): developed back in 2015
+* YOLO basic idea:
 
-## Bounding Box Predictions
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/33520dd1-d76d-498a-8436-61d52d5f0191.png" width="700" />
 
+  1. Lets say we have an image of 100 X 100
+  2. Place a 3 x 3 window on the image. For smoother results use 19 x 19 for the 100 x 100
+  3. Apply the classification and localization algorithm we discussed in a previous section to each section of the grid. bx and by will represent the center point of the object in each grid and will be relative to the box so the range is between 0 and 1 while bh and bw will represent the height and width of the object which can be > 1
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1b78c1ef-6973-46a7-9248-a15da5aa0fa5.png" width="700" />
+
+  4. Do everything at once with the convolution sliding window. If Y shape is 1 x 1 x 8 as we discussed before then the output of the 100 x 100 image should be 3 x 3 x 8 which corresponds to 9 cell results
+  5. Merging the results using predicted localization mid point
+* We have a problem if we have found more than one object in one grid box
+* One of the best advantages that makes the YOLO algorithm popular is that it has great speed and a ConvNet implementation.
+* How is YOLO different from other Object detectors? YOLO uses a single CNN network for both classification and localizing the object using bounding boxes
+* In the next sections we will see some ideas that can make the YOLO algorithm better.
+
+##  
