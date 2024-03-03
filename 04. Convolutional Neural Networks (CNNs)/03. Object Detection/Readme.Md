@@ -77,7 +77,7 @@ Apply your new knowledge of CNNs to one of the hottest (and most challenging!) f
 
 * In practice we use logistic regression for Pc, log likely hood loss for classes, and squared error for the bounding box
 
-<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a03fdcaa-fcaa-46e2-b056-b275c435b988.png" width="700" />
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a03fdcaa-fcaa-46e2-b056-b275c435b988.png" width="700" />
 
 ## Landmark Detection
 * In some of the computer vision problems you will need to output some points, a process called landmark detection
@@ -97,4 +97,26 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 * Note: in your labeled data, if l1x,l1y is the left corner of left eye, all other l1x,l1y of the other examples has to be the same i.e., consistent!
 
 ## Object Detection
+* We will use a ConvNet to solve the object detection problem using a technique called 'sliding windows detection algorithm'
+  * E.g., let's say we are working on Car object detection
+  * First, we will train a ConvNet on cropped car images and non car images
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d74f0318-b2d6-4a25-bc6e-c0db3223e2b7.png" width="700" />
+
+  * After we finish training of this ConvNet, we will then use it with the sliding windows technique
+* Sliding windows detection algorithm:
+  * Decide a sliding window (rectangle) size
+  * Slide your window across the image, ensuring each region is covered (you can use whatever value for stride)
+  * For each window, feed the image into the ConvNet and decide it decide if there's a car or not
+  * Pick a larger window size and repeat the process from the previous 2 steps
+  * Store the rectangles that contain a car
+    * If two or more rectangles intersects choose the rectangle with the best accuracy.
+* Disadvantage of sliding window is the computation time
+  * Before the deep learning era, people used hand-crafted linear classifiers to classify an object and then used the sliding window technique. The linear classier make it a cheap computation. But in the deep learning era this is computationally expensive due to the complexity of the deep learning model
+  * To solve this problem, we can implement the sliding window detection algorithm with a convolutional approach
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/bcccf904-5572-4a23-a510-68f62d3bbb09.png" width="700" />
+
+## 
+
+## 
