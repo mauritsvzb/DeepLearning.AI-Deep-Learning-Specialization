@@ -117,6 +117,36 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/bcccf904-5572-4a23-a510-68f62d3bbb09.png" width="700" />
 
-## 
+## Convolutional Implementation of Sliding
+* Turning a FC layer into convolutional layers (predict image class from four classes):
 
-## 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c19fda5f-2e2f-4d15-8c83-b14a1065acd4.png" width="700" />
+
+  * As can be seen in the above image, we turned the FC layer into a Conv layer using a convolution with the width and height of the filter being the same as the width and height of the input
+* Convolution implementation of sliding windows:
+  * First, let's consider that the ConvNet you trained is like this (No FC: all is conv layers):
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/ae80c878-a67e-457f-81fd-ccdd463c29c9.png" width="700" />
+
+  * Say now we have a 16 x 16 x 3 image that we need to apply the sliding windows to. From the previous, we would run this ConvNet 4 times, each rectangle size will be 16 x 16.
+  * The convolution implementation will be as follows:
+  
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a88c6f86-1fb2-4235-a8f9-7f697a9a7389.png" width="700" />
+
+  * We have fed the image into the same ConvNet we just trained
+  * The left cell of the result "the blue square" will represent the the first sliding window of the normal implementation. The other squares will represent the other windows.
+  * This is more efficient because ConvNet now shares the computations between each of the four windows
+  * Another example would be:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/61922f8b-c183-4502-b476-529627d651eb.png" width="700" />
+
+  * This example has a total of 16 sliding windows that share computations
+  * Paper: [Sermanet et al., 2014, OverFeat: Integrated recognition, localization and detection using convolutional networks](https://arxiv.org/abs/1312.6229)
+* The weakness of the algorithm is that the position of the rectangle wont be so accurate. Maybe none of the rectangles is exactly on the object you want to recognize.
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6b4f2491-3673-48f7-a82a-7985c0cd1160.png" width="700" />
+
+  * In red, the rectangle we want and in blue is the required car rectangle
+
+## Bounding Box Predictions
+
