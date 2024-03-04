@@ -128,7 +128,7 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/ae80c878-a67e-457f-81fd-ccdd463c29c9.png" width="700" />
 
-  * Say now we have a 16 x 16 x 3 image that we need to apply the sliding windows to. From the previous, we would run this ConvNet 4 times, using a rectangle size of 14 x 14 with stride 2.
+  * Say now we have a 16 x 16 x 3 image from the test set that we want to apply the sliding windows to. From the previous, we would run this ConvNet 4 times, using a rectangle size of 14 x 14 with stride 2.
   * The convolution implementation will be as follows:
   
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a88c6f86-1fb2-4235-a8f9-7f697a9a7389.png" width="700" />
