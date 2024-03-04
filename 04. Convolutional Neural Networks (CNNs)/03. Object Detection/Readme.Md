@@ -30,7 +30,7 @@ Apply your new knowledge of CNNs to one of the hottest (and most challenging!) f
 * Defining the target label Y in classification with localization problem:
 ```{python}
   Y = [
-        Pc  # Probability of an object is presented
+        Pc  # Probability of an object is present
         bx  # Bounding box
         by  # Bounding box
         bh  # Bounding box
@@ -40,7 +40,7 @@ Apply your new knowledge of CNNs to one of the hottest (and most challenging!) f
         ...
       ]
 ```
-  * When object is presented:
+  * When object is present:
     ```{python}
     Y = [
             1     # Object is present
@@ -53,10 +53,10 @@ Apply your new knowledge of CNNs to one of the hottest (and most challenging!) f
             0
           ]
     ```
-  * When object isn't presented:
+  * When object isn't present:
     ```{python}
     Y = [
-           0   # Object isn't presented
+           0   # Object isn't present
            ?   # ? means we dont care with other values
            ?
            ?
@@ -106,7 +106,7 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
   * After we finish training of this ConvNet, we will then use it with the sliding windows technique
 * Sliding windows detection algorithm:
   * Decide a sliding window (rectangle) size
-  * Slide your window across the image, ensuring each region is covered (you can use whatever value for stride)
+  * Slide your window across the image (from left to right, top to bottom), ensuring each region is covered (you can use whatever value for stride)
   * For each window, feed the image into the ConvNet and decide it decide if there's a car or not
   * Pick a larger window size and repeat the process from the previous 2 steps
   * Store the rectangles that contain a car
