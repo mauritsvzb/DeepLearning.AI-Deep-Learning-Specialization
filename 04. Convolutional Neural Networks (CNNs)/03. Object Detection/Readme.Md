@@ -145,14 +145,14 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 
 
 ## Bounding Box Predictions
-* The weakness of the algorithm is that the position of the rectangle wont be so accurate. Maybe none of the rectangles is exactly on the object you want to recognize.
+* A weakness of the sliding window detection algorithm is that the position of the rectangle may not be that accurate. Maybe none of the rectangles is exactly on the object you aim to detect.
 
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6b4f2491-3673-48f7-a82a-7985c0cd1160.png" width="700" />
 
-  * In red, the rectangle we want and in blue is the required car rectangle
-* A better algorithm than the one described in the last section is the YOLO algorithm
+  * In red, the rectangle we want and in blue is the rectangle we get  from applying this algorithm
+* A better algorithm is the YOLO (You Only Look Once) algorithm
   * Paper: [Redmon et al., 2015, You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/abs/1506.02640)
-* YOLO (You Only Look Once): developed back in 2015
+* YOLO: developed back in 2015
 * YOLO basic idea:
 
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/33520dd1-d76d-498a-8436-61d52d5f0191.png" width="700" />
