@@ -173,4 +173,15 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 * How is YOLO different from other Object detectors? YOLO uses a single CNN network for both classification and localizing the object using bounding boxes
 * In the next sections we will see some ideas that can make the YOLO algorithm better.
 
-##  
+## Intersection Over Union
+*  Intersection Over Union is a function used to evaluate the object detection algorithm
+* It computes the size of intersection (area where both bounding boxes overlap) and divide it by the union (total area size of both bounding boxes). More generally, IoU is a measure of the overlap between two bounding boxes
+* For example:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/fbcf6a7b-997f-4c26-8598-5b417b0c06fa.png" width="700" />
+
+* The red is the labeled output and the purple is the predicted output
+* To compute Intersection Over Union, we first compute the union area of the two rectangles which is "the first rectangle + second rectangle", then compute the intersection area between these two rectangles.
+* Finally IOU = intersection area / Union area
+* If IOU >=0.5 then the algorithm is good. The best answer will be 1.
+* The higher the IOU the higher the accuracy
