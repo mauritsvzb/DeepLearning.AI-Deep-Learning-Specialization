@@ -187,3 +187,23 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
   * The best answer will be 1 i.e., bounding boxes completely overlap
   * Threshold value chosen rather arbitrarily, but  generally falls between 0.5 and 0.7
 * The higher the IOU the higher the accuracy
+
+## Non-Max Suppression
+* One of the problems we have discussed previously is that our algorithm (YOLO) can detect an object multiple times
+* Non-max Suppression is a way to make sure that YOLO detects the object just once
+* For example:
+  * Each car has two or more detections with different probabilities. This result came from the fact that some of the grid cellss thought that they have the center point of the object in their grid cell.
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d451d01f-afb3-465e-a802-130cfb8507bd.png" width="700" />
+
+* Non-max suppression algorithm details:
+  * Lets assume that we are targeting one class as an output class (so we can drop c1, c2, and c3 from output Y)
+  * Y shape should be `[Pc, bx, by, bh, hw]` where `Pc` is the probability if that object occurs
+  * Discard all boxes with `Pc < 0.6`
+  * While there are any remaining boxes:
+    * Pick the box with the highest Pc value and output that as a prediction (e.g., highlight the bounding box in the video)
+    * Discard any remaining boxes with IoU > 0.5 with that box output from the previous step i.e., any box with with an IoU > 0.5 gets suppressed (darkened color of bounding box in video)
+    * Repeat until you processed all bounding boxes (either box used for prediction or discard)
+* If there are multiple classes/object types c you want to detect, you should run the Non-max suppression c times, once for every output class.
+
+## Anchor Boxes
