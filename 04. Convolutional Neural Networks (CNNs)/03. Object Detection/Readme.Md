@@ -135,7 +135,10 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 
   * We have fed the image into the same ConvNet we just trained
   * The left cell of the result "the blue square" will represent the the first sliding window of the normal implementation. The other squares will represent the other windows  (slide right, slide down, slide right and down).
-  * This is more efficient because ConvNet now shares the computations between each of the four windows
+  * This is more efficient because ConvNet now shares a lot of the computations between each of the four windows, because the model combines all 4 computations into 1 forward propagation function
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/8350eab3-ad24-401a-8575-a5915f6185cc.png" width="700" />
+
   * Another example would be:
 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/61922f8b-c183-4502-b476-529627d651eb.png" width="700" />
