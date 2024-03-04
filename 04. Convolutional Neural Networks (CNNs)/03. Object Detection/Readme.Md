@@ -141,9 +141,9 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 
   * Another example would be:
 
-    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/61922f8b-c183-4502-b476-529627d651eb.png" width="700" />
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/ed589eb7-736d-43ed-9638-ad666afbe371.png" width="700" />
 
-  * This example has a total of 16 sliding windows that share computations
+  * This example applies all sliding windows simultaneously whereby the  CNN shares computations due to 1 forward prop, hopefully capturing the image successfully
   * Paper: [Sermanet et al., 2014, OverFeat: Integrated recognition, localization and detection using convolutional networks](https://arxiv.org/abs/1312.6229)
 
 
