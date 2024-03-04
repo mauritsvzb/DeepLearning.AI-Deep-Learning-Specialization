@@ -183,5 +183,7 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 * The red is the labeled output and the purple is the predicted output
 * To compute Intersection Over Union, we first compute the union area of the two rectangles which is "the first rectangle + second rectangle", then compute the intersection area between these two rectangles.
 * Finally IOU = intersection area / Union area
-* If IOU >=0.5 then the algorithm is good. The best answer will be 1.
+* If IOU >=0.5 then the algorithm is good. 
+  * The best answer will be 1 i.e., bounding boxes completely overlap
+  * Threshold value chosen rather arbitrarily, but  generally falls between 0.5 and 0.7
 * The higher the IOU the higher the accuracy
