@@ -233,4 +233,36 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
   * There are 3 objects associated in the same grid cell with only 2 anchor boxes
   * There are 2 objects associated with the same grid cell, and both of them have the same anchor box shape
 
+## YOLO Algorithm
+* YOLO is a state-of-the-art object detection model that is fast and accurate
+* Let's summarize the whole YOLO algorithm given an example:
+  * Construct the training set:
+    * Suppose we need to do object detection for our autonomous driver system. It needs to identify three classes:
+      * Pedestrian (Walks on ground)
+      * Car
+      * Motorcycle
+  * Suppose we decide to choose two anchor boxes, a taller one and a wide one (In practice, they use five or more anchor boxes handmade or generated using k-means
+  * Our labeled Y shape will be `[Ny, HeightOfGrid, WidthOfGrid, 16]`, where `Ny` is number of instances and each row (of size 16) is as follows:
+    * `[Pc, bx, by, bh, bw, c1, c2, c3, Pc, bx, by, bh, bw, c1, c2, c3]`
+  * Your dataset could be an image with a multiple labels and a rectangle for each label
+  * An example:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3e6473fc-19f5-4997-a74a-5e02cd0ae613.png" width="700" />
+
+  * We first initialize all of them to zeros and ?, then for each label and rectangle choose its closest grid point then the shape to fill it and then the best anchor point based on the IOU. so that the shape of Y for one image should be `[HeightOfGrid, WidthOfGrid, 16]`
+  * Train the labeled images on a Conv net. You should get an output of [HeightOfGrid, WidthOfGrid, 16] for our case
+  * To make predictions, run the Conv net on an image and run Non-max suppression algorithm for each class you have (in our case there are 3 classes)
+  * You could get something like that:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/78122e3e-a52b-4ed2-b09d-d5f01e08c1b6.png" width="700" />
+
+    * Total number of generated boxes are `grid_width * grid_height * no_of_anchors` = `3 x 3 x 2`
+  * By removing the low probability predictions you should have:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5673df76-6937-4f34-a247-f034d1b74a5b.png" width="700" />
+
+  * Then get the best probability followed by the IOU filtering:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2a04e405-5e76-427b-a149-3301a82114f7.png" width="700" />
+
 ## 
