@@ -261,7 +261,7 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5673df76-6937-4f34-a247-f034d1b74a5b.png" width="700" />
 
-  * Then get the best probability followed by the IOU filtering:
+  * Then get the best probability followed by repeating the non-max suppression as many times as you have number of classes:
 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2a04e405-5e76-427b-a149-3301a82114f7.png" width="700" />
 
