@@ -207,3 +207,30 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 * If there are multiple classes/object types c you want to detect, you should run the Non-max suppression c times, once for every output class.
 
 ## Anchor Boxes
+* What we've seen so far is that with YOLO only 1 object is detected
+* What if a grid cell detects multiple objects simultaneously? e.g., if a the center of a car and person are in the same grid cell?
+  * In practice this happens rarely (especially if you're using a fine grid)
+* We can use anchor boxes (see Redmon et al., 2015)
+  
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4278d94e-5fc9-44da-ab76-4529b5e791de.png" width="700" />
+
+  * If `Y = [Pc, bx, by, bh, bw, c1, c2, c3]` for 1 object detection, then we just repeat this once for detection 2 objects using 2 anchor boxes
+    
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e74ee191-ebed-44d1-96a8-4e06b9e65ad4.png" width="700" />
+
+  * You have to check where your object should be based on its rectangle closest to which anchor box
+
+* Anchor box example:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e74ee191-ebed-44d1-96a8-4e06b9e65ad4.png" width="700" />
+
+  * Where the car bounding box better matches anchor box 2 i.e., has higher overlap compared to with anchor box 1, and the human bounding box better matches anchor box 1
+* You may have two or more anchor boxes but you should know their shapes
+  * How do you choose the anchor boxes and people used to just choose them by hand. Maybe five or ten anchor box shapes that span a variety of shapes that cover the types of objects you seem to detect frequently.
+  * Better, more advanced way to choose anchor boxes is by using k-means clustering algorithm on your dataset to specify shapes of anchor boxes
+* Anchor boxes allows your algorithm to specialize, means in our case to easily detect fat, wider objects or tall, skinny ones
+* However, the algorithms doesn't handle well when
+  * There are 3 objects associated in the same grid cell with only 2 anchor boxes
+  * There are 2 objects associated with the same grid cell, and both of them have the same anchor box shape
+
+## 
