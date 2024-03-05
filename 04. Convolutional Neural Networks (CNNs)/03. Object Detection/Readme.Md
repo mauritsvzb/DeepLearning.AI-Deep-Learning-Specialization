@@ -354,5 +354,23 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
       <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4a625ccb-bb8c-434a-aece-699cc657a1e5.png" width="700" />
 
 ## U-Net Architecture Intuition
+* Semantic Segmentation Neural Network
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/288401c5-cc33-4e1d-ae22-444ad6594b8d.png" width="700" />
+
+* In the first half, we use `Normal Conv` layers to reduce feature representation
+  * You lose detailed spatial information, as the dimensions get smaller but deeper
+* In the second half, we use the `transpose Conv` layers to blow up feature representation
+  * Create the Segmentation Map
+* Also, we have a Skip connections between first-half blocks and second-half blocks
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d51a8467-e66e-4957-9e74-6a406099bdeb.png" width="700" />
+
+* Take home message from the above image is that the penultimate layer of the CNN needs to know whether pixels denote a cat or not. To be abble to do this, this layer requires 2 pieces of information:
+  1. Low-level spatial resolution but high-level contextual information (red) that it gets from the previous layer (which is why its dimensions are reduced
+  2. High-level spatial resolution but low-level feature information (blue) that covers every pixel, which it gets from the skip connection that copies over the activations block with proper dimensions from the 2nd layer to the penultimate layer
+
+## U-Net Architecture
+
 
 
