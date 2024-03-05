@@ -222,7 +222,7 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 
 * Anchor box example:
 
-  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e74ee191-ebed-44d1-96a8-4e06b9e65ad4.png" width="700" />
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e27df99c-9953-4c1b-95f1-ef3d0e26cbcb.png" width="700" />
 
   * Where the car bounding box better matches anchor box 2 i.e., has higher overlap compared to with anchor box 1, and the human bounding box better matches anchor box 1
 * You may have two or more anchor boxes but you should know their shapes
