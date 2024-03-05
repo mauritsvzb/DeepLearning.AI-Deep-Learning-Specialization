@@ -323,3 +323,36 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 
       <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/fb22ee3e-a077-488c-8493-8883493974d2.png" width="700" />
 
+## Transpose Convolutions
+* Normal Convolution vs Transpose Convolution
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c5b740ba-65ef-49cf-8f92-12e3ff7fdb1f.png" width="700" />
+
+* Tranpose Convolution:
+  * Intuition: 
+    * Input: 2x2
+    * Filter: 3x3
+    * Padding 1, Stride 2 for output
+    * Output: 4x4
+  * Mechanism:
+    * Place the filter on the output map
+    * Multiply the whole filter with corresponded input's entry (compared to the position of filter in output), except the padding positions
+
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/74c583c6-516f-4425-8a45-6b122a5ca3c6.png" width="700" />
+
+    * Shift the filter and keep multiply with the corresponded input's entry
+      * In the overlapping output entries, we add the value together
+
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/29730679-ad54-4640-9125-bf5829fa8b79.png" width="700" />
+
+    * Repeat for the others
+
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/ba6c14b6-7264-4bb3-b4c3-8428ae0f678e.png" width="700" />
+
+    * Finally, we have the output
+
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4a625ccb-bb8c-434a-aece-699cc657a1e5.png" width="700" />
+
+## U-Net Architecture Intuition
+
+
