@@ -371,6 +371,32 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
   2. High-level spatial resolution but low-level feature information (blue) that covers every pixel, which it gets from the skip connection that copies over the activations block with proper dimensions from the 2nd layer to the penultimate layer
 
 ## U-Net Architecture
+* U-Net:
+  * Paper: [Ronneberger et al., 2015, U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597)
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/928c8bc0-8909-4fb9-9c56-dc53147220fe.png" width="700" />
+
+
+  * Image input: [h x w x 3]
+  * The first-half (Encoder):
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d57b5f9c-4daa-4ba2-8ae1-279bf74d2bb4.png" width="700" />
+
+    * 2 Normal Conv + ReLU
+    * Max-pooling to decrease dimensions
+    * Repeat 4 times => Decrease dimension, increase channel
+  * The second-half (Decoder):
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3a438b2f-286f-4550-a1b4-f71a8a3e82cb.png" width="700" />
+
+    * Trans Conv to increase dimensions
+    * Skip-connection: Copy the last layer of each step from the first-half and concat with corresponded layer of the second-half
+    * 2 Normal Conv + ReLu
+    * Repeat 4 times => increase dimensions, decrease channels
+  * Finally, use a 1x1 ConV => Segmentation Map Output
+    * The final output have the size of [h x w x n_class]
+  * Detailed architecture: 
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/eb81936d-bd2c-443f-90c8-d3490f22da28".png" width="700" />
 
 
