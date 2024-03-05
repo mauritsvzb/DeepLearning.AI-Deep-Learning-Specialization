@@ -397,6 +397,7 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
     * The final output have the size of [h x w x n_class]
   * Detailed architecture: 
 
-    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/eb81936d-bd2c-443f-90c8-d3490f22da28".png" width="700" />
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7824f43b-a5bc-48ea-b00d-734471dfe2f4.png" width="700" />
+
 
 
