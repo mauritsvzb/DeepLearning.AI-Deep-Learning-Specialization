@@ -249,7 +249,7 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3e6473fc-19f5-4997-a74a-5e02cd0ae613.png" width="700" />
 
-  * We first initialize all of them to zeros and ?, then for each label and rectangle choose its closest grid point then the shape to fill it and then the best anchor point based on the IOU. so that the shape of Y for one image should be `[HeightOfGrid, WidthOfGrid, 16]`
+  * We first initialize all of them to zeros and ?, then for each label and rectangle choose its closest grid point then the shape to fill it and then the best anchor box based on the IOU. so that the shape of Y for one image should be `[HeightOfGrid, WidthOfGrid, 16]`
   * Train the labeled images on a Conv net. You should get an output of [HeightOfGrid, WidthOfGrid, 16] for our case
   * To make predictions, run the Conv net on an image and run Non-max suppression algorithm for each class you have (in our case there are 3 classes)
   * You could get something like that:
