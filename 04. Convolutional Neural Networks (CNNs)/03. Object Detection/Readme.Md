@@ -266,5 +266,60 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2a04e405-5e76-427b-a149-3301a82114f7.png" width="700" />
 
 ## Region Proposals (Optional)
+* R-CNN is another algorithm that that is used for object detection
+* YOLO is faster:
+  > Our model has several advantages over classifier-based systems. It looks at the whole image at test time so its predictions are informed by global context in the image. It also makes predictions with a single network evaluation unlike systems like R-CNN which require thousands for a single image. This makes YOLO extremely fast, more than 1000x faster than R-CNN and 100x faster than Fast R-CNN. See our paper for more details on the full system.
 
+* Still, one of the downsides of YOLO that it processes a lot of areas where no objects are present
+* Enter 'R-CNN', which stands for Regions with Conv Nets
+  * R-CNN tries to pick (propose) a few windows (regions) and run a Conv net (your confident classifier) on them
+  * The algorithm the R-CNN uses to pick windows is called a 'segmentation algorithm'. Outputs something like this:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/091f4433-00b1-4986-8e3c-283fd624f983.png" width="700" />
+
+  * If, for example, the segmentation algorithm produces 2000 blobs then we should run our classifier/CNN also 2000 times
+* There has been a lot of work regarding R-CNN tries to make it faster:
+  * R-CNN:
+    * Pro: proposes regions, classifies proposed regions one at a time, and outputs a label + bounding box
+    * Con: slow speed
+    * Paper: [Girshik et al., 2013. Rich feature hierarchies for accurate object detection and semantic segmentation](https://arxiv.org/abs/1311.2524)
+  * Fast R-CNN:
+    * Pro: proposes regions, uses convolution implementation of sliding windows to classify all the proposed regions, which makes the algorithm faster
+    * Con: still slow speed
+    * Paper: [Girshik, 2015, Fast R-CNN](https://arxiv.org/abs/1504.08083)
+  * Faster R-CNN:
+    * Pro: uses a convolutional network to propose regions, making this algorithm faster than predecessors
+    * Con: most of the implementation of faster R-CNN are still slower than YOLO
+    * Paper: [Ren et al., 2016, Faster R-CNN: Towards real-time object detection with region proposal networks](https://arxiv.org/abs/1506.01497)
+* Andrew Ng thinks that the idea behind YOLO is better than R-CNN, because you are able to do all the things in just one go instead of multiple steps
+
+## Semantic Segmentation with U-Net
+* Object Detection vs Semantic Segmentation
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7d8d9b02-7c20-4a37-aef8-cb6d57ea56c0.png" width="700" />
+
+  * Object Detection: only bounding box
+  * Semantic Segmentation: label every single pixel => more sophisticated
+    * U-Net Application in Medical prediction
+      * Chest X-Ray: [Novikow et al., 2017, Fully Convolutional Architectures for Multi-Class Segmentation in Chest Radiographs](https://arxiv.org/abs/1701.08816)
+      * Brain MRI: [Dong et al., 2017, Automatic Brain Tumor Detection and Segmentation Using U-Net Based Fully Convolutional Networks](https://arxiv.org/abs/1705.03820)
+* Per-pixel class label:
+  * 1 for car, 0 for not car
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/0dc03685-5a75-4ab2-9154-9e0d0ed7757b.png" width="700" />
+
+  * if we want finer resolution: 1 for car, 2 for building, 3 for road
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/22ffa65d-8341-430f-9d86-4f5bc8736e7c.png" width="700" />
+
+* Deep Learning for Semantic Segmentation:
+  * Let start with object recognition NN architecture
+    * First, we get rid of the last few layer (FC layer, Softmax)
+    * The dimensions of the image are getting smaller throughout the NN
+
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a717e357-c0c8-4014-9fcc-83797beaa4cb.png" width="700" />
+
+    * We have to blow up the height and width back to the original size, while the number of channels is reduced to normal, leading ultimately to a semantic segmentation map of image: A process called 'Tranpose Convolution'
+
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/fb22ee3e-a077-488c-8493-8883493974d2.png" width="700" />
 
