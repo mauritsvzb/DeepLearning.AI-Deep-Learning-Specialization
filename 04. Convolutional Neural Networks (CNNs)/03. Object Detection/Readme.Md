@@ -170,7 +170,8 @@ Y shape for the face recognition problem that needs to output 64 landmarks:
   5. Merging the results using predicted localization mid point
 * We have a problem if we have found more than one object in one grid box
 * One of the best advantages that makes the YOLO algorithm popular is that it has great speed and a ConvNet implementation.
-* How is YOLO different from other Object detectors? YOLO uses a single CNN network for both classification and localizing the object using bounding boxes
+* How is YOLO different from other Object detectors? YOLO uses a single CNN network for both classification and localizing the object using bounding boxes 
+  * i.o.w.: This algorithm "only looks once" at the image in the sense that it requires only one forward propagation pass through the network to make predictions
 * In the next sections we will see some ideas that can make the YOLO algorithm better.
 
 ## Intersection Over Union
