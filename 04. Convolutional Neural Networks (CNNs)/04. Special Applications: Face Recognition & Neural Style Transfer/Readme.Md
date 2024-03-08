@@ -43,8 +43,19 @@ Explore how CNNs can be applied to multiple fields, including art generation and
 
 <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/bc188b88-d5ee-43ae-b181-8dbcbf5bb7b7.png" width="700" />
 
+## Siamese Network
+* We will implement the similarity function `d` using a type of NNs called **Siamease Network** in which we can pass multiple inputs to two or more networks with the same architecture and parameters
+* Siamese network architecture are as the following:
 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a3b4e5c4-e95c-4ca8-9cb4-a535fe9542bd.png" width="700" />
 
+* We make 2 identical conv nets which encode an input image into a vector. In the above image the vector shape is (128, )
+*  The loss function will be d(x1, x2) = || f(x1) - f(x2) ||^2
+   * If X1, X2 are the same person, we want d to be low
+   * If X1, X2 are different persons, we want d to be high
+* Paper: [Taigman et al., 2014, DeepFace closing the gap to human level performance](https://www.cv-foundation.org/openaccess/content_cvpr_2014/html/Taigman_DeepFace_Closing_the_2014_CVPR_paper.html)
+
+## Triplet Loss
 
 <img src=".png" width="700" />
 
@@ -55,3 +66,4 @@ Explore how CNNs can be applied to multiple fields, including art generation and
 
 
 # Neural Style Transfer
+## 
