@@ -50,12 +50,51 @@ Explore how CNNs can be applied to multiple fields, including art generation and
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a3b4e5c4-e95c-4ca8-9cb4-a535fe9542bd.png" width="700" />
 
 * We make 2 identical conv nets which encode an input image into a vector. In the above image the vector shape is (128, )
-*  The loss function will be d(x1, x2) = || f(x1) - f(x2) ||^2
+*  The loss function will be `d(x1, x2) = || f(x1) - f(x2) ||^2`
    * If X1, X2 are the same person, we want d to be low
    * If X1, X2 are different persons, we want d to be high
 * Paper: [Taigman et al., 2014, DeepFace closing the gap to human level performance](https://www.cv-foundation.org/openaccess/content_cvpr_2014/html/Taigman_DeepFace_Closing_the_2014_CVPR_paper.html)
 
 ## Triplet Loss
+* Triplet Loss is one of the loss functions we can use to solve the similarity distance in a Siamese Network
+* Our learning objective in the triplet loss function is to get the distance between an Anchor image (A) and a positive (P) or a negative (N) image (hence 'triplet')
+   * Positive means same person, while negative means different person.
+* Formally we want:
+   * Positive distance to be less than negative distance, and actually much less (defined by the **margin** parameter 'alpha')
+
+     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b7a70315-adb6-40ca-b218-df276877440a.png" width="700" />
+
+   * The margin alpha pushes the anchor-positive pair and the anchor-negative pair further away from each other, forcing a higher confidence that pictures are either the same or different. So either the distance between A and P need to go down, or between A and N to go up.
+
+* Final Loss function:
+   * Given 3 images (A, P, N):
+      * `L(A, P, N) = max(||f(A) - f(P)||^2  - ||f(A) - f(N)||^2 + alpha , 0)`
+      * `J = Sum(L(A[i], P[i], N[i]))` for all triplets of images
+   * You need multiple images of the same person in your dataset. Then get some triplets out of your dataset. So the dataset should be big enough.
+      * i.e. 10k pictures of 1k person for the training set
+      * After training, you can use 1 picture per person for one-shot learning
+* Choosing the triplets A, P, N:
+   * During training if A, P, N are chosen randomly (Subjet to A and P are the same and A and N aren't the same) then one of the problems this constrain is easily satisfied
+      * `d(A, P) + alpha <= d(A, N)`
+      * So the NN wont learn much
+   * What we want to do is choose triplets that are hard to train on
+      * So for all the triplets we want this to be satisfied:
+         * `d(A, P) + alpha <= d(A, N)`
+         * `d(A, P) ~= d(A, N)`
+            => increase the computational efficiency of the learning algorithm
+      
+           <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/73bb4b24-cbef-4d07-83d9-cb3a90cbadd0.png" width="700" />
+
+      * This can be achieved by i.e. choosing people with high similar appearance for P and N
+      * Details of choosing triplets: [Schroff et al.,2015, FaceNet: A unified embedding for face recognition and clustering](https://arxiv.org/abs/1503.03832)
+* Commercial recognition systems are trained on a large datasets like 10/100 million images
+* There are a lot of pretrained models and parameters online for face recognition
+
+## 
+
+
+
+
 
 <img src=".png" width="700" />
 
