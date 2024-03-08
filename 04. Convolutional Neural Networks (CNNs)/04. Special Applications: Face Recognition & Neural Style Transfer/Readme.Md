@@ -87,8 +87,8 @@ Explore how CNNs can be applied to multiple fields, including art generation and
 
       * This can be achieved by i.e. choosing people with high similar appearance for P and N
       * Details of choosing triplets: [Schroff et al.,2015, FaceNet: A unified embedding for face recognition and clustering](https://arxiv.org/abs/1503.03832)
-* Commercial recognition systems are trained on a large datasets like 10/100 million images
-* There are a lot of pretrained models and parameters online for face recognition
+* Commercial recognition systems are trained on a large datasets like 10/100 million images that are difficult to acquire
+* There are a lot of pretrained models and parameters online for face recognition to circumvent the potential issue of obtaining such large data sets
 
 ## 
 
