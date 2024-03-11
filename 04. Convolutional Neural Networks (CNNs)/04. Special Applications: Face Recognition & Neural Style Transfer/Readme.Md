@@ -113,9 +113,16 @@ Explore how CNNs can be applied to multiple fields, including art generation and
    * Create a training set of pair of images where y = 1 when 2 pictures come from the same person and y = 0 otherwise
    * Then, training the Siamese neural network like normal with back progagation
 
-##
+## What is Neural Style Transfer?
+* Technique in computer vision and image processing that combines the content of one image (C) with the artistic style of another image (S)
+* This method uses deep NN to analyze and extract the content and style features of two input images and then generates a new image (G) that merges these features
 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/72c4f933-11ca-4076-aee5-eca99ac11829.png" width="700" />
 
+* In order to implement this you need to look at the features extracted by the Conv net at the shallower and deeper layers
+* Reminder:  The idea of using a network trained on a different task and applying it to a new task is called transfer learning
+
+## 
 
 
 <img src=".png" width="700" />
