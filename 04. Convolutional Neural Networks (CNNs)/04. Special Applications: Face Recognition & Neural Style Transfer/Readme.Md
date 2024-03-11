@@ -127,7 +127,7 @@ Explore how CNNs can be applied to multiple fields, including art generation and
 *  Visualizing what a deep network is learning:
    * Given this AlexNet like Conv net:
 
-     <img src=https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b73a76a1-a564-49d5-8520-15416baf80dd".png" width="700" />
+     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b73a76a1-a564-49d5-8520-15416baf80dd".png" width="700" />
 
    * Pick a unit in layer l. Find the 9 image patches that maximize that unit's activation
       * Notice that a hidden unit in layer 1 will see a relatively small portion of the NN, so if you plotted it it will match a small image in the shallower layers, while a larger image can be seen by a unit in deeper layers
@@ -140,6 +140,34 @@ Explore how CNNs can be applied to multiple fields, including art generation and
 * The first layer was created using the weights of the first layer; other images are generated using the receptive fields in the image that triggered the unit to produce maximal activation values
 * Paper: [Zeiler and Fergus., 2013, Visualizing and understanding convolutional networks](https://arxiv.org/abs/1311.2901)
 
-## 
+## Cost Function
+* We will define a cost function for the generated image that calculates how good the image is
+* Give a content image C, a style image S, and a generated image G:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/fa4ef091-e37d-4c58-9d88-067aa8e841e5.png" width="700" />
+
+  * J_content(C, G) measures how similar the content is between the content image C and the generated image G
+  * J_style(S, G) measures how similar the style is between image S and image G
+    * alpha and beta are relative weighting to the similarity and these are hyperparameters
+  * Paper: [Gatys et al., 2015, A neural algorithm of artistic style](https://arxiv.org/abs/1508.06576)
+* How to find the generated image G:
+   * Initiate G randomly e.g., G: 100 x 100 x 3
+   * Use gradient descent to minimize J(G) i.e., `G = G - dG` 
+      * We compute the gradient image and use gradient decent to minimize the cost function
+   * The iterations might be as the following image by minimizing the cost function:
+      * To Generate this:
+
+        <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c25b393e-b812-4741-a250-91eb63de8332.png" width="700" />
+
+      * You will go through this:
+
+        <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/577dd182-a4f3-4852-9dbb-f5e1468e23d9.png" width="700" />
+
+   * Note that the pixel values of G are updated after each iteration of the optimization algorithm
+
+## Content Cost Function
+
+
+
 
 <img src=".png" width="700" />
