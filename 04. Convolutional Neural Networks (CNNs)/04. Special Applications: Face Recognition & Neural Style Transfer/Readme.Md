@@ -113,6 +113,7 @@ Explore how CNNs can be applied to multiple fields, including art generation and
    * Create a training set of pair of images where y = 1 when 2 pictures come from the same person and y = 0 otherwise
    * Then, training the Siamese neural network like normal with back progagation
 
+# Neural Style Transfer
 ## What is Neural Style Transfer?
 * Technique in computer vision and image processing that combines the content of one image (C) with the artistic style of another image (S)
 * This method uses deep NN to analyze and extract the content and style features of two input images and then generates a new image (G) that merges these features
@@ -122,16 +123,23 @@ Explore how CNNs can be applied to multiple fields, including art generation and
 * In order to implement this you need to look at the features extracted by the Conv net at the shallower and deeper layers
 * Reminder:  The idea of using a network trained on a different task and applying it to a new task is called transfer learning
 
-## 
+## What are deep ConvNets learning?
+*  Visualizing what a deep network is learning:
+   * Given this AlexNet like Conv net:
 
+     <img src=https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b73a76a1-a564-49d5-8520-15416baf80dd".png" width="700" />
+
+   * Pick a unit in layer l. Find the 9 image patches that maximize that unit's activation
+      * Notice that a hidden unit in layer 1 will see a relatively small portion of the NN, so if you plotted it it will match a small image in the shallower layers, while a larger image can be seen by a unit in deeper layers
+   * Repeat for other units and layers
+* It turns out that layer 1 is learning the low level representations like colors and edges
+   * You will find out that as you go deeper into the NN, each layer is learning increasingly more complex representations
+
+     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4a09b169-a704-45e8-b47c-8ef1d220cb8f.png" width="700" />
+
+* The first layer was created using the weights of the first layer; other images are generated using the receptive fields in the image that triggered the unit to produce maximal activation values
+* Paper: [Zeiler and Fergus., 2013, Visualizing and understanding convolutional networks](https://arxiv.org/abs/1311.2901)
+
+## 
 
 <img src=".png" width="700" />
-
-
-
-
-
-
-
-# Neural Style Transfer
-## 
