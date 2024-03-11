@@ -70,6 +70,7 @@ Explore how CNNs can be applied to multiple fields, including art generation and
    * Given 3 images (A, P, N):
       * `L(A, P, N) = max(||f(A) - f(P)||^2  - ||f(A) - f(N)||^2 + alpha , 0)`
       * `J = Sum(L(A[i], P[i], N[i]))` for all triplets of images
+      * the max() function above ensures that the distance function minimim value cannot be lower than 0
    * You need multiple images of the same person in your dataset. Then get some triplets out of your dataset. So the dataset should be big enough.
       * i.e. 10k pictures of 1k person for the training set
       * After training, you can use 1 picture per person for one-shot learning
@@ -90,8 +91,29 @@ Explore how CNNs can be applied to multiple fields, including art generation and
 * Commercial recognition systems are trained on a large datasets like 10/100 million images that are difficult to acquire
 * There are a lot of pretrained models and parameters online for face recognition to circumvent the potential issue of obtaining such large data sets
 
-## 
+## Face Verification and Binary Classification
+* Triplet loss is one way to learn the parameters of a conv net for face recognition
+* There's another way to learn these parameters as a straight binary classification problem
+   *  Learning the similarity function another way:
 
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/bda9b9ea-ed57-46cd-8fbd-e4b7804ae892.png" width="700" />
+
+      * The final layer is a sigmoid layer
+      * Then Y_hat = Sigmoid( w<sub>i</sub> * | f(x_i) - f(x_j) | + b)
+      * Some other similarities can used instead e.g., Chi-square similarity (green formula in  below image)
+   * Paper: Taigman et al., 2014, DeepFace closing the gap to human level performance
+* A good performance/deployment trick:
+   * Pre-compute all the images that you are using as a comparison to the vector f(x_j)
+   * When a new image needs to be compared, get its vector f(x_i), then compare it to all the pre-computed vectors in the data base and pass the 'difference' fector to the sigmoid function (as above)
+   * This version works as well as the triplet loss function
+
+     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/dc89c5a3-4949-4f0b-9eb1-1b3f6ec980d1.png" width="700" />
+
+* Face verification supervised learning
+   * Create a training set of pair of images where y = 1 when 2 pictures come from the same person and y = 0 otherwise
+   * Then, training the Siamese neural network like normal with back progagation
+
+##
 
 
 
