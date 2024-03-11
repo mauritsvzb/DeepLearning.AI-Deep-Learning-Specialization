@@ -218,5 +218,35 @@ Explore how CNNs can be applied to multiple fields, including art generation and
 
    * The overall J(G) = alpha * J<sub>content</sub>(C, G) + beta * J<sub>style</sub>(S, G)
 
+## 1D and 3D Generalizations
+* So far we have used the Conv nets for images which are 2D, but Conv nets can work with 1D and 3D data as well
+* 1D data comes from a lot of resources e.g., waves, sounds, heartbeat signals
+   * In most of the applications that uses 1D data we use Recurrent Neural Network RNN (next and final course)
 
-<img src=".png" width="700" />
+     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1b8947d9-4c31-4f23-a9c9-cd20840c1104.png" width="700" />
+
+* 3D data also are available in some applications like CT scan, video processing...
+
+   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7f1dd829-48e2-4639-a496-ca708ac74349.gif" width="700" />
+
+   * An example of 1D convolution:
+      * Input shape: (14 x 1)
+      * Applying 16 filters with F = 5 , S = 1
+      * Output shape will be (10 x 16)
+      * Applying 32 filters with F = 5, S = 1
+      * Output shape will be (6 x 32)
+      * The general equation (N - F)/S + 1 can be applied here but here it gives a vector rather than a 2D matrix.
+   * An example of 2D convolution:
+      * Input shape: (14 x 14 x 1)
+      * Applying 16 filters with F = 5 , S = 1
+      * Output shape will be (10 x 10 x 16)
+      * Applying 32 filters with F = 5, S = 1
+      * Output shape will be (6 x 6 x 32)
+   * Example of 3D convolution:
+      * Input shape: (14 x 14 x 14 x 1)
+      * Applying 16 filters with F = 5 , S = 1
+      * Output shape will be (10 x 10 x 10 x 16)
+      * Applying 32 filters with F = 5, S = 1
+      * Output shape will be (6 x 6 x 6 x 32)
+
+##
