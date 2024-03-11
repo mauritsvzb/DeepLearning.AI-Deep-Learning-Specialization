@@ -176,6 +176,48 @@ Explore how CNNs can be applied to multiple fields, including art generation and
    * If `a[l](C)` and `a[l](G)` are similar, then both images have a similar content
    * The cost function then becomes: J_content(C, G) at layer l = `|| a[l](C) - a[l](G) ||^2`
 
+## Style Cost Function
+* What is the meaning of 'the **_style_** of an image'?
+   * Let's say you have input image and a conv net like this:
+
+     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/129d5f12-c5a5-4ba1-ac37-65ad9898238f.png" width="700" />
+
+   * And let's say you are using layer l's activation to measure style
+   * We define style as the correlation (actually: cross-variance) among activations across channels in this layer L activation
+      * That means given an activation like this:
+
+        <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e55f9d31-f8fa-45d4-8e19-1518a8444f98.png" width="700" />
+
+      * How strongly correlated are the red channel and the yellow channel?
+         * Correlated means that if a characteristic appeared in a specific channel, another specific characteristic will appear with it (depend on each other)
+         * Uncorrelated means if a characteristic appeared in a specific channel doesn't mean that another characteristic will consistently appear (Not depend on each other)
+
+          <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7d15a0b8-c89e-4015-bff1-9cf005d4fe57.png" width="700" />
+
+      * The correlation tells you how a components might co-occur or not in the same image
+   * The correlation of style image channels should appear in the generated image channels
+   * Style matrix (Gram matrix):
+      * Let `a[l](i,j,k)` be the activation at (i,j,k) with `(i=H, j=W, k=C)`
+      * Also `G[l]` is matrix of shape `n_c[l] x n_c[l]`
+         * We call this matrix style Gram matrix
+         * In this matrix, each cell will tell us how correlated is a channel to another channel
+            * `G[l](k,k')` will measure how correlated are the activations between channel `k` and channel `k'` at layer `l` where `k,k' = 1..n_c`
+      * To populate the matrix, we use these equations to compute style matrix of the style image and the generated image
+         * As it appears, it's the sum of the multiplication of each member in the matrix
+
+           <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b7c165c0-0bc1-441c-9286-145b923b12af.png" width="700" />
+
+            * Note: The second factor of second fomular should be `a[l](i,j,k')` on the above image
+
+   * Then, the cost function `J_style(S, G)` at layer l will be:
+      * `J_style(S, G)[l] = 1/(...) * ||G[l](S) - G[l](G)||^2_F`
+
+        <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/8b07fc7b-f6f2-444e-bb86-5c8861e9cef4.png" width="700" />
+
+   * Finally, the overall J_style(S, G) will be:
+      * `J_style(S, G) = Sum(lamda[l]*J_style(S, G)[l] # for all layers)`
+
+
 
 
 <img src=".png" width="700" />
