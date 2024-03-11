@@ -186,7 +186,7 @@ Explore how CNNs can be applied to multiple fields, including art generation and
    * We define style as the correlation (actually: cross-variance) among activations across channels in this layer L activation
       * That means given an activation like this:
 
-        <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e55f9d31-f8fa-45d4-8e19-1518a8444f98.png" width="700" />
+        <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e55f9d31-f8fa-45d4-8e19-1518a8444f98.png" width="300" />
 
       * How strongly correlated are the red channel and the yellow channel?
          * Correlated means that if a characteristic appeared in a specific channel, another specific characteristic will appear with it (depend on each other)
