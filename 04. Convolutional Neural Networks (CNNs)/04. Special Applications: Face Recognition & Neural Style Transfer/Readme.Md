@@ -210,14 +210,13 @@ Explore how CNNs can be applied to multiple fields, including art generation and
             * Note: The second factor of second fomular should be `a[l](i,j,k')` on the above image
 
    * Then, the cost function `J_style(S, G)` at layer l will be:
-      * `J_style(S, G)[l] = 1/(...) * ||G[l](S) - G[l](G)||^2_F`
 
         <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/8b07fc7b-f6f2-444e-bb86-5c8861e9cef4.png" width="700" />
 
-   * Finally, the overall J_style(S, G) will be:
+   * Finally, the J_style(S, G) will be:
       * `J_style(S, G) = Sum(lamda[l]*J_style(S, G)[l] # for all layers)`
 
-
+   * The overall J(G) = alpha * J<sub>content</sub>(C, G) + beta * J<sub>style</sub>(S, G)
 
 
 <img src=".png" width="700" />
