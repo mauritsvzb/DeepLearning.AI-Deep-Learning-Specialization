@@ -172,9 +172,9 @@ Explore how CNNs can be applied to multiple fields, including art generation and
    * If we choose l to be small (like layer 1), we will force the network to get similar output to the original content image
    * In practice, l is typically not too shallow and not too deep but somewhere in the middle
    * Use pre-trained ConvNet (e.g., VGG network)
-   * Let a[l](C) and a[l](G) be the activations of layer l on both the images
-   * If a[l](C) and a[l](G) are similar, then both images have a similar content
-   * The cost function then becomes: J_content(C, G) at layer l = ||a[l](C) - a[l](G)||^2
+   * Let `a[l](C)` and `a[l](G)` be the activations of layer l on both the images
+   * If `a[l](C)` and `a[l](G)` are similar, then both images have a similar content
+   * The cost function then becomes: J_content(C, G) at layer l = `|| a[l](C) - a[l](G) ||^2`
 
 
 
