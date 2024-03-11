@@ -166,7 +166,15 @@ Explore how CNNs can be applied to multiple fields, including art generation and
    * Note that the pixel values of G are updated after each iteration of the optimization algorithm
 
 ## Content Cost Function
-
+* In the previous section, we showed that we need separate cost functions for the content image as well as the style image to measure how similar images are to each other
+* Let's use an example
+   * Say you use hidden layer l to compute content cost
+   * If we choose l to be small (like layer 1), we will force the network to get similar output to the original content image
+   * In practice, l is typically not too shallow and not too deep but somewhere in the middle
+   * Use pre-trained ConvNet (e.g., VGG network)
+   * Let a<sup>[l](C)</sup> and a<sup>[l](G)</sup> be the activation of layer l on the images
+   * If a<sup>[l](C)</sup> and a<sup>[l](G)</sup> are similar, then both images have similar content
+   * So the J_content(C, G) function becomes at layer l = ||a<sup>[l](C)</sup> - a<sup>[l](G)</sup>||<sup>2</sup>
 
 
 
