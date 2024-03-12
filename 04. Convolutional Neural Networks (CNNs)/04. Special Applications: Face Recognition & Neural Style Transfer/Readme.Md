@@ -127,7 +127,7 @@ Explore how CNNs can be applied to multiple fields, including art generation and
 *  Visualizing what a deep network is learning:
    * Given this AlexNet like Conv net:
 
-     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b73a76a1-a564-49d5-8520-15416baf80dd".png" width="700" />
+     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b73a76a1-a564-49d5-8520-15416baf80dd.png" width="700" />
 
    * Pick a unit in layer l. Find the 9 image patches that maximize that unit's activation
       * Notice that a hidden unit in layer 1 will see a relatively small portion of the NN, so if you plotted it it will match a small image in the shallower layers, while a larger image can be seen by a unit in deeper layers
