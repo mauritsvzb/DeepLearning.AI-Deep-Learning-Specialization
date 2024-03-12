@@ -17,7 +17,7 @@ This repository contains documentation and resources used to complete the certif
   * Train test sets, analyze variance for deep learning applications, use standard techniques and optimization algorithms, and build neural networks in TensorFlow 
 * ✅ [03. Structuring Machine Learning Project](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/tree/main/03.%20Structuring%20Machine%20Learning%20Project)
   * Use strategies for reducing errors in machine learning systems, understand complex machine learning settings, and apply end-to-end, transfer, and multi-task learning.
-* [04. Convolutional Neural Networks (CNNs)](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/tree/main/04.%20Convolutional%20Neural%20Networks%20(CNNs))
+* ✅ [04. Convolutional Neural Networks (CNNs)](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/tree/main/04.%20Convolutional%20Neural%20Networks%20(CNNs))
   * Build a convolutional neural network (CNN) and apply it to detection and recognition tasks, use neural style transfer to generate art, and apply algorithms to image and video data
 * [05. Sequence Models](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/tree/main/05.%20Sequence%20Models)
   * Build and train recurrent neural network (RNN), work with natural language processing (NLP) and Word Embeddings, and use HuggingFace tokenizers and transformer models to perform NER and Question Answering
@@ -39,3 +39,5 @@ Here are some references of lecture notes and reviews drawn by some communities,
 
 # 🏆 Certificates
 To verify the certificates, click the images to follow the links:
+
+
