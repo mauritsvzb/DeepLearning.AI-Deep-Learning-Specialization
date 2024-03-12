@@ -19,7 +19,7 @@ You will:
 * [Week 3 - PA 1 - Car detection with YOLO for Autonomous Driving](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/03.%20Object%20Detection/Autonomous_driving_application_Car_detection.ipynb)
 * [Week 3 - PA 2 - Image Segmentation Unet](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/03.%20Object%20Detection/Image_segmentation_Unet_v2.ipynb)
 * [Week 4 - PA 1 - Face Recognition](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/04.%20Special%20Applications%3A%20Face%20Recognition%20%26%20Neural%20Style%20Transfer/Face_Recognition.ipynb)
-* Week 4 - PA 2 - Art Generation with Neural Style Transfer
+* [Week 4 - PA 2 - Art Generation with Neural Style Transfer](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/04.%20Special%20Applications%3A%20Face%20Recognition%20%26%20Neural%20Style%20Transfer/Art_Generation_with_Neural_Style_Transfer_1.ipynb)
 
 
 # 📄 References
