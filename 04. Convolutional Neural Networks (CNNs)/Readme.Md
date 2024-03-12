@@ -16,10 +16,11 @@ You will:
 * [Week 1 - PA 2 - Convolutional Neural Networks: Application](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/01.%20Foundations%20of%20Convolutional%20Neural%20Networks/Convolution_model_Application.ipynb)
 * [Week 2 - PA 1 - Residual Networks](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/02.%20Deep%20Convolutional%20Models%3A%20Case%20Studies/Residual_Networks.ipynb)
 * [Week 2 - PA 2 - Transfer Learning with MobileNet](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/02.%20Deep%20Convolutional%20Models%3A%20Case%20Studies/Transfer_learning_with_MobileNet_v1.ipynb)
-* Week 3 - PA 1 - Car detection with YOLO for Autonomous Driving
-* Week 3 - PA 2 - Image Segmentation Unet
-* Week 4 - PA 1 - Art Generation with Neural Style Transfer
-* Week 4 - PA 2 - Face Recognition
+* [Week 3 - PA 1 - Car detection with YOLO for Autonomous Driving](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/03.%20Object%20Detection/Autonomous_driving_application_Car_detection.ipynb)
+* [Week 3 - PA 2 - Image Segmentation Unet](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/03.%20Object%20Detection/Image_segmentation_Unet_v2.ipynb)
+* [Week 4 - PA 1 - Face Recognition](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/04.%20Special%20Applications%3A%20Face%20Recognition%20%26%20Neural%20Style%20Transfer/Face_Recognition.ipynb)
+* Week 4 - PA 2 - Art Generation with Neural Style Transfer
+
 
 # 📄 References
 
