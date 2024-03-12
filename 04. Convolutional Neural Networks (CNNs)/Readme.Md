@@ -26,7 +26,7 @@ You will:
 
 # 🏆 Certificates 
 To verify the certificates, click the images to follow the links:
-
+[<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/56aef1dc-5998-445c-8243-d486e919a052.png" width="700">](https://coursera.org/share/7817eea2624196aa6b03565be6e36db7)
 
 
 
