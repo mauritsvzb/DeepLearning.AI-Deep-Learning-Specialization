@@ -254,3 +254,19 @@ Explore how CNNs can be applied to multiple fields, including art generation and
 * Triplet loss is an effective loss function for training a neural network to learn an encoding of a face image
 * The same encoding can be used for verification and recognition. Measuring distances between two images' encodings allows you to determine whether they are pictures of the same person
 
+* The content cost takes a hidden layer activation of the neural network, and measures how different a<sup>(G)</sup> and a<sup>(G)</sup> are
+* When you minimize the content cost later, this will help make sure G has similar content to C
+
+* The style of an image can be represented using the Gram matrix of a hidden layer's activations
+* You get even better results by combining this representation from multiple different layers
+* This is in contrast to the content representation, where usually using just a single hidden layer is sufficient
+* Minimizing the style cost will cause the image G to follow the style of the image S
+
+* The total cost is a linear combination of the content cost 𝐽𝑐𝑜𝑛𝑡𝑒𝑛𝑡(𝐶,𝐺) and the style cost 𝐽𝑠𝑡𝑦𝑙𝑒(𝑆,𝐺)
+* 𝛼 and 𝛽 are hyperparameters that control the relative weighting between content and style
+
+* Neural Style Transfer (NST) is an algorithm that, given a content image C and a style image S, can generate an artistic image
+* NST uses representations (hidden layer activations) based on a pretrained ConvNet
+* The content cost function is computed using one hidden layer's activations
+* The style cost function for one layer is computed using the Gram matrix of that layer's activations. The overall style cost function is obtained using several hidden layers.
+* Optimizing the total cost function results in synthesizing new images.
