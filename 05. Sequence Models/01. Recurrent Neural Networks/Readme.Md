@@ -110,7 +110,7 @@ Discover recurrent neural networks, a type of model that performs extremely well
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/720878fe-add3-49ea-89b8-77caa2f076d0.png" width="300" height="400" />
 
 * But this notation is harder to interpret. It's easier to roll this drawings to the unrolled version shown in the previous image
-* In the discussed RNN architecture above, the current output ŷ</sup><t></sup> depends only on the previous inputs and activations i.e. the prediction on ŷ<sup><3></sup> can be made with the information from x<sup><3></sup>, x<sup><2></sup> and x<sup><1></sup>, but not from x<sup><4></sup> and so on...
+* In the discussed RNN architecture above, the current output ŷ</sup>< t ></sup> depends only on the previous inputs and activations i.e. the prediction on ŷ<sup><3></sup> can be made with the information from x<sup><3></sup>, x<sup><2></sup> and x<sup><1></sup>, but not from x<sup><4></sup> and so on...
 
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6deffb79-d422-466e-bcab-d38f8151bed9.png" width="700" />
 
@@ -128,7 +128,7 @@ Discover recurrent neural networks, a type of model that performs extremely well
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d2976944-dc58-42f5-831c-ad720b492e2f.png" width="700" />
 
   * W<sub>a</sub> is W<sub>aa</sub> and W<sub>ax</sub> stacked horizontally
-  * [a<sup><t-1></sup>, x<sup><t></sup>] is a<sup><t-1></sup> and x<sup><t></sup> stacked vertically
+  * [a<sup><t - 1></sup>, x<sup>< t ></sup>] is a<sup><t - 1></sup> and x<sup><t></sup> stacked vertically
   * W<sub>a</sub> shape: (NoOfHiddenNeurons, NoOfHiddenNeurons + n<sub>x</sub>)
   * [a<sup> <t - 1> </sup>, x<sup>< t ></sup>] shape: (NoOfHiddenNeurons + n<sub>x</sub>, 1)
 
