@@ -130,7 +130,7 @@ Discover recurrent neural networks, a type of model that performs extremely well
   * W<sub>a</sub> is W<sub>aa</sub> and W<sub>ax</sub> stacked horizontally
   * [a<sup><t-1></sup>, x<sup><t></sup>] is a<sup><t-1></sup> and x<sup><t></sup> stacked vertically
   * W<sub>a</sub> shape: (NoOfHiddenNeurons, NoOfHiddenNeurons + n<sub>x</sub>)
-  * [a<sup><t-1></sup>, x<sup><t></sup>] shape: (NoOfHiddenNeurons + n<sub>x</sub>, 1)
+  * [a<sup> <t-1> </sup>, x<sup><t></sup>] shape: (NoOfHiddenNeurons + n<sub>x</sub>, 1)
 
 ## Backpropagation Through Time
 
