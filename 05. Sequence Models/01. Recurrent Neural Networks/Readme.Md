@@ -117,7 +117,20 @@ Discover recurrent neural networks, a type of model that performs extremely well
 * Let's take this example why this is an issue 
   * 'He Said, "Teddy Roosevelt was a great president"'. In this example, 'Teddy is a person' refers to a person but we know that only from the words that proceed the first 3 words, because you could formulate a sentence where 'teddy' refers to a teddy bear
 * Conclusion: a limitation of the discussed architecture is that it can not learn from elements later in the sequence. To address this problem we will later discuss **Bidirectional RNN (BRNN)**
+* Now let's discuss the forward propagation equations on the discussed architecture:
 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1c73e90b-56f4-4e0d-89ad-0f2aec2a1f15.png" width="700" />
 
+  * The activation function of `a` is usually `tanh` or `ReLU` and for `y` depends on your task choosing some activation functions like `sigmoid` and `softmax`. In a name entity recognition task, we will use sigmoid because we only have two classes
+* In order to help us develop complex RNN architectures, the last equations needs to be simplified a bit
+* Simplified RNN notation:
 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d2976944-dc58-42f5-831c-ad720b492e2f.png" width="700" />
+
+  * W<sub>a</sub> is W<sub>aa</sub> and W<sub>ax</sub> stacked horizontally
+  * [a<sup><t-1></sup>, x<sup><t></sup>] is a<sup><t-1></sup> and x<sup><t></sup> stacked vertically
+  * W<sub>a</sub> shape: (NoOfHiddenNeurons, NoOfHiddenNeurons + n<sub>x</sub>)
+  * [a<sup><t-1></sup>, x<sup><t></sup>] shape: (NoOfHiddenNeurons + n<sub>x</sub>, 1)
+
+## Backpropagation Through Time
 
