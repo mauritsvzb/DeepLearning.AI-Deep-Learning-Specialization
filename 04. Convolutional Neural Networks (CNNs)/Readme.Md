@@ -21,9 +21,6 @@ You will:
 * [Week 4 - PA 1 - Face Recognition](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/04.%20Special%20Applications%3A%20Face%20Recognition%20%26%20Neural%20Style%20Transfer/Face_Recognition.ipynb)
 * [Week 4 - PA 2 - Art Generation with Neural Style Transfer](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/04.%20Convolutional%20Neural%20Networks%20(CNNs)/04.%20Special%20Applications%3A%20Face%20Recognition%20%26%20Neural%20Style%20Transfer/Art_Generation_with_Neural_Style_Transfer_1.ipynb)
 
-
-# 📄 References
-
 # 🏆 Certificates 
 To verify the certificates, click the images to follow the links:
 [<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/56aef1dc-5998-445c-8243-d486e919a052.png" width="700">](https://coursera.org/share/7817eea2624196aa6b03565be6e36db7)
