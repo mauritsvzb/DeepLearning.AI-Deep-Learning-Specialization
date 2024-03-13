@@ -65,20 +65,24 @@ Discover recurrent neural networks, a type of model that performs extremely well
   * x<sup>(i)<t></sup> refers to the t<sup>th</sup> element in the input sequence of the i<sup>th</sup> training example; similarly, y<sup>(i)<t></sup> refers to the t<sup>th</sup> element in the output sequence of the i<sup>th</sup> training example
  * T<sub>x</sub><sup>i</sup> is the input sequence length for training example i, which can be different across examples. Similarly, for T<sub>y</sub><sup>i</sup> is the length of the output sequence in the i-th training example
 
+   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d872c8e6-ba4e-4385-ae0c-a0b7e1acea22.png" width="700" />
 
+* Representing words:
+* We will work in this course with natural language processing (NLP) 
+* One of the challenges of NLP is how can we represent individual words in a sentence?
+  * We will need a vocabulary dictionary i.e., a list containing all the words that you'll use in your representation e.g.,:
+    * [a ... And ... Harry ... Potter ... Zulu]
+    * Each word will have a unique index that it can be represented with
+    * The sorting here is in alphabetical order
+  * Vocabulary sizes in modern applications range from 30k to 50k. 100k is not uncommon. Some of the bigger companies use even a million+
+  
 
-Representing words:
-We will now work in this course with NLP which stands for natural language processing. One of the challenges of NLP is how can we represent a word?
-We need a vocabulary list that contains all the words in our target sets.
-Example:
-[a ... And ... Harry ... Potter ... Zulu]
-Each word will have a unique index that it can be represented with.
-The sorting here is in alphabetical order.
-Vocabulary sizes in modern applications are from 30,000 to 50,000. 100,000 is not uncommon. Some of the bigger companies use even a million.
-To build vocabulary list, you can read all the texts you have and get m words with the most occurrence, or search online for m most occurrent words.
-Create a one-hot encoding sequence for each word in your dataset given the vocabulary you have created.
-While converting, what if we meet a word thats not in your dictionary?
-We can add a token in the vocabulary with name <UNK> which stands for unknown text and use its index for your one-hot vector.
-Full example:
+  * To build a vocabulary dictionary, you can read all the texts you have and get m words with the most occurrence, or search online for m most occurrent words
+  * Create a one-hot encoding sequence for each word in your dataset given the vocabulary you have created
+  * While converting, what if we meet a word thats not in your dictionary?
+    * We can add a token in the vocabulary with name <UNK> which stands for unknown text and use its index for your one-hot vector
+  * Full example:
 
-The goal is given this representation for x to learn a mapping using a sequence model to then target output y as a supervised learning problem.
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/291a33c3-fdde-402c-9a17-3561bbe6b3ca.png" width="700" />
+
+* The goal is, given this representation for x, to learn a mapping using a sequence model to then target output y as a supervised learning problem
