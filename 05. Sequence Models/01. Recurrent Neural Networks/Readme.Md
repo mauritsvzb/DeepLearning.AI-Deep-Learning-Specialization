@@ -68,21 +68,56 @@ Discover recurrent neural networks, a type of model that performs extremely well
    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d872c8e6-ba4e-4385-ae0c-a0b7e1acea22.png" width="700" />
 
 * Representing words:
-* We will work in this course with natural language processing (NLP) 
-* One of the challenges of NLP is how can we represent individual words in a sentence?
-  * We will need a vocabulary dictionary i.e., a list containing all the words that you'll use in your representation e.g.,:
-    * [a ... And ... Harry ... Potter ... Zulu]
-    * Each word will have a unique index that it can be represented with
-    * The sorting here is in alphabetical order
-  * Vocabulary sizes in modern applications range from 30k to 50k. 100k is not uncommon. Some of the bigger companies use even a million+
-  
+  * We will work in this course with natural language processing (NLP) 
+  * One of the challenges of NLP is how can we represent individual words in a sentence?
+    * We will need a vocabulary dictionary i.e., a list containing all the words that you'll use in your representation e.g.,:
+      * [a ... And ... Harry ... Potter ... Zulu]
+      * Each word will have a unique index that it can be represented with
+      * The sorting here is in alphabetical order
+    * Vocabulary sizes in modern applications range from 30k to 50k. 100k is not uncommon. Some of the bigger companies use even a million+
+    * To build a vocabulary dictionary, you can read all the texts you have and get m words with the most occurrence, or search online for m most occurrent words
+    * Create a one-hot encoding sequence for each word in your dataset given the vocabulary you have created
+    * While converting, what if we meet a word thats not in your dictionary?
+      * We can add a token in the vocabulary with name <UNK> which stands for unknown text and use its index for your one-hot vector
+    * Full example:
 
-  * To build a vocabulary dictionary, you can read all the texts you have and get m words with the most occurrence, or search online for m most occurrent words
-  * Create a one-hot encoding sequence for each word in your dataset given the vocabulary you have created
-  * While converting, what if we meet a word thats not in your dictionary?
-    * We can add a token in the vocabulary with name <UNK> which stands for unknown text and use its index for your one-hot vector
-  * Full example:
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/291a33c3-fdde-402c-9a17-3561bbe6b3ca.png" width="700" />
 
-    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/291a33c3-fdde-402c-9a17-3561bbe6b3ca.png" width="700" />
+  * The goal is, given this representation for x, to learn a mapping using a sequence model to then target output y as a supervised learning problem
 
-* The goal is, given this representation for x, to learn a mapping using a sequence model to then target output y as a supervised learning problem
+## Recurrent Neural Networks (RNNs)
+* Why not to use a standard network for sequence tasks? There are two problems:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6eaebdda-d6c3-4090-9106-376ef1e3e145.png" width="700" />
+
+* RNNs don't have either of the two mentioned problems
+* Let's build a RNN that solves a name entity recognition task:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5efb23d5-18fa-4406-a22e-737b538f6d80.png" width="700" />
+
+  * In this problem, T<sub>x</sub> = T<sub>y</sub> (in other problems where they aren't equal, the RNN architecture may be different)
+  * a<sup><0></sup> is usually initialized with zeros, but some others may initialize it randomly in some cases
+  * There are three weight matrices here: W<sub>ax</sub>, W<sub>aa</sub>, and W<sub>ya<> with shapes:
+    * W<sub>ax</sub>: (NoOfHiddenNeurons, n<sub>x</sub>), whereby n<sub>x</sub> refers to number of input features i.e., the input dimension
+      * connects input features to hidden state
+    * W<sub>aa</sub>: (NoOfHiddenNeurons, NoOfHiddenNeurons)
+      * models recurrent connections within the hidden layer
+    * W<sub>ya</sub>: (n<sub>y</sub>, NoOfHiddenNeurons), whereby n<sub>y</sub> refers to number of output classes/labels i.e., the number of categories in a classification task
+      * transforms the hidden state to the output
+* The weight matrix W<sub>aa</sub> is the memory the RNN as it is passed from the previous layers the the subsequent layers
+* A lot of papers and books write the same architecture this way:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/720878fe-add3-49ea-89b8-77caa2f076d0.png" width="700" />
+
+* But this notation is harder to interpret. It's easier to roll this drawings to the unrolled version shown in the previous image
+* In the discussed RNN architecture above, the current output ŷ</sup><t></sup> depends only on the previous inputs and activations i.e. the prediction on ŷ<sup><3></sup> can be made with the information from x<sup><3></sup>, x<sup><2></sup> and x<sup><1></sup>, but not from x<sup><4></sup> and so on...
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6deffb79-d422-466e-bcab-d38f8151bed9.png" width="700" />
+
+* Let's take this example why this is an issue 
+  * 'He Said, "Teddy Roosevelt was a great president"'. In this example, 'Teddy is a person' refers to a person but we know that only from the words that proceed the first 3 words, because you could formulate a sentence where 'teddy' refers to a teddy bear
+* Conclusion: a limitation of the discussed architecture is that it can not learn from elements later in the sequence. To address this problem we will later discuss **Bidirectional RNN (BRNN)**
+
+
+
+
