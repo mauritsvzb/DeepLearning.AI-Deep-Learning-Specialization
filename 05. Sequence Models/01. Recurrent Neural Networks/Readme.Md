@@ -268,8 +268,8 @@ Discover recurrent neural networks, a type of model that performs extremely well
   * We now suppose that U is 0 or 1 and is the part that tells us if a singular word needs to be memorized
   * Splitting the words and get values of C and U at each place:
 
-| --- | --- | --- |
 |**Word**	| **Update gate(U)** |	**Cell memory (C)** |
+| --- | --- | --- |
 |The |	0	| val |
 |cat	| 1	| new_val |
 | which |	0	| new_val |
@@ -277,10 +277,11 @@ Discover recurrent neural networks, a type of model that performs extremely well
 |...|	0	| new_val|
 | was |	1 (I don't need it anymore)	| newer_val |
 |full	| ...	| ... |
+
 * Because the update gate U is usually a small number like 0.00001, GRUs don't suffer from the vanishing gradient problem
   * In the equation this makes c<sup>< t ></sup> = c<sup><t - 1><sup> in a lot of cases
 * Shapes:
-  * a<sup>< t >sup<> shape is (NoOfHiddenNeurons, 1)
+  * a<sup>< t >sup</sup> shape is (NoOfHiddenNeurons, 1)
   * c<sup>< t ></sup> is the same as a<sup>< t ></sup>
   * c̃<sup>< t ></sup> is the same as a<sup>< t ></sup>
   * u<sup>< t ></sup> is also the same dimensions of a<sup>< t ></sup>
