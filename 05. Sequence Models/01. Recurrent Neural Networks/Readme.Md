@@ -230,7 +230,7 @@ Discover recurrent neural networks, a type of model that performs extremely well
   * What the deal is here is that "was" is used because it refers to "cat" (singular), whereas "were" refers to "cats"
     * The naive RNN is not very good at capturing very long-term dependencies like this
 
-     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/93ed131f-0434-4af6-9bb2-26db6bc766d6.png" width="700" />
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/93ed131f-0434-4af6-9bb2-26db6bc766d6.png" width="700" />
 
     * To compute the word "was", we need to compute the gradient for every word that preceeds this word. Multiplying fractions tends to cause gradients to vanish, while multiplication of large number tends to cause gradient explosion
     * Therefore, some of your weights may not be updated properly
@@ -240,7 +240,7 @@ Discover recurrent neural networks, a type of model that performs extremely well
 * **Vanishing gradient** problems tend to be the bigger problem with RNNs than the **exploding gradient** problems (We will discuss how to solve it in next sections)
 * Exploding gradients can be easily seen when your weight values become `NaN`. So one of the ways to solve an exploding gradient is to apply gradient clipping, meaning if your gradient is more than some threshold - rescale some of your gradient vector so that values are not too big (so they are cliped according to some maximum value)
 
- <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c4b3484f-f105-4c86-93fb-38b1121ff675.png" width="700" />
+   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c4b3484f-f105-4c86-93fb-38b1121ff675.png" width="700" />
 
 ## Gated Recurrent Unit (GRU)
 
