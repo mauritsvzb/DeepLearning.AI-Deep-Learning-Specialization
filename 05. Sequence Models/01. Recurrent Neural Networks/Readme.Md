@@ -164,6 +164,36 @@ Discover recurrent neural networks, a type of model that performs extremely well
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/de9a785d-d98f-4ba4-938f-581e3435867a.png" width="700" />
 
 ## Language Model and Sequence Generation
+* RNNs do very well in language model problems. In this section, we will build a language model using RNNs.
+* What is a language model?
+  * Let's say we are solving a speech recognition problem and someone says a sentence that can be interpreted into to two sentences:
+    * The apple and pair salad
+    * The apple and pear salad
+  * 'Pair' and 'pear' sounds exactly the same, so how would a speech recognition application choose from the two?
+  * This is where the language model comes in: it gives a probability for the two sentences and the application choses the best sentencce based on this probability
+  * The job of a language model is to give a probability of any given sequence of words
+* How to build language models with RNNs?
+  * The first thing to do is to get a training set: a large 'corpus' of target language text
+  * Then tokenize this training set by getting the vocabulary and then one-hot each word
+  * Put an end-of-sentence token <EOS> with the vocabulary and include it with each converted sentence. Also, use the token <UNK> for the unknown words.
+* Given the sentence "Cats average 15 hours of sleep a day. <EOS>"
+  * In training time we will use this:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/468a5180-198a-4230-aeb5-562de620cc1a.png" width="700" />
+
+  * The loss function is defined by cross-entropy loss:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c064b4e0-ad1e-49eb-8c58-97ac4c3896bd.png" width="300" />
+
+      * 'i' is for all elements in the corpus, 't -' for all time steps
+  * To use this model:
+    * For predicting the chance of next word, we feed the sentence to the RNN and then get the final y^<t> hot vector and sort it by maximum probability
+    * For taking the probability of a sentence, we compute this:
+      * `p(y<1>, y<2>, y<3>) = p(y<1>) * p(y<2> | y<1>) * p(y<3> | y<1>, y<2>)`
+    * This is simply feeding the sentence into the RNN and multiplying the probabilities (outputs)
+
+## Sampling Novel Sequences
+
 
 
 
