@@ -296,3 +296,29 @@ Discover recurrent neural networks, a type of model that performs extremely well
 * So why do we use these architectures, why don't we change them, how we know they will work, why not add another gate, why not use the simpler GRU instead of the full GRU; because researchers have experimented over years all the various types of these architectures with many  different versions and also addressing the vanishing gradient problem. They have found that full GRUs are one of the best RNN architectures to be used for many different problems. You can make your design but put in mind that GRUs and LSTMs are standards.
 
 ## Long Short Term Memory (LSTM)
+* LSTM - the other type of RNN that can enable you to account for long-term dependencies. It's more powerful and general than GRU, but also a bit more complicated to use
+  * Paper: [Hochreiter & Schmidhuber, 1997, Long Short-term memory](https://ieeexplore.ieee.org/abstract/document/6795963)
+    * It is recommended to read other resources for the details of LSTM rather than using the original paper
+* In LSTM , C<sup>< t ></sup> != a<sup>< t ></sup>
+* Here are the equations of an LSTM unit:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/907f674f-a3e2-43e2-ac4b-0785decd1647.png" width="700" />
+
+* In GRU we have an update gate u, a relevance gate r, and a candidate cell variables c̃<sup>< t ></sup> while in LSTM we have an update gate u (sometimes it's called input gate I), a forget gate f, an output gate O, and a candidate cell variables c̃<sup>< t ></sup>
+* Drawings (inspired by http://colah.github.io/posts/2015-08-Understanding-LSTMs/):
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/816f0b7b-2804-4a83-8c36-76d690ec5c63.png" width="700" />
+
+* And we simply connect the LSTM blocks together like this:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/47b9f90b-7bd5-4513-b808-351cc7c7671f.png" width="700" />
+
+  * Also, there is a direct line (red line) at the top to have some initial values i.e. c<sup><0></sup> pass all the way to later blocks i.e. c<sup><3></sup> so long as the forget and update gates are set appropriately
+  * Some variants on LSTM includes:
+    * LSTM with **peephole connections**
+      * The normal LSTM with C<sup><t - 1></sup> included with every gate
+* There isn't a universal superior between LSTM and it's variants. One of the advantages of GRU is that it's simpler and can be used to build much bigger network but the LSTM is more powerful and general.
+
+## Bidirectional RNN
+
+
