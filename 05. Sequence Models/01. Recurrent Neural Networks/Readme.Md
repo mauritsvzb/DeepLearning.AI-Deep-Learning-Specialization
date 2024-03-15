@@ -152,6 +152,18 @@ Discover recurrent neural networks, a type of model that performs extremely well
 * The backpropagation here is called **backpropagation through time**, because we pass activations a from one sequence element to another like backwards in time (red line)
 
 ## Different types of RNNs
+* So far we have seen only one RNN architecture in which T<sub>x</sub> equals T<sub></sub>y</sub>. In some other problems, they may not be equal so we need different architectures
+* The ideas in this section was inspired by Andrej Karpathy's [blog](https://karpathy.github.io/2015/05/21/rnn-effectiveness/). Mainly this image has all types:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/bb2e0a6a-a6d4-446f-9b1a-9530ae687b4f.png" width="700" />
+
+* The architecture we have described until now is called **Many to Many**, but here are some others
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/ed354e98-6c30-4bc7-8bdf-b69c392e6e0a.png" width="700" />
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/de9a785d-d98f-4ba4-938f-581e3435867a.png" width="700" />
+
+## Language Model and Sequence Generation
 
 
 
