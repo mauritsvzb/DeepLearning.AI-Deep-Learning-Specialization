@@ -221,5 +221,28 @@ Discover recurrent neural networks, a type of model that performs extremely well
 * The trend Andrew has seen in NLP is that for the most part, a word-level language model is still used, but as computers get faster there are more and more applications where people are, at least in some special cases, starting to look at more character-level models. Also, they are used in specialized applications where you might need to deal with unknown words or other vocabulary words a lot. Or they are also used in more specialized applications where you have a more specialized vocabulary.
 
 ## Vanishing gradients with RNNs
+* One of the problems with naive RNNs that they run into vanishing gradient problem if they have a long sequence size
+* A RNN that processes sequence data with the size of 10,000 time steps has 10,000 deep layers which is very hard to optimize
+* E.g., suppose we are working with a language modeling problem and there are two sequences that model tries to learn:
+  * "The cat, which already ate ..., was full"
+  * "The cats, which already ate ..., were full"
+    * Dots represent many random words in between
+  * What the deal is here is that "was" is used because it refers to "cat" (singular), whereas "were" refers to "cats"
+    * The naive RNN is not very good at capturing very long-term dependencies like this
+
+     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/93ed131f-0434-4af6-9bb2-26db6bc766d6.png" width="700" />
+
+    * To compute the word "was", we need to compute the gradient for every word that preceeds this word. Multiplying fractions tends to cause gradients to vanish, while multiplication of large number tends to cause gradient explosion
+    * Therefore, some of your weights may not be updated properly
+* In the problem we described it means that it's hard for the network to memorize it should predict "was" because this pertains to a single "cat". So in this case, the network won't identify the singular/plural words so that it gives it the right grammar form of verb "was/were"
+* The conclusion is that basic RNNs aren't good in long-term dependencies
+> In theory, RNNs are absolutely capable of handling such “long-term dependencies.” A human could carefully pick parameters for them to solve toy problems of this form. Sadly, in practice, RNNs don’t seem to be able to learn them. http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+* **Vanishing gradient** problems tend to be the bigger problem with RNNs than the **exploding gradient** problems (We will discuss how to solve it in next sections)
+* Exploding gradients can be easily seen when your weight values become `NaN`. So one of the ways to solve an exploding gradient is to apply gradient clipping, meaning if your gradient is more than some threshold - rescale some of your gradient vector so that values are not too big (so they are cliped according to some maximum value)
+
+ <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c4b3484f-f105-4c86-93fb-38b1121ff675.png" width="700" />
+
+## Gated Recurrent Unit (GRU)
+
 
 
