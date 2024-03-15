@@ -187,9 +187,9 @@ Discover recurrent neural networks, a type of model that performs extremely well
 
       * 'i' is for all elements in the corpus, 't -' for all time steps
   * To use this model:
-    * For predicting the chance of next word, we feed the sentence to the RNN and then get the final y^<t> hot vector and sort it by maximum probability
+    * For predicting the chance of next word, we feed the sentence to the RNN and then get the final ŷ<sup>< t ></sup> hot vector and sort it by maximum probability
     * For taking the probability of a sentence, we compute this:
-      * `p(y<1>, y<2>, y<3>) = p(y<1>) * p(y<2> | y<1>) * p(y<3> | y<1>, y<2>)`
+      * `p(y<sup><1></sup>, y<sup><2></sup>, y<sup><3></sup>) = p(y<sup><1></sup>) * p(y<sup><2></sup> | y<sup><1></sup>) * p(y<sup><3></sup> | y<sup><1></sup>, y<sup><2></sup>)`
     * This is simply feeding the sentence into the RNN and multiplying the probabilities (outputs)
 
 ## Sampling Novel Sequences
