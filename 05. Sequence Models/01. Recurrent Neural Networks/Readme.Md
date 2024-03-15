@@ -147,7 +147,7 @@ Discover recurrent neural networks, a type of model that performs extremely well
   * Where the first equation is the loss for one example and the loss for the whole sequence is given by the summation over all the calculated single example losses
   * Graph with losses:
 
-    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d31d826d-2305-4b14-a472-cdbe49ff1d16.png" width="700" />
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/0426fbd7-1384-428a-9ccb-62634b639358.png" width="700" />
 
 * The backpropagation here is called **backpropagation through time**, because we pass activations a from one sequence element to another like backwards in time (red line)
 
