@@ -62,7 +62,7 @@ Discover recurrent neural networks, a type of model that performs extremely well
     * y<sup><2></sup> = 2
   * T<sub>x</sub> is the size of the input sequence; T<sub>y</sub> output sequence
     * T<sub>x</sub> = T<sub>y</sub> = 9 in the last example, although they can be different in other problems
-  * x<sup>(i)<t></sup> refers to the t<sup>th</sup> element in the input sequence of the i<sup>th</sup> training example; similarly, y<sup>(i)<t></sup> refers to the t<sup>th</sup> element in the output sequence of the i<sup>th</sup> training example
+  * x<sup>(i)< t ></sup> refers to the t<sup>th</sup> element in the input sequence of the i<sup>th</sup> training example; similarly, y<sup>(i)< t ></sup> refers to the t<sup>th</sup> element in the output sequence of the i<sup>th</sup> training example
  * T<sub>x</sub><sup>i</sup> is the input sequence length for training example i, which can be different across examples. Similarly, for T<sub>y</sub><sup>i</sup> is the length of the output sequence in the i-th training example
 
    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d872c8e6-ba4e-4385-ae0c-a0b7e1acea22.png" width="700" />
