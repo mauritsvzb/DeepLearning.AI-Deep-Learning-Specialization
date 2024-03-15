@@ -243,6 +243,55 @@ Discover recurrent neural networks, a type of model that performs extremely well
    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c4b3484f-f105-4c86-93fb-38b1121ff675.png" width="700" />
 
 ## Gated Recurrent Unit (GRU)
+* GRU is an RNN type that can help solve the vanishing gradient problem and can remember the long-term dependencies
+* Papers:
+  * [Cho et al., 2014, On the properties of neural machine translation: Encoder-decoder approaches](https://arxiv.org/abs/1409.1259)
+  * [Chung et al., 20014, Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling](https://arxiv.org/abs/1412.3555)
+* The basic RNN unit can be visualized to be like this:
 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d9118f56-e627-47a8-8eee-0824f6cda5ab.png" width="700" />
 
+* We will represent a GRU with a similar drawing
+* Each layer in a GRU has a new variable C which denotes a memory cell. It can be used to determine whether to memorize something or not
+* In GRUs, c<sup>< t ></sup> = a<sup>< t ></sup>
+* Equations of the GRUs:
 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/99e0f249-744a-4d06-bbfa-48d617d493ab.png" width="700" />
+
+  * where c<sup><t - 1></sup> is the old value and c̃<sup>< t ></sup> is the candidate value
+* The update gate (called Gamma) is always between 0 and 1
+* To understand GRUs, imagine that the update gate is either 0 or 1 most of the time
+* So we update the memory cell based on the update cell and the previous cell
+  * Drawings like in http://colah.github.io/posts/2015-08-Understanding-LSTMs/ can help you understand GRUs and LSTMs
+* Let's take the cat sentence example again and apply it to understand this equations:
+  * Sentence: "The cat, which already ate ........................, was full"
+  * We now suppose that U is 0 or 1 and is the part that tells us if a singular word needs to be memorized
+  * Splitting the words and get values of C and U at each place:
+
+| --- | --- | --- |
+|**Word**	| **Update gate(U)** |	**Cell memory (C)** |
+|The |	0	| val |
+|cat	| 1	| new_val |
+| which |	0	| new_val |
+| already	| 0	| new_val |
+|...|	0	| new_val|
+| was |	1 (I don't need it anymore)	| newer_val |
+|full	| ...	| ... |
+* Because the update gate U is usually a small number like 0.00001, GRUs don't suffer from the vanishing gradient problem
+  * In the equation this makes c<sup>< t ></sup> = c<sup><t - 1><sup> in a lot of cases
+* Shapes:
+  * a<sup>< t >sup<> shape is (NoOfHiddenNeurons, 1)
+  * c<sup>< t ></sup> is the same as a<sup>< t ></sup>
+  * c̃<sup>< t ></sup> is the same as a<sup>< t ></sup>
+  * u<sup>< t ></sup> is also the same dimensions of a<sup>< t ></sup>
+* The multiplications in the equations are element-wise multiplications
+* What has been described so far is the simplified GRU unit: Let's now describe the full GRU one:
+  * The **full GRU** contains a new gate that is used to calculate the candidate c̃. The gate tells you how relevant is c<sup><t - 1></sup> to c<sup>< t ></sup>
+  * Equations:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5b82889a-a3fe-49f7-9342-e649255dd990.png" width="700" />
+
+    * where gamma(r) represents how relevant is the c<sup><t - 1></sup> to computing c<sup>< t ></sup>
+* So why do we use these architectures, why don't we change them, how we know they will work, why not add another gate, why not use the simpler GRU instead of the full GRU; because researchers have experimented over years all the various types of these architectures with many  different versions and also addressing the vanishing gradient problem. They have found that full GRUs are one of the best RNN architectures to be used for many different problems. You can make your design but put in mind that GRUs and LSTMs are standards.
+
+## Long Short Term Memory (LSTM)
