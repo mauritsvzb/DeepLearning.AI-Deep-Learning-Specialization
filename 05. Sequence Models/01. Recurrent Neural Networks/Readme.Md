@@ -133,4 +133,25 @@ Discover recurrent neural networks, a type of model that performs extremely well
   * [a<sup> <t - 1> </sup>, x<sup>< t ></sup>] shape: (NoOfHiddenNeurons + n<sub>x</sub>, 1)
 
 ## Backpropagation Through Time
+* In modern deep learning frameworks, you only have to implement the forward pass, and the framework takes care of the backward pass, so most deep learning engineers do not need to bother with the details of the backward pass. If however you are an expert in calculus and want to see the details of backprop in RNNs, you can work through this.
+* Let's see how backpropagation works with the RNN architecture
+* Here is the graph:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/87427133-d955-4a69-b04c-1bc8265d9637.png" width="700" />
+
+  * where W<sub>a</sub>, b<sub>a</sub>, W<sub>y</sub>, and b<sub>y</sub> are shared across each element in a sequence
+* We will use the cross-entropy loss function:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/bf3a349f-0169-4b9e-b891-a677b8fc4f9b.png" width="700" />
+
+  * Where the first equation is the loss for one example and the loss for the whole sequence is given by the summation over all the calculated single example losses
+  * Graph with losses:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d31d826d-2305-4b14-a472-cdbe49ff1d16.png" width="700" />
+
+* The backpropagation here is called **backpropagation through time**, because we pass activations a from one sequence element to another like backwards in time (red line)
+
+## Different types of RNNs
+
+
 
