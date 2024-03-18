@@ -206,7 +206,7 @@ Discover recurrent neural networks, a type of model that performs extremely well
   4. We pass the last predicted word ŷ<sup><1></sup> to the next block a<sup><2></sup> to calculate ŷ<sup><2></sup>
   5. We keep doing repeating 3 & 4 for a fixed length or until we get the `<EOS>` token
 
-     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1062b93c-1d21-40f2-adf1-00391778685e.png" width="700" />
+     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6d2669bb-d637-40b2-80a1-41a6293f5825.png" width="700" />
 
   6. You can reject any `<UNK>` token if you mind finding it in your output
 * So far we have to build a word-level language model, but it's also possible to implement a character-level language model
