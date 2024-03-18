@@ -320,5 +320,32 @@ Discover recurrent neural networks, a type of model that performs extremely well
 * There isn't a universal superior between LSTM and it's variants. One of the advantages of GRU is that it's simpler and can be used to build much bigger network but the LSTM is more powerful and general.
 
 ## Bidirectional RNN
+* There are still some ideas to let you build much more powerful sequence models, e.g., a bidirectional RNN and a Deep RNN
+* As we saw before, here is an example of the Name entity recognition task:
 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7f9c6f4c-2e51-46e7-ae96-0e265c306fb1.png" width="700" />
 
+* Whether Teddy refers to a name in this case cannot be learned from the first two words 'he said', but can be learned from the word that comes after Teddy i.e., 'bears'
+* BiRNNs fix this issue
+* Here is BRNNs architecture:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a6f73d64-b4b5-44c8-b1d6-e4a381850152.png" width="700" />
+
+  * Note, that BiRNN is an acyclic graph
+* Part of the forward propagation goes from left to right, and part - from right to left; a BiRNN learns from going from either side
+* To make predictions we use ŷ<sup>< t ></sup> by using the two activations that come from left and right
+* The blocks here can be any RNN block including the basic RNNs, LSTMs, or GRUs
+* For a lot of NLP or text processing problems, a BiRNN with LSTM appears to be commonly used
+* The **disadvantage** of BiRNNs is that they need to the entire sequence before you can process it e.g., in live speech recognition, if you use BiRNNs you will need to wait for the person who speaks to stop to take the entire sequence and then make your predictions
+
+## Deep RNNs
+* In a lot of cases the standard one layer RNNs will solve your problem. But in some problems it's useful to stack some RNN layers to make a deeper network
+* For example, a deep RNN with 3 layers would look like this:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/92fadb19-1b79-46af-a766-cb0ae4d389c6.png" width="700" />
+
+* With the activation i.e. a<sup>[2]<3></sup> = g(W<sub>a</sub><sup>[2]</sup>[a<sup>[2]<2></sup>,a<sup>[1]<3></sup>] + b<sub>a[2]</sub>)
+* In feed-forward deep nets, there could be 100 or even 200 layers. In deep RNNs stacking 3 layers is already considered deep and expensive to train
+* In some cases you might see some feed-forward network layers connected after recurrent cell
+
+## 
