@@ -344,7 +344,7 @@ Discover recurrent neural networks, a type of model that performs extremely well
 
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/92fadb19-1b79-46af-a766-cb0ae4d389c6.png" width="700" />
 
-* With the activation i.e. a<sup>[2]<3></sup> = g(W<sub>a</sub><sup>[2]</sup>[a<sup>[2]<2></sup>,a<sup>[1]<3></sup>] + b<sub>a[2]</sub>)
+* With the activation i.e. a<sup>[2]<3></sup> = g(W<sub>a</sub><sup>[2]</sup>[a<sup>[2]<2></sup>,a<sup>[1]<3></sup>] + b<sub>a</sub><sup>[2]</sup>)
 * In feed-forward deep nets, there could be 100 or even 200 layers. In deep RNNs stacking 3 layers is already considered deep and expensive to train
 * In some cases you might see some feed-forward network layers connected after recurrent cell
 
