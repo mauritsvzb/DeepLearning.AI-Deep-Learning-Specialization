@@ -358,7 +358,6 @@ Discover recurrent neural networks, a type of model that performs extremely well
 * Each cell has two outputs at each time step:
   1. A hidden state
   2. A prediction
-
 * A Long Short Term Memory (LSTM) is similar to an RNN in that they both use hidden states to pass along information, but an LSTM also uses a cell state, which is like a long-term memory, to help deal with the issue of vanishing gradients
 * An LSTM cell consists of a cell state, or long-term memory, a hidden state, or short-term memory, along with 3 gates that constantly update the relevancy of its inputs:
   * A **forget** gate, which decides which input units should be remembered and passed along. It's a tensor with values between 0 and 1.
@@ -368,4 +367,10 @@ Discover recurrent neural networks, a type of model that performs extremely well
       * When a unit in the update gate is close to 1, the value of its candidate is passed on to the hidden state
       * When a unit in the update gate is close to 0, it's prevented from being passed onto the hidden state
   * And an **output** gate, which decides what gets sent as the output of the time step
-
+* Very large, or "exploding" gradients updates can be so large that they "overshoot" the optimal values during back prop -- making training difficult
+* Clip gradients before updating the parameters to avoid exploding gradients
+* Sampling is a technique you can use to pick the index of the next character according to a probability distribution
+* To begin character-level sampling:
+  * Input a "dummy" vector of zeros as a default input
+  * Run one step of forward propagation to get 𝑎⟨1⟩ (your first character) and 𝑦̂ ⟨1⟩ (probability distribution for the following character)
+  * When sampling, avoid generating the same result each time given the starting letter (and make your names more interesting!) by using `np.random.choice`
