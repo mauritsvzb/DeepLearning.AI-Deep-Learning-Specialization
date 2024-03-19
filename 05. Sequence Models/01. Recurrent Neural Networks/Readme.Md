@@ -348,4 +348,14 @@ Discover recurrent neural networks, a type of model that performs extremely well
 * In feed-forward deep nets, there could be 100 or even 200 layers. In deep RNNs stacking 3 layers is already considered deep and expensive to train
 * In some cases you might see some feed-forward network layers connected after recurrent cell
 
-## 
+## What you should remember:
+* The recurrent neural network, or RNN, is essentially the repeated use of a single cell
+* A basic RNN reads inputs one at a time, and **remembers** (through memory) information through the hidden layer activations (hidden states) that are passed from one time step to the next
+* The time step dimension determines how many times to re-use the RNN cell
+* Each cell takes two inputs at each time step:
+  1. The hidden state from the previous cell
+  2. The current time step's input data
+* Each cell has two outputs at each time step:
+  1. A hidden state
+  2. A prediction
+
