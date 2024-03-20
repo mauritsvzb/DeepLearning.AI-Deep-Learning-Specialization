@@ -47,9 +47,36 @@ Natural language processing with deep learning is a powerful combination. Using 
     * You will get a sense that more related words are closer to each other
 * The word **embeddings** comes from that we need to embed a unique vector inside a n-dimensional space.
 
+## Using Word Embeddings
+* Let's see how we can take the feature representation we have extracted from each word and apply it in the Named Entity Recognition problem
+* Given this example (from named entity recognition):
 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/968a2e46-78ea-486c-ae0d-bbd412080c71.png" width="700" />
 
+  * **Sally Johnson** is a person's name
+  * After training on this sentence, the model should find out that the sentence "Robert Lin is an apple farmer" contains Robert Lin as a name, as apple and orange have near representations
+  * Now if you have tested your model with this sentence "Mahmoud Badry is a durian cultivator", the model should learn the name even if it hasn't seen the word durian before (during training)
+    * That's the power of word representations
+  * Note that you would actualy use a bidirectional RNN or BiNNR instead of a unidirectional RNN
+* The algorithms that are used to learn word embeddings can examine billions of words of unlabeled text - for example, 100 B words and learn the representation from them
+* **Transfer learning** and word embeddings:
+  1. Learn word embeddings from large text corpus (1-100 B words)
+    * Or download pre-trained embedding online
+  2. Transfer embedding to new task with the smaller training set (say, 100k words)
+  3. Optional: continue to finetune the word embeddings with new data
+    * You bother doing this if your smaller training set (from step 2) is big enough
+* Word embeddings tend to make the biggest difference when the task you're trying to carry out has a relatively small training set
+* Also, one of the advantages of using word embeddings is that it reduces the size of the input!
+  * 10k one-hot compared to 300 features vector
+* Word embeddings have an interesting relationship to the face recognition task:
 
+  <img src="(https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/bb3f862c-979d-4501-9701-2cab09bcff6f.png" width="700" />
 
+* In this problem, we encode each face into a vector and then check how similar are these vectors
+* Words encoding and embeddings have a similar meaning here
+* In the word embeddings task, we are learning a representation for each word in our vocabulary (unlike in image encoding where we have to map each new image to some n-dimensional vector)
+  * We will discuss the algorithm in next sections
+
+## Properties of Word Embeddings
 
    <img src=".png" width="700" />
