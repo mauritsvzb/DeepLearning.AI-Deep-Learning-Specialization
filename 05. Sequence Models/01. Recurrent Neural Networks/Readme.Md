@@ -374,3 +374,6 @@ Discover recurrent neural networks, a type of model that performs extremely well
   * Input a "dummy" vector of zeros as a default input
   * Run one step of forward propagation to get 𝑎⟨1⟩ (your first character) and 𝑦̂ ⟨1⟩ (probability distribution for the following character)
   * When sampling, avoid generating the same result each time given the starting letter (and make your names more interesting!) by using `np.random.choice`
+* A sequence model can be used to generate musical values, which are then post-processed into midi music
+* You can use a fairly similar model for tasks ranging from generating dinosaur names to generating original music, with the only major difference being the input fed to the model
+* In Keras, sequence generation involves defining layers with shared weights, which are then repeated for the different time steps  1,…,𝑇𝑥
