@@ -70,7 +70,7 @@ Natural language processing with deep learning is a powerful combination. Using 
   * 10k one-hot compared to 300 features vector
 * Word embeddings have an interesting relationship to the face recognition task:
 
-  <img src="(https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/bb3f862c-979d-4501-9701-2cab09bcff6f.png" width="700" />
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/bb3f862c-979d-4501-9701-2cab09bcff6f.png" width="700" />
 
 * In this problem, we encode each face into a vector and then check how similar are these vectors
 * Words encoding and embeddings have a similar meaning here
