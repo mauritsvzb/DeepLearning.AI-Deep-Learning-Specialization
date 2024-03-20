@@ -78,5 +78,58 @@ Natural language processing with deep learning is a powerful combination. Using 
   * We will discuss the algorithm in next sections
 
 ## Properties of Word Embeddings
+* One of the most fascinating properties of word embeddings is that they can also help with analogy reasoning. While analogy reasoning may not be by itself the most important NLP application, but it might help convey a sense of what these word embeddings can do.
+* Analogies example:
+  * Given this word embeddings table:
+
+   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4738674e-1cba-43de-8dbe-44ce2e85ac97.png" width="700" />
+
+  * Can we conclude this relation:
+    * Man ==> Woman
+    * King ==> ??
+  * Lets subtract e<sub>Man</sub> from e<sub>Woman</sub>, which will approximately equal the vector [-2  0  0  0]
+  * Similarly, e<sub>King</sub> - e<sub>Queen</sub> ≈ [-2  0  0  0]
+  * So the difference is about the gender in both
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/63571823-93fa-44c9-945f-f7eb4ac43966.png" width="300" />
+
+      * This vector represents the gender
+      * This drawing is a 2D visualization of the 4D vector that has been extracted by a t-SNE algorithm. It's a drawing just for visualization. Don't rely on the t-SNE algorithm for finding parallels.
+    * So we can reformulate the problem to find:
+      * e<sub>Man</sub> - e<sub>Woman</sub> ≈ e<sub>King</sub> - e<sub>?</sub>
+    * It can also be represented mathematically by:
+
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1d63886f-f5ed-43e4-bad4-39f018d2ad80.png" width="700" />
+
+    * It turns out that e<sub>Queen</sub> is the best solution here that gets the similar vector
+      * Paper: Mikolov et al., 2013, Linguistic Regularities in Continuous Space Word Representations
+* Cosine similarity - the most commonly used similarity function:
+  * Equation:
+
+   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f200fe7b-fb50-4a8f-86e6-ae90af419091.png" width="700" />
+
+    * `CosineSimilarity(u, v)` = `(u.v)/(||u||.||v||)` = `cos(θ)`
+    * The top part represents the inner product of u and v vectors. It will be large if the vectors are very similar.
+* You can also use Euclidean distance as a similarity function (but it rather measures a dissimilarity, so you should take it with negative sign)
+* We can use this equation to calculate the similarities between word embeddings and on the analogy problem where u = e<sub>w</sub> and v = e<sub>king</sub> - e<sub>man</sub> + e<sub>woman</sub>
+
+## Embedding Matrix
+* When you implement an algorithm to learn a word embedding, what you end up learning is a embedding matrix
+* Let's take an example:
+  * Suppose we are using 10,000 words as our vocabulary (plus token)
+  * The algorithm should create a matrix E of the shape (300, 10000) in case we are extracting 300 features
+
+   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6f549673-10a8-4202-8779-6cde7a64ea23.png" width="700" />
+
+  * If O<sub>6257</sub> is the one hot encoding of the word orange of shape (10000, 1), then
+    * E * O<sub>6257</sub> = e<sub>6257</sub>, which shape is (300, 1)
+
+   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1dd4571e-e0e5-4447-8c67-94c411be59be.png" width="700" />
+
+## Learning Word Embeddings
+
+
+
+
 
    <img src=".png" width="700" />
