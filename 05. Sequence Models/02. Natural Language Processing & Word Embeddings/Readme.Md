@@ -249,7 +249,3 @@ The logistic regression model can be drawn like this
 
 With f(a) is the observed frequency of the word a in the training set corpus
 
-
-
-
-    <img src=".png" width="700" />
