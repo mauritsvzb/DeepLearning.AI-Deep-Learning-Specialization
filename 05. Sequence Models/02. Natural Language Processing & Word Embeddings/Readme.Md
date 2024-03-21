@@ -161,7 +161,9 @@ Natural language processing with deep learning is a powerful combination. Using 
 * Researchers discovered that if you really want to build a **language model**, it's natural to use the last few words as a context. But if your main goal is really to **learn a word embedding**, then you can use all of these other contexts and they will result in very meaningful work embeddings as well.
 * To summarize, the language modeling problem poses a machine learning problem where you input the context (like the last four words) and predict some target words. And posing that problem allows you to learn good word embeddings.
 
-## 
+### Word2Vec
+
+
 
 
    <img src=".png" width="700" />
