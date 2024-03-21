@@ -236,9 +236,9 @@ Natural language processing with deep learning is a powerful combination. Using 
 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a33030c5-cf4f-4b21-8af1-a587ddad9dfb.png" width="700" />
 
-The logistic regression model can be drawn like this:
+The logistic regression model can be drawn like this
 
-    *  So  we are like having 10
+* ff
 
 * How to select negative samples:
   * We can sample according to empirical frequencies in words corpus which means according to how often different words appears
