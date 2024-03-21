@@ -12,7 +12,8 @@ Natural language processing with deep learning is a powerful combination. Using 
 * Build and train a more sophisticated classifier using an LSTM
 
 # Natural Language Processing & Word Embeddings
-## Word Representation
+## Introduction to Word Embeddings
+### Word Representation
 * NLP has been revolutionized by deep learning and especially by RNNs and deep RNNs
 * Word embeddings are a way of representing words. It lets your algorithm automatically understand the analogies between words like "king" and "queen"
 * So far we have defined our language by a vocabulary. Then represented our words with a one-hot vector that represents the word in the vocabulary
@@ -47,7 +48,7 @@ Natural language processing with deep learning is a powerful combination. Using 
     * You will get a sense that more related words are closer to each other
 * The word **embeddings** comes from that we need to embed a unique vector inside a n-dimensional space.
 
-## Using Word Embeddings
+### Using Word Embeddings
 * Let's see how we can take the feature representation we have extracted from each word and apply it in the Named Entity Recognition problem
 * Given this example (from named entity recognition):
 
@@ -77,7 +78,7 @@ Natural language processing with deep learning is a powerful combination. Using 
 * In the word embeddings task, we are learning a representation for each word in our vocabulary (unlike in image encoding where we have to map each new image to some n-dimensional vector)
   * We will discuss the algorithm in next sections
 
-## Properties of Word Embeddings
+### Properties of Word Embeddings
 * One of the most fascinating properties of word embeddings is that they can also help with analogy reasoning. While analogy reasoning may not be by itself the most important NLP application, but it might help convey a sense of what these word embeddings can do.
 * Analogies example:
   * Given this word embeddings table:
@@ -130,10 +131,37 @@ Natural language processing with deep learning is a powerful combination. Using 
 
    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1dd4571e-e0e5-4447-8c67-94c411be59be.png" width="700" />
 
-## Learning Word Embeddings
+## Learning Word Embeddings: Word2vec & GloVe
+### Learning Word Embeddings
+* Let's start learning some algorithms that can learn word embeddings
+* Historically, word embeddings algorithms were complex but over time they got simpler and simpler
+* We will start by learning the complex examples to make more intuition
+* **Neural language model**:
+  * Paper: [Bengio et al., 2003, A Neural Probabilistic Language Model](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)
+  * Let's start with an example:
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/cde7b1a4-0cda-4b8c-9f06-eb0eb90edaec.png" width="700" />
 
+  * We want to build a language model so that we can predict the next word
+  * So we use this neural network to learn the language model:
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d6f2b9cc-8f10-433b-bede-fd14d1231271.png" width="700" />
+
+    * We get e<sub>j</sub> by multipling the embedding matrix E by the one-hot O<sub>j</sub>
+    * Input dimension is (300*6, 1) if the window size is 6 (six previous words)
+    * Here we are optimizing matrix E and layers parameters. We need to maximize the likelihood to predict the next word given the context (previous words)
+  * This model was build in 2003 and tends to work pretty decent for learning word embeddings
+* In the last example, we took a window of 6 words that come before the word that we want to predict i.e., the 'target' word. There are other choices when we are trying to learn word embeddings.
+* Suppose we have an example: "I want a glass of orange juice to go along with my cereal."
+* To learn the word 'juice', choices of context are:
+  
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2d383476-4392-417f-b293-723f778097fb.png" width="700" />
+
+* These idea is much simpler and works remarkably well, and we will talk about this in the next section
+* Researchers discovered that if you really want to build a **language model**, it's natural to use the last few words as a context. But if your main goal is really to **learn a word embedding**, then you can use all of these other contexts and they will result in very meaningful work embeddings as well.
+* To summarize, the language modeling problem poses a machine learning problem where you input the context (like the last four words) and predict some target words. And posing that problem allows you to learn good word embeddings.
+
+## 
 
 
    <img src=".png" width="700" />
