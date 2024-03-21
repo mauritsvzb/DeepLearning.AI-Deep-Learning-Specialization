@@ -247,5 +247,5 @@ The logistic regression model can be drawn like this
 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/37b22352-e743-435b-990c-fd6e66ef7715.png" width="300" />
 
-With f(a) is the observed frequency of the word a in the training set corpus
+* With f(a) is the observed frequency of the word a in the training set corpus
 
