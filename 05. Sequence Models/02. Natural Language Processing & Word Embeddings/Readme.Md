@@ -106,7 +106,7 @@ Natural language processing with deep learning is a powerful combination. Using 
       <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1d63886f-f5ed-43e4-bad4-39f018d2ad80.png" width="700" />
 
     * It turns out that e<sub>Queen</sub> is the best solution here that gets the similar vector
-      * Paper: Mikolov et al., 2013, Linguistic Regularities in Continuous Space Word Representations
+      * Paper: [Mikolov et al., 2013, Linguistic Regularities in Continuous Space Word Representations](https://arxiv.org/abs/1301.3781)
 * Cosine similarity - the most commonly used similarity function:
   * Equation:
 
@@ -162,8 +162,51 @@ Natural language processing with deep learning is a powerful combination. Using 
 * To summarize, the language modeling problem poses a machine learning problem where you input the context (like the last four words) and predict some target words. And posing that problem allows you to learn good word embeddings.
 
 ### Word2Vec
+* Paper: [Mikolov et al., 2013, Efficient Estimation of Word Representations in Vector Space]
+* Before presenting Word2Vec, lets talk about skip-grams:
+  * For example, we have the sentence: "I want a glass of orange juice to go along with my cereal."
+  * We will choose context and target
+  * The target is chosen randomly based on a window with a specific size
 
+| Context| 	Target	| How far |
+| --- | --- | --- |
+| orange | 	juice	| +1
+| orange	glass	| -2 |
+| orange	| my |	+6 |
 
+  * Obviously, this is not a very easy learning problem, because within plus minus 10 words of the word orange, it could be a lot of different words. But a goal of setting up this supervised learning problem isn't to do well on the supervised learning problem per se, it is that we want to use this learning problem to learn good word embeddings
 
+* word2vec model:
+  * Vocabulary size = 10,000 words
+  * Let's say that the context word is 'c' ("orange") and the target word is 't' ("juice")
+  * We want to learn to map from c to t
+  * We get e<sub>c</sub> by np.dot(E, O<sub>c</sub>)
+  * We then use a softmax layer to get P(t|c) which is ŷ
+  * Also we will use the cross-entropy loss function
+    * L(ŷ,y) = -Sum<sub>i=1:n</sub><sub>y</sub>i.log(ŷ<sub>i</sub>) with n = 10,000
+  
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/01c85a10-9967-40ec-aaf9-cdcb824183f7.png" width="700" />
+
+    * This model (encircled in green ) is called skip-grams model (a form of word2vec model); e has its own parameters, and so does the softmax
+* The last model has a problem with the softmax layer:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2d8f40c8-1afc-4576-bc5d-66b1181642d2.png" width="700" />
+
+* Here we are summing 10,000 numbers which corresponds to the number of words in our vocabulary
+* If this number is large e,g., 1 million, the computation will become very slow
+* One of the solutions for the last problem is to use **"Hierarchical softmax classifier"**, which works as a binary tree classifier
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2db76473-d96e-44c8-825e-49dc5ee640f3.png" width="700" />
+
+* In practice, the hierarchical softmax classifier doesn't use a balanced tree like the drawn one. Common words are at the top and less common are further down the tree.
+
+* How to sample the context c?
+  * One way is to choose the context by random from your corpus
+  * If you have done it that way, there will be frequent words like "the, of, a, and, to,..." that can dominate other words like "orange, apple, durian,..."
+  * In practice, we don't take the context uniformly random, but instead there are some heuristics to balance the common words and the non-common words
+* Word2Vec paper includes 2 ideas of learning word embeddings. One is skip-gram model and another is CBoW (continuous bag-of-words)
+* But the key problem with this algorithm with the skip-gram model as presented so far is that the softmax step is very expensive to calculate because needing to sum over your entire vocabulary size into the denominator of the soft packs
+
+##  Negative Sampling
 
    <img src=".png" width="700" />
