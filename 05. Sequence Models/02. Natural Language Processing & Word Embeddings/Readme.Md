@@ -207,6 +207,49 @@ Natural language processing with deep learning is a powerful combination. Using 
 * Word2Vec paper includes 2 ideas of learning word embeddings. One is skip-gram model and another is CBoW (continuous bag-of-words)
 * But the key problem with this algorithm with the skip-gram model as presented so far is that the softmax step is very expensive to calculate because needing to sum over your entire vocabulary size into the denominator of the soft packs
 
-##  Negative Sampling
+### Negative Sampling
+* Negative sampling allows you to do something similar to the skip-gram model, but with a much more efficient learning algorithm. We will create a different learning problem.
+  * Paper: Mikolow et al., 2013, Distributed Representations of Words and Phrases and their Compositionality
+* Given this example:
+  * "I want a glass of orange juice to go along with my cereal."
+  * The sampling will look like this:
+    | Context	| Word	| target
+    | --- | --- | --- |
+    | orange	| juice	| 1 |
+    | orange	| king	| 0 |
+    | orange	| book	| 0 |
+    | orange	| the	| 0 |
+    | orange	| of	| 0 |
+  * We get a positive example by using the same skip-grams technique, with a fixed window that goes around
+  * To generate a negative example, we pick a word randomly from the vocabulary
+  * So the steps to generate the samples are:
+    1. Pick a positive context
+    2. Pick k negative contexts from the dictionary
+  * k is recommended to be from 5-20 in small datasets; for larger ones use 2-5 contexts
+  * We will have a ratio of k negative examples to 1 positive ones in the data we are collecting
 
-   <img src=".png" width="700" />
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f7b95560-33b3-40b2-97da-7060e6263b23.png" width="700" />
+
+* Now let's define the model that will learn this supervised learning problem:
+  * Lets say that the context word is 'c' and the target word is 't' and y is the target prediction
+  * We will apply the simple logistic regression model
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a33030c5-cf4f-4b21-8af1-a587ddad9dfb.png" width="700" />
+
+The logistic regression model can be drawn like this:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1017a18c-350b-41e6-8618-db9d019e39ad.png" width="300" />
+
+    * So we are like having 10,000 binary classification problems, and we only train k negative + 1 positive classifier of them in each iteration, whereby each iteration consists of a different subset of k classifiers
+* How to select negative samples:
+  * We can sample according to empirical frequencies in words corpus which means according to how often different words appears
+    * The problem with this is that we will end up more frequently with words like words the, of, and, etc.
+  * The best is to sample with this equation (according to authors):
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/37b22352-e743-435b-990c-fd6e66ef7715.png" width="300" />
+
+With f(a) is the observed frequency of the word a in the training set corpus
+
+
+
+    <img src=".png" width="700" />
