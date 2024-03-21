@@ -238,6 +238,7 @@ Natural language processing with deep learning is a powerful combination. Using 
 
 The logistic regression model can be drawn like this:
 
+    *  So  we are like having 10
 
 * How to select negative samples:
   * We can sample according to empirical frequencies in words corpus which means according to how often different words appears
@@ -249,5 +250,10 @@ The logistic regression model can be drawn like this:
 With f(a) is the observed frequency of the word a in the training set corpus
 
 
+
+
+    * So we are like having 10,000 binary classification problems, and we only train k negative + 1 positive classifier of them in each iteration, whereby each iteration consists of a different subset of k classifiers
+
+    * So we are like having 10,000 binary classification problems, and we only train k negative + 1 positive classifier of them in each iteration, whereby each iteration consists of a different subset of k classifiers
 
     <img src=".png" width="700" />
