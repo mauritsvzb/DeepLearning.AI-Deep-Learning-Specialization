@@ -252,8 +252,4 @@ With f(a) is the observed frequency of the word a in the training set corpus
 
 
 
-    * So we are like having 10,000 binary classification problems, and we only train k negative + 1 positive classifier of them in each iteration, whereby each iteration consists of a different subset of k classifiers
-
-    * So we are like having 10,000 binary classification problems, and we only train k negative + 1 positive classifier of them in each iteration, whereby each iteration consists of a different subset of k classifiers
-
     <img src=".png" width="700" />
