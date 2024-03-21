@@ -82,13 +82,16 @@ Natural language processing with deep learning is a powerful combination. Using 
 * Analogies example:
   * Given this word embeddings table:
 
-   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4738674e-1cba-43de-8dbe-44ce2e85ac97.png" width="700" />
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4738674e-1cba-43de-8dbe-44ce2e85ac97.png" width="700" />
 
   * Can we conclude this relation:
     * Man ==> Woman
     * King ==> ??
   * Lets subtract e<sub>Man</sub> from e<sub>Woman</sub>, which will approximately equal the vector [-2  0  0  0]
   * Similarly, e<sub>King</sub> - e<sub>Queen</sub> ≈ [-2  0  0  0]
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e05f4f6c-5fb6-4e77-bbce-372404bcbd7d.png" width="700" />
+
   * So the difference is about the gender in both
 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/63571823-93fa-44c9-945f-f7eb4ac43966.png" width="300" />
