@@ -125,7 +125,8 @@ Natural language processing with deep learning is a powerful combination. Using 
    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6f549673-10a8-4202-8779-6cde7a64ea23.png" width="700" />
 
   * If O<sub>6257</sub> is the one hot encoding of the word orange of shape (10000, 1), then
-    * E * O<sub>6257</sub> = e<sub>6257</sub>, which shape is (300, 1)
+    * E * O<sub>6257</sub> = e<sub>6257</sub>
+    * **The result is an embedded vector of shape (300, 1)**
 
    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1dd4571e-e0e5-4447-8c67-94c411be59be.png" width="700" />
 
