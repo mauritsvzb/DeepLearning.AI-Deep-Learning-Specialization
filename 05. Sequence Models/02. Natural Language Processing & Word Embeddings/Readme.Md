@@ -190,13 +190,13 @@ Natural language processing with deep learning is a powerful combination. Using 
     * This model (encircled in green ) is called skip-grams model (a form of word2vec model); e has its own parameters, and so does the softmax
 * The last model has a problem with the softmax layer:
 
-  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2d8f40c8-1afc-4576-bc5d-66b1181642d2.png" width="700" />
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2d8f40c8-1afc-4576-bc5d-66b1181642d2.png" width="300" />
 
 * Here we are summing 10,000 numbers which corresponds to the number of words in our vocabulary
 * If this number is large e,g., 1 million, the computation will become very slow
 * One of the solutions for the last problem is to use **"Hierarchical softmax classifier"**, which works as a binary tree classifier
 
-  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2db76473-d96e-44c8-825e-49dc5ee640f3.png" width="700" />
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2db76473-d96e-44c8-825e-49dc5ee640f3.png" width="300" />
 
 * In practice, the hierarchical softmax classifier doesn't use a balanced tree like the drawn one. Common words are at the top and less common are further down the tree.
 
