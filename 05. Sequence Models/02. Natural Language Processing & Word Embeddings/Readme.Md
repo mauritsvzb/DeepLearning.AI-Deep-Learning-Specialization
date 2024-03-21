@@ -239,7 +239,7 @@ Natural language processing with deep learning is a powerful combination. Using 
 The logistic regression model can be drawn like this:
 
 
-
+    * So we are like having 10,000 binary classification problems, and we only train k negative + 1 positive classifier of them in each iteration, whereby each iteration consists of a different subset of k classifiers
 
     * So we are like having 10,000 binary classification problems, and we only train k negative + 1 positive classifier of them in each iteration, whereby each iteration consists of a different subset of k classifiers
 
