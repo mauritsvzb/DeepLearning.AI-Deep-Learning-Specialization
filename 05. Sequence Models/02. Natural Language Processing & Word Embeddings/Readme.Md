@@ -279,6 +279,27 @@ The logistic regression model can be drawn like this
 
 ## Applications Using Word Embeddings
 ### Sentiment Classification
+* As we have discussed before, Sentiment classification is the process of finding out if a text has a positive or a negative connotation. It's so useful in NLP and is used in so many applications. An example would be:
 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1ecb6d7a-2756-4042-990a-042201c3aee6.png" width="700" />
+
+* One of the challenges with this, is that you might not have a huge labeled training data for it, but using word embeddings can help overcome this issue
+* The common dataset sizes varies from 10,000 to 100,000 words
+* A simple sentiment classification model would be like this:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f13f3a82-0b10-4700-8841-338a41795011.png" width="700" />
+
+  * The embedding matrix may have been trained on say 100 billion words
+  * Number of features in word embedding is 300
+  * We can use the 'sum'or 'average' given all the words, then pass the outcome to a softmax classifier. That makes this classifier works for short or long sentences.
+* One of the problems with the above simple model is that it ignores words order e.g., "completely lacking in good taste, good service, and good ambience" has the word "good" in it 3 times but its a negative review
+* A better model uses an RNN for solving this problem:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d99110ec-cf0c-4071-b270-a298cd6b0f05.png" width="700" />
+
+* And so if you train this algorithm, you end up with a pretty decent sentiment classification algorithm
+* Also, it will generalize better even if certain words weren't in your dataset. For example you have the sentence "Completely absent of good taste, good service, and good ambience", then even if the word "absent" is not in your label training set, if it was in your 1 billion or 100 billion word corpus used to train the word embeddings, it might still get this right and generalize much better even to words that were in the training set used to train the word embeddings but not necessarily in the label training set that you had for specifically the sentiment classification problem
+
+### Debiasing Word Embeddings
 
 
