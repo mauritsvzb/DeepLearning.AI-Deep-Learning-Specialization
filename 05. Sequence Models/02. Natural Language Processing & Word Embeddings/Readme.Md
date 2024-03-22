@@ -249,3 +249,36 @@ The logistic regression model can be drawn like this
 
 * With f(a) is the observed frequency of the word a in the training set corpus
 
+### GloVe Word Vectors
+* GloVe is another algorithm (simplest) for learning the word embedding 
+  * Paper: Pennington et al., 2014, GloVe: Global Vectors for Word Representation
+  * This is not used as much as Word2Vec or skip-gram models, but it has some enthusiasts because of its simplicity
+  * GloVe stands for Global Vectors for word representation
+* Let's use our previous example: "I want a glass of orange juice to go along with my cereal."
+  * We will choose a context and a target from the choices we have mentioned in the previous sections
+  * Then we will calculate this for every pair: X<sub>ij</sub> = # times `t` appears in context of `c`
+    * In other words, X<sub>ij</sub> captures how often do words `c` and `t` appear with each other, or close to each other
+  * X<sub>ij</sub> = X<sub>ji</sub> if we choose a window pair, but they will not be equal if we choose the previous words for example. In GloVe they use a window which means they are equal.
+* The model is defined like this:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/81c40998-154e-4491-b369-ef6d8b3c2648.png" width="700" />
+
+  * `i`, `j` play the roles of `c`, `t`
+  * f(x<sub>ij</sub>) is the weighting term, used for many reasons which include:
+    * `0` or `0 log(0) = 0`  (because log(0) = -inf) which might occur if there are no pairs for the given target and context values (xij = 0)
+    * Giving more but not too much weight for stop words e.g., "is", "the", and "this", which may occur many times
+    * Giving less but meaningful weight for infrequent or incommon words e.g., "durian"
+    * Details of choosing f(x) is presented in the algorithm paper
+  * `Theta` and `e` are symmetric which helps getting the final word embedding by averaging, and these two parameters and can be optimized by Gradient Descent
+    * Given the word `w`, Theta(w)<sub>final</sub> = (Theta(w)<sub>trained</sub> + e(w)<sub>trained</sub>) /2
+* Conclusions on word embeddings:
+  * If this is your first try, you should try to download a pre-trained model that has been made and actually works best
+  * If you have enough data, you can try to implement one of the available algorithms
+  * Because word embeddings are very computationally expensive to train, most ML practitioners will load a pre-trained set of embeddings
+  * A final note is that you can't guarantee that the axis used to represent the features will be well-aligned with what might be easily humanly interpretable axis like gender, royal, age
+
+## Applications Using Word Embeddings
+### Sentiment Classification
+
+
+
