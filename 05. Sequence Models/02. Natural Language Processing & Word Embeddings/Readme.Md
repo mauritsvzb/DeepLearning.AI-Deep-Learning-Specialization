@@ -301,5 +301,53 @@ The logistic regression model can be drawn like this
 * Also, it will generalize better even if certain words weren't in your dataset. For example you have the sentence "Completely absent of good taste, good service, and good ambience", then even if the word "absent" is not in your label training set, if it was in your 1 billion or 100 billion word corpus used to train the word embeddings, it might still get this right and generalize much better even to words that were in the training set used to train the word embeddings but not necessarily in the label training set that you had for specifically the sentiment classification problem
 
 ### Debiasing Word Embeddings
+* We want to make sure that our word embeddings are free from undesirable forms of bias, such as gender bias, ethnicity bias etc
+* Worrying results on the trained word embeddings in the context of Analogies:
+  * Man: Computer_programmer as Woman: Homemaker
+  * Father: Doctor as Mother: Nurse
+* Word embeddings can reflect gender, ethnicity, age, sexual orientation, and other biases of text used to train the model
+* Learning algorithms generalally assist or make important decisions and therefore mustn't be biased
+* Andrew thinks we actually have better ideas for quickly reducing the bias in AI than for quickly reducing the bias in the human race, although it still needs a lot of work to be done
+* Addressing bias in word embeddings steps:
+  * Paper: [Bolukbasi et al., 2016, Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings](https://arxiv.org/abs/1607.06520)
+  * Given these learned embeddings:
 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b4160ffe-afec-40a9-9dfe-736df1b3a6b3.png" width="300" />
+
+  * We need to solve the **gender bias** here. The steps we will discuss can help solve any bias problem but we are focusing here on gender bias.
+  * Here are the steps:
+    1. Identify the direction:
+      * Calculate the difference between:
+        * e<sub>he</sub> - e<sub>she</sub>
+        * e<sub>male</sub> - e<sub>female</sub>
+        * ...
+      * Choose some k differences and average them
+      * This will help you find this:
+
+        <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/62a23336-1b64-42ca-bf41-aa7bb776d4db.png" width="300" />
+
+      * By that we have found the bias direction which is 1D vector and the non-bias vector which is 299D vector
+    2. Neutralize: For every word that is not definitional, project to get rid of bias
+       * Babysitter and doctor need to be neutral so we project them on non-bias axis with the direction of the bias:
+
+         <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/8d0cb772-7301-4892-a5c4-c3af171cb3a6.png" width="300" />
+
+         * After that they will be equal in the term of gender
+         * To do this, the authors of the paper trained a classifier to tell the words that need to be neutralized or not
+    3. Equalize pairs
+       * We want each pair to have difference only in gender e.g., :
+         * Grandfather - Grandmother
+         * He - She
+         * Boy - Girl
+      * We want to do this because the distance between grandfather and babysitter is bigger than babysitter and grandmother:
+
+        <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/411e95cf-1f10-4319-a911-1cf4fef81415.png" width="300" />
+
+      * To do that, we move grandfather and grandmother to new points (purple dots) where they will be in the middle of the non-bias axis (green lines)
+
+        <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c8124ae3-3f03-48bf-86c0-45f0bd3cf279.png" width="300" />
+
+      * There are some words you need to do this for in your steps (Number of these words is relatively small)
+        * We can train the model to identify these words
+      * You can read the original papper for the full idea of equalize pair
 
