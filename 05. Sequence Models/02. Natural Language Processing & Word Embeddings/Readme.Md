@@ -188,6 +188,7 @@ Natural language processing with deep learning is a powerful combination. Using 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/01c85a10-9967-40ec-aaf9-cdcb824183f7.png" width="700" />
 
     * This model (encircled in green ) is called skip-grams model (a form of word2vec model); e has its own parameters, and so does the softmax
+    * θ<sub>t</sub>: parameter associated with output 't' i.e., the chance of a particular word 't' being the label
 * The last model has a problem with the softmax layer:
 
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/2d8f40c8-1afc-4576-bc5d-66b1181642d2.png" width="300" />
