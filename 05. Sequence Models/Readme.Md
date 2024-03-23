@@ -12,7 +12,7 @@ You will:
 * [Week 1 - PA 1 - Building a Recurrent Neural Network - Step by Step](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/05.%20Sequence%20Models/01.%20Recurrent%20Neural%20Networks/Building_a_Recurrent_Neural_Network_Step_by_Step.ipynb)
 * [Week 1 - PA 2 - Dinosaur Land -- Character-level Language Modeling](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/05.%20Sequence%20Models/01.%20Recurrent%20Neural%20Networks/Dinosaurus_Island_Character_level_language_model.ipynb)
 * [Week 1 - PA 3 - Jazz improvisation with LSTM](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/05.%20Sequence%20Models/01.%20Recurrent%20Neural%20Networks/Improvise_a_Jazz_Solo_with_an_LSTM_Network_v4.ipynb)
-* Week 2 - PA 1 - Word Vector Representation and Debiasing
+* [Week 2 - PA 1 - Word Vector Representation and Debiasing](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/05.%20Sequence%20Models/02.%20Natural%20Language%20Processing%20%26%20Word%20Embeddings/Operations_on_word_vectors_v2a.ipynb)
 * Week 2 - PA 2 - Emojify!
 * Week 3 - PA 1 - Neural Machine Translation with Attention
 * Week 3 - PA 2 - Trigger Word Detection
