@@ -72,7 +72,7 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
 * If you want to find the sequence of words, y1, y2, all the way up to the final word that together maximize the probability, it's not always optimal to just pick one word at a time. And, of course, the total number of combinations of words in the English sentence is exponentially larger.
 * So what is better than greedy approach, is to get an approximate solution for the whole sentence, that will try to maximize the output (the last equation above).
 
-  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/0a277f76-c59b-40d9-aa6c-7dbbf800aad1.png" width="350" />
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/0a277f76-c59b-40d9-aa6c-7dbbf800aad1.png" width="700" />
 
 ### Beam Search
 
