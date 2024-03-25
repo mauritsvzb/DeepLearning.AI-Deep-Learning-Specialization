@@ -40,7 +40,51 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
     [Vinyals et. al., 2014, Show and tell: Neural image caption generator](https://arxiv.org/abs/1411.4555)
     [Karpathy and Li, 2015, Deep visual-semantic alignments for generating image descriptions](https://cs.stanford.edu/people/karpathy/cvpr2015.pdf)
 
-### 
+### Picking the Most Likely Sentence
+* There are some similarities between the language model we have learned previously, and the machine translation model we have just discussed, but there are some differences as well
+* The language model we have learned is very similar to the decoder part of the machine translation model, except for a<sup><0></sup>
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a6e315f4-4ec3-4283-9d6a-e1a52c6ec316.png" width="700" />
+
+* Rather than starting with an initial representation with all zeros in language model, the machine translation has an encoded network to figure out some representation for input sentence => **Conditional language model**
+* Problems formulations also are different:
+  * In language model: P(y<sup><1></sup>, ..., y</sup><Ty></sup>)
+  * In machine translation: P(y<sup><1></sup>, ..., y<sup><Ty></sup> | x<sup><1></sup>, ..., x<sup><Tx></sup>)
+* What we don't want is to sample outputs at random. e.g., maybe one time you may get a good translation, but other times you may get a different (bad) translation
+* Example:
+  * X = "Jane visite l’Afrique en septembre."
+  * Y may be:
+    * Jane is visiting Africa in September
+    * Jane is going to be visiting Africa in September
+    * In September, Jane will visit Africa
+    * Her African friend welcomed Jane in September
+* So, when using this model for machine translation, you're not trying to sample at random from this distribution. Instead, what you would like is to find the English sentence, y, that maximizes that conditional probability.
+* So in developing a machine translation system, one of the things you need to do is come up with an algorithm that can actually find the value of y that maximizes the probability:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/fe8f7e9a-49b1-4a3b-8f2b-468bd9a1827a.png" width="350" />
+
+* The most common algorithm is the beam search, which we will explain in the next section
+* Why not use greedy search? Why not get the best choices each time?
+  * It turns out that this approach doesn't really work!
+  * Lets explain it with an example:
+    * The best output for the example we talked about is *"Jane is visiting Africa in September."*
+    * Suppose that when you are choosing with greedy approach, the first two words were *"Jane is"*, the word that may come after that will be *"going"* as *"going"* is the most common word (with high probability) that comes after *"is"* so the result may look like this: *"Jane is going to be visiting Africa in September."*. And that isn't the best/optimal solution.
+* If you want to find the sequence of words, y1, y2, all the way up to the final word that together maximize the probability, it's not always optimal to just pick one word at a time. And, of course, the total number of combinations of words in the English sentence is exponentially larger.
+* So what is better than greedy approach, is to get an approximate solution for the whole sentence, that will try to maximize the output (the last equation above).
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/0a277f76-c59b-40d9-aa6c-7dbbf800aad1.png" width="350" />
+
+### Beam Search
+
+
+
+
+
+
+
+
+
+
 
 
 
