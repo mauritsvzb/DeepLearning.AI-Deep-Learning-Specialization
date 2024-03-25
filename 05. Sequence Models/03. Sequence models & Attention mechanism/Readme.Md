@@ -17,13 +17,13 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
 * Let's start with the basic model:
   * Given this machine translation problem in which X is a French sequence and Y is an English sequence:
 
-    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/adb5322d-2f0c-4ba0-a3eb-351e356343e1.png" width="300" />
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/adb5322d-2f0c-4ba0-a3eb-351e356343e1.png" width="350" />
 
   * Our architecture will include an **encoder** and **decoder**
   * The encoder is an RNN - LSTM or GRU are included - and takes the input sequence and then outputs a vector that should represent the whole input
   * After that the decoder network, also an RNN, takes the sequence built by the encoder and outputs the new sequence:
 
-    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7a141172-d6aa-4108-85a2-282c5b30caa4.png" width="300" />
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7a141172-d6aa-4108-85a2-282c5b30caa4.png" width="350" />
 
   * These ideas are from the following papers:
     * [Sutskever et al., 2014, Sequence to sequence learning with neural networks](https://arxiv.org/abs/1409.3215)
@@ -32,7 +32,7 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
   * In this problem X is an image, while Y is a sentence sequence (caption)
   * The model architecture image:
 
-    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5e769ad2-6066-4e06-8fa8-298039aee74d.png" width="300" />
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/5e769ad2-6066-4e06-8fa8-298039aee74d.png" width="700" />
 
   * The architecture uses a pretrained CNN (like AlexNet) as an encoder for the image, and the decoder is an RNN
   * Ideas are from the following papers (they share similar ideas):
