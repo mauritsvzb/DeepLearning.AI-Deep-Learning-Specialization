@@ -75,9 +75,24 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/0a277f76-c59b-40d9-aa6c-7dbbf800aad1.png" width="700" />
 
 ### Beam Search
+* Beam search is the most widely used algorithm to get the best output sequence. It's a heuristic search algorithm.
+* To illustrate the algorithm we will stick with the example from the previous section. We need Y = *"Jane is visiting Africa in September."*
+* The algorithm has a parameter B which is the beam width. Lets take B = 3 which means the algorithm will consider/get 3 possibility outputs at a time.
+  * For the first step you will get [*"in"*, *"jane"*, *"september"*] words that are the most likely 3 best candidates for the first words (top 3) among 10,000 possibilities
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f21218cf-5c71-4126-b03b-2fac2eb45048.png" width="700" />
 
+  * Then for each word in the first output, get B next (second) words and select top best B combinations where the best are those what give the highest value of multiplying both probabilities: P(y<sup><1></sup>,y<sup><2></sup>|x) = P(y<sup><1></sup>|x) * P(y<sup><2></sup>|x, y<sup><1></sup>)
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b19f915f-5384-4abc-ad1a-594408f0c782.png" width="700" />
+
+  * Which means, we have to work with 30,000 choices of word in total. And we have to make 3 copies of the network to evaluate the possible output (10,000 possibilities for each)
+  * Then we will have [*"in september"*, *"jane is"*, *"jane visits"*]. Notice, that we automatically discard "september" as a first word if Beam Search chose this triplet.
+  * Repeat the same process and get the next best B words for [*"in september"*, *"jane is"*, *"jane visits"*] and so on until the end of sentence 
+* In this algorithm, keep only B instances of your network. Which means we have to work with B * N choices for each step
+* If `B = 1`, then this will become the greedy search
+
+### 
 
 
 
