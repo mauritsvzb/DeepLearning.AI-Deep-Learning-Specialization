@@ -123,9 +123,31 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
   * Unlike exact search algorithms like BFS (Breadth First Search) or DFS (Depth First Search), Beam Search runs faster but is not guaranteed to find the exact solution
 
 ### Error Analysis in Beam Search
+* We have talked before about Error analysis in "Structuring Machine Learning Projects" course. We will apply these concepts to improve our beam search algorithm.
+* We will use error analysis to figure out if the B hyperparameter of the beam search is the problem (it doesn't get an optimal solution) or our RNN part.
+* Let's take an example:
+  * Initial info:
+    * x = *"Jane visite l’Afrique en septembre."*
+    * y* = *"Jane visits Africa in September."* - right answer (human)
+    * ŷ = *"Jane visited Africa last September."* - answer produced by model
+  * Observation: Our model has produced not a good result
+  * We now want to know who to blame - the RNN or the beam search?
+  * To do that, we calculate P(y* | X) and P(ŷ | X). There are two cases:
+    * Case 1: P(y* | X) > P(ŷ | X)
+      * Beam search chose ŷ. But y* attains higher P(y | X)
+      * Conclusion: Beam search is at fault
+    * Case 2: P(y* | X) ≤ P(ŷ | X)
+      * y* is a better translation than ŷ. But RNN predicted otherwise
+      * Conclusion: RNN model is at fault
+* The error analysis process is as following:
+  * You choose N error examples and make the following table:
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4efc1981-7a38-431c-92b5-b6ae93a21531.png" width="700" />
 
+B for beam search, R is for the RNN.
+Get counts and then decide what to work on next
 
+### Bleu Score (Optional)
 
 
 
