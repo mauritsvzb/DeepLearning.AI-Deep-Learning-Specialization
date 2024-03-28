@@ -92,7 +92,37 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
 * In this algorithm, keep only B instances of your network. Which means we have to work with B * N choices for each step
 * If `B = 1`, then this will become the greedy search
 
-### Refinements to Beam Searchv
+### Refinements to Beam Search
+* In the previous section, we have discussed the basic beam search. In this section, we will try to do some refinements to it.
+* The first thing is ** Length optimization** 
+  * In beam search we are trying to optimize:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/f4e705a7-2dab-426b-9d98-3ab597931e58.png" width="350" />
+
+    * And to do that we multiply: P(y<1> | x) * P(y<2> | x, y<1>) * ... * P(y<t> | x, y<y(t-1)>)
+      * Each probability is a fraction, most of the time a small fraction
+    * However, multiplying small fractions will cause a numerical overflow. Meaning that the value is too small for the floating part representation in your computer to store accurately
+  * So in practice we use **summing logs** of probabilities instead of multiplying directly
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/43becca6-568f-4f86-8bed-9160edd3d817.png" width="350" />
+
+    *  But there's another problem. The two optimization functions we have mentioned prefer small sequences rather than long ones. Because multiplying more fractions gives a smaller value, so fewer fractions - bigger values = better result.
+  * So there's another step - dividing by the number of elements in the sequence
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/89299807-6ee9-4107-a96c-3b29a6d72068.png" width="350" />
+
+    * with alpha is a hyperparameter to tune
+      * If `alpha = 0` - no sequence length normalization
+      * If `alpha = 1` - full sequence length normalization
+      * In practice, `alpha = 0.7` is a good thing (somewhere in between two extremes)
+* The second thing is **how can we choose best beam width `B`**?
+  * The larger the value of B, the more possibilities are considered, and the better the result is achieved
+    * However, increasing B also comes with increasing computational cost
+  * In practice, you might see in the production setting `B = 10`
+    * `B = 100`, `B = 1000` are uncommon (sometimes used in research settings)
+  * Unlike exact search algorithms like BFS (Breadth First Search) or DFS (Depth First Search), Beam Search runs faster but is not guaranteed to find the exact solution
+
+### Error Analysis in Beam Search
 
 
 
