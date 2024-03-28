@@ -92,7 +92,9 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
 * In this algorithm, keep only B instances of your network. Which means we have to work with B * N choices for each step
 * If `B = 1`, then this will become the greedy search
 
-### 
+### Refinements to Beam Searchv
+
+
 
 
 
