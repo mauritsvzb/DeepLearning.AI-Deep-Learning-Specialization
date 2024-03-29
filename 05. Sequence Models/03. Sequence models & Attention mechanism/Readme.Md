@@ -318,3 +318,25 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
 * Using both attention model and CTC cost can help you to build an accurate speech recognition system
 
 ### Trigger Word Detection
+* With the rise of deep learning speech recognition, there are a lot of devices that can be waked up by saying some words with your voice. These systems are called trigger word detection systems.
+* For example, Alexa - a smart device made by Amazon - can answer your call "Alexa, what time is it?" and then Alexa will respond to you
+* Trigger word detection systems include:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/65f4bf1e-4bd2-4776-9401-1a35479ce225.png" width="700" />
+
+* For now, the trigger word detection literature is still evolving so there actually isn't a single universally agreed on the algorithm for trigger word detection yet. But let's discuss an algorithm that can be used.
+* Let's now build a model that can solve this problem:
+  * X: audio clip
+  * X has been preprocessed and spectrogram features have been returned of X
+    * X<sup><1></sup>, X<sup><2></sup>, ... , X<sup>< t ></sup>
+  * Y will be label 0 or 1. 0 represents the non-trigger word, while 1 is that trigger word that we need to detect.
+  * The model architecture can be like this:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/1fad2ea5-e249-4a81-87bf-5a62a2da72fd.png" width="700" />
+
+  * The vertical lines in the audio clip represent moment just after the trigger word. The corresponding to this will be 1.
+* One disadvantage of this creates a very imbalanced training set. There will be a lot of zeros and few ones.
+* A hack to solve this is to make an output a few ones for several times or for a fixed period of time before reverting back to zero.
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/59781019-a9cb-4cf5-aa4e-dbfcb24bd627.png" width="700" />
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3879f946-3e9e-489e-99d7-43ef4fa0d45e.png" width="700" />
