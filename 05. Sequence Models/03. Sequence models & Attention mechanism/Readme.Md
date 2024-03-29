@@ -234,7 +234,31 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
 
     * With alpha<sup><3, t></sup> can be affected by a<sup>< t ></sup> forward, alpha<sup>< t ></sup> backward (as we used the Bidirectional RNN) and the state from previous step S<sup><2></sup> => how much you pay attention to S<sup><3></sup>
 
-### 
+### Attention Model
+* Let's formalize the intuition from the last section into the exact details on how this can be implemented
+* First we will have an bidirectional RNN (most common is LSTMs) that encodes French language:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4a6a79da-1c53-4d1f-9c46-4743ec8874f3.png" width="700" />
+
+  * For learning purposes, let's assume that a<sup><t'></sup> will include both directions activations at time step t' a<sup><t'></sup> = (a<sup><t'></sup> forward, a<sup><t'></sup> backward)
+  * We will have a unidirectional RNN to produce the output using a context 'c' which is computed using the attention weights, which denote how much information does the output needs to look in a<sup><t'></sup>
+
+Sum of the attention weights for each element in the sequence should be 1:
+
+The context c is calculated using this equation:
+
+compute the attention weights alpha<t, t'>:
+So alpha<t, t'> = amount of attention y<t> should pay to a<t'>
+Like for example we payed attention to the first three words through alpha<1,1>, alpha<1,2>, alpha<1,3>
+We are going to softmax the attention weights so that their sum is 1:
+
+Now we need to know how to calculate e<t, t'>. We will compute e using a small neural network (usually 1-layer, because we will need to compute this a lot):
+
+S<t-1> is the hidden state S of the RNN, and a<t'> is the activation of the other bidirectional RNN.
+One of the disadvantages of this algorithm is that it takes quadratic time or quadratic cost to run.
+Other application of attention in image captioning: [Xu et al., 2015, Show, attend and tell: Neural image caption generation with visual attention]
+One fun way to see how attention works is by visualizing the attention weights:
+
 
 
 
