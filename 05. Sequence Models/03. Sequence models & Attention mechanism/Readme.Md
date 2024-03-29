@@ -196,9 +196,45 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
 * BLEU score has several open-source implementations
 * It is used in a variety of systems like machine translation and image captioning
 
-###  
+### Attention Model Intuition
+* So far we were using sequence to sequence models with an encoder and decoders, but there is a technique called *attention* which makes these models even better
+* The attention idea has been one of the most influential ideas in deep learning
+* The problem of long sequences:
+  * Given this model, inputs, and outputs:
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/95b649c9-af50-4923-8188-9fb1ae0fe0b5.png" width="700" />
 
+  * The encoder should memorize this long sequence into one vector, and the decoder has to process this vector to generate the translation
+* If a human would translate this sentence, he/she wouldn't read the whole sentence and memorize it then try to translate it but rather translate a part each time
+* The performance of this model decreases if a sentence is long
+* We will discuss the attention model that works like a human that looks at parts at a time. That will significantly increase the accuracy even with longer sequence:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/42c1154c-e898-43d0-b76b-9cdae793fe89.png" width="700" />
+
+  * Blue is the normal model, while green is the model with attention mechanism.
+* In this section we will give just some intuitions about the attention model and in the next section we will discuss its details
+* The attention model was descried in this paper:
+  * [Bahdanau et al., 2014. Neural machine translation by jointly learning to align and translate](https://arxiv.org/abs/1409.0473)
+* Now for the intuition:
+  * Suppose that our encoder is a bidirectional RNN: 
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3f7894f1-30fa-4b78-b5b4-b15c4e43dc0c.png" width="700" />
+
+  * We pass the French sentence to the encoder whichh generates a vector that represents the inputs
+  * Now to generate the first word in English, which is *"Jane"*, we will make another RNN, which is the decoder
+  * Attention weights are used to specify which words are needed when generating a word. So to generate *"Jane"* we will look at *"jane"*, *"visite"*, *"l'Afrique"*
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a8564e80-4b2b-4c2a-a230-48204798b86d.png" width="700" />
+
+    * S<sup><0></sup>, S<sup><1></sup>,... is the hidden State (S) activation of the other RNN (same as a<sup><0></sup>, a<sup><1></sup>,... but denoted with symbol S to avoid confusion
+    * alpha<sup><1,1></sup>, alpha<sup><1,2></sup>, and alpha<sup><1,3></sup> are the attention weights being used
+  * And so to generate any word there will be a set of attention weights that controls which words we are looking at right now
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/ee650961-dc8a-4323-acfa-5cfcb0538010.png" width="700" />
+
+    * With alpha<sup><3, t></sup> can be affected by a<sup>< t ></sup> forward, alpha<sup>< t ></sup> backward (as we used the Bidirectional RNN) and the state from previous step S<sup><2></sup> => how much you pay attention to S<sup><3></sup>
+
+### 
 
 
 
