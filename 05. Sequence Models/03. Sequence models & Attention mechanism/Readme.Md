@@ -273,6 +273,48 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
 
 ## Speech Recognition (Audio Data)
 ### Speech Recognition
+* One of the most exciting developments using sequence-to-sequence models has been the rise of very accurate speech recognition
+* Let's define the speech recognition problem:
+  * X: audio clip
+  * Y: transcript
+  * If you plot an audio clip it will look like this:
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/37abc6fb-f43c-40a1-96bc-dafe4344aab6.png" width="250" />
+
+    * The horizontal axis is time while the vertical is changes in air pressure.
+  * What really is an audio recording? A microphone records little variations in air pressure over time, and it is these little variations that your ear perceives as sound. You can think of an audio recording as a long list of numbers measuring the little air pressure changes detected by the microphone. We will use audio sampled at 44100 Hz (or 44100 Hertz). This means the microphone gives us 44100 numbers per second. Thus, a 10 second audio clip is represented by 441000 numbers (= 10 * 44100).
+  * It is quite difficult to work with "raw" representations of audio
+  * Because even the human ear doesn't process raw wave forms, the human ear can process different frequencies
+  * There's a common preprocessing step for an audio - generate a spectrogram which works similarly to human ears
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/18c3cc51-d0d1-41b0-ba1e-5c9d0c2c0253.png" width="250" />
+
+    * The horizontal axis is time while the vertical is frequencies. Intensity of different colors shows the amount of energy - how loud is the sound - for different frequencies (a human ear does a very similar preprocessing step).
+  * A spectrogram is computed by sliding a window over the raw audio signal, which calculates the most active frequencies in each window using a Fourier transformation
+  * In the past, speech recognition systems were built using phonemes that are a hand-engineered basic units of sound. Linguists used to hypothesize that writing down audio in terms of these basic units of sound called phonemes   would be the best way to do speech recognition.
+  * End-to-end deep learning found that phonemes was no longer needed. One of the things that made this possible is the large audio datasets
+  * Research papers have around 300 - 3000 hours of training data while the best commercial systems are now trained on over 100,000 hours of audio
+* You can build an accurate speech recognition system using the attention model that we have descried in the previous section:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/16a135ce-f565-44f5-9e5c-020a20e05341.png" width="700" />
+
+* One of the methods that seem to work well is **CTC cost**, which stands for "Connectionist temporal classification"
+  * To explain this let's say that Y = "the quick brown fox"
+  * We are going to use an RNN with input, output structure:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c6164e23-0e21-471c-b7f9-b09483881ce5.png" width="500" />
+
+  * Note: this is a unidirectional RNN, but in practice a bidirectional RNN is used
+  * Notice that the number of inputs and number of outputs are the same here, but in speech recognition problem input X tends to be a lot larger than output Y
+    * 10 seconds of audio at 100Hz gives us X with shape (1000, ). These 10 seconds don't contain 1000 character outputs.
+  * The CTC cost function allows the RNN to output something like this:
+    * `ttt_h_eee<SPC>___<SPC>qqq___` - this covers "the q".
+    * The _ is a special character called "blank" and <SPC> is for the "space" character.
+    * Basic rule for CTC: collapse repeated characters not separated by "blank"
+  * So the 19 characters in our Y can be generated into 1000 character output using CTC and it's special blanks
+  * The ideas were taken from this paper:
+    * [Graves et al., 2006, Connectionist Temporal Classification: Labeling unsegmented sequence data with recurrent neural networks](https://dl.acm.org/doi/10.1145/1143844.1143891)
+    * This paper's ideas were also used by Baidu's DeepSpeech
+* Using both attention model and CTC cost can help you to build an accurate speech recognition system
 
 ### Trigger Word Detection
