@@ -144,13 +144,59 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4efc1981-7a38-431c-92b5-b6ae93a21531.png" width="700" />
 
-B for beam search, R is for the RNN.
-Get counts and then decide what to work on next
+* B is for beam search, R is for the RNN
+* Get counts and then decide what to work on next
 
 ### Bleu Score (Optional)
+* One of the challenges of machine translation is that, given a sentence in a language, there are one or more possible good translations in another language. So how do we evaluate our results?
+* The way we do this is by using BLEU score (*bilingual evaluation understudy*)
+  * Paper: [Papineni et al., 2002, BLEU: a Method for Automatic Evaluation of Machine Translation](https://aclanthology.org/P02-1040.pdf)
+  * The intuition is: as long as the machine-generated translation is pretty close to any of the references provided by humans, then it will receive a high BLEU score
+* Let's take an example:
+  * X = *"Le chat est sur le tapis."*
+  * Y1 = *"The cat is on the mat."*   (human reference 1)
+  * Y2 = "There is a cat on the mat." (human reference 2)
+  * Suppose that the machine outputs: 
+    * "the the the the the the the."
+  * One way to evaluate the machine translation output is to look at each word in the output and check if it is in the references. This is called *precision*:
+    * In this case: precision = 7/7 because every word in the output 'the' appears in Y1 or Y2
+    * This is not a useful measure!
+  * We can use a *modified precision* in which we are looking for the reference with the maximum number of a particular word and set the maximum appearing of this word to this number. So:
+    * modified precision = 2/7 because the max of 'the' is 2 in Y1
+    * We clipped 'the' 7 times by the max which is 2.
+  * Here we are looking at one word at a time - *unigrams*, we may look at *n-grams* too
+* BLEU score on bigrams
+  * The n-grams are typically collected from a text or speech corpus. When the items are words, n-grams may also be called shingles. An n-gram of size 1 is referred to as a "unigram"; size 2 is a "bigram" (or, less commonly, a "digram"); size 3 is a "trigram", etc
+  * X = "Le chat est sur le tapis."
+  * Y1 = "The cat is on the mat."
+  * Y2 = "There is a cat on the mat."
+  * Suppose that the machine outputs the translation: "The cat the cat on the mat."
+  * The bigrams in the machine output:
+    | Pairs	| Count |	Count clip |
+    | --- | --- | --- |
+    | the cat	| 2	| 1 (Y1) |
+    | cat the	| 1	| 0 |
+    | cat on	| 1	| 1 (Y2) |
+    | on the	| 1	| 1 (Y1 & Y2) |
+    | the mat | 1 |	1 (Y1 & Y2) |
+    | Totals |	6	| 4 |
+      * `Modified precision = sum(Count clip) / sum(Count) = 4/6`
+* So here are the equations for modified precision for the n-grams case:
 
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/7879ec7a-10d2-4f4a-89c9-2889bc1015bb.png" width="700" />
 
+* Let's put this together to formalize the BLEU score:
+  * P<sub>n</sub> = Bleu score on one type of n-gram
+  * **Combined BLEU score** = BP * exp(1/n * sum(Pn))
+    * e.g., if we want BLEU for 4, we compute P<sub>1</sub>, P<sub>2</sub>, P<sub>3</sub>, P<sub>4</sub> and then average them and take the exp
+  * BP stands for **brevity penalty**. It turns out that if a machine outputs a small number of words it will get a better score so we need to handle that
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3e515cbe-188e-4db5-8894-23e13061fe28.png" width="700" />
+
+* BLEU score has several open-source implementations
+* It is used in a variety of systems like machine translation and image captioning
+
+###  
 
 
 
