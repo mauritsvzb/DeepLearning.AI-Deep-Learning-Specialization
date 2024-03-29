@@ -241,27 +241,35 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4a6a79da-1c53-4d1f-9c46-4743ec8874f3.png" width="700" />
 
   * For learning purposes, let's assume that a<sup><t'></sup> will include both directions activations at time step t' a<sup><t'></sup> = (a<sup><t'></sup> forward, a<sup><t'></sup> backward)
-  * We will have a unidirectional RNN to produce the output using a context 'c' which is computed using the attention weights, which denote how much information does the output needs to look in a<sup><t'></sup>
+* We will have a unidirectional RNN to produce the output using a context 'c' which is computed using the attention weights, which denote how much information does the output needs to look in a<sup><t'></sup>
 
-Sum of the attention weights for each element in the sequence should be 1:
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/12fa0c39-bd3e-4c5f-9299-084bacc59dcd.png" width="700" />
 
-The context c is calculated using this equation:
+* Sum of the attention weights for each element in the sequence should be 1:
 
-compute the attention weights alpha<t, t'>:
-So alpha<t, t'> = amount of attention y<t> should pay to a<t'>
-Like for example we payed attention to the first three words through alpha<1,1>, alpha<1,2>, alpha<1,3>
-We are going to softmax the attention weights so that their sum is 1:
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/c854251a-69fd-4015-90d2-bc7838b9b509.png" width="250" />
 
-Now we need to know how to calculate e<t, t'>. We will compute e using a small neural network (usually 1-layer, because we will need to compute this a lot):
+* The context 'c' is calculated using this equation:
 
-S<t-1> is the hidden state S of the RNN, and a<t'> is the activation of the other bidirectional RNN.
-One of the disadvantages of this algorithm is that it takes quadratic time or quadratic cost to run.
-Other application of attention in image captioning: [Xu et al., 2015, Show, attend and tell: Neural image caption generation with visual attention]
-One fun way to see how attention works is by visualizing the attention weights:
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/43f43b2c-bafb-421d-a01a-68aa6029cfaf.png" width="250" />
 
+* Compute the attention weights alpha<sup><t, t'></sup>:
+  * So alpha<sup><t, t'></sup> = amount of attention y<sup>< t ></sup> should pay to a<sup><t'></sup>
+    * Like for example we payed attention to the first three words through alpha<1,1>, alpha<1,2>, alpha<1,3>
+  * We are going to softmax the attention weights so that their sum is 1:
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/d842d9d4-93eb-40ca-89da-55bb6229c55e.png" width="250" />
 
+  * Now we need to know how to calculate e<sup><t, t'></sup>. We will compute 'e' using a small neural network (usually 1-layer, because we will need to compute this a lot):
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e958211a-5395-4c5b-80ca-bbe8bd992c6e.png" width="250" />
+
+    * S<sup><t-1></sup> is the hidden state 'S' of the RNN, and a<sup><t'></sup> is the activation of the other bidirectional RNN
+  * One of the disadvantages of this algorithm is that it takes quadratic time or quadratic cost to run
+  * Other application of attention in image captioning: [Xu et al., 2015, Show, attend and tell: Neural image caption generation with visual attention](https://arxiv.org/abs/1502.03044)
+* One fun way to see how attention works is by visualizing the attention weights:
+
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/4aeae855-c09a-45ae-87cf-7027fc5a8987.png" width="250" />
 
 ## Speech Recognition (Audio Data)
 ### Speech Recognition
