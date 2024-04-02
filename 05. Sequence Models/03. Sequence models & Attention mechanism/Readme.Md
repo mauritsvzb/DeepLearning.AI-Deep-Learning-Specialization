@@ -340,3 +340,15 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
 
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/59781019-a9cb-4cf5-aa4e-dbfcb24bd627.png" width="700" />
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/3879f946-3e9e-489e-99d7-43ef4fa0d45e.png" width="700" />
+
+### Here's what you should remember
+#### Neural Machine Translation with Attention
+* Machine translation models can be used to map from one sequence to another. They are useful not just for translating human languages (like French -> English) but also for tasks like date format translation.
+* An attention mechanism allows a network to focus on the most relevant parts of the input when producing a specific part of the output
+* A network using an attention mechanism can translate from inputs of length T<sup>x</sup> to outputs of length T<sup>y</sup>, where T<sup>x</sup> and T<sup>y</sup> can be different
+* You can visualize attention weights 𝛼<sup>⟨𝑡, 𝑡′⟩</sup> to see what the network is paying attention to while generating each output
+
+#### Trigger Word Detection
+* Data synthesis is an effective way to create a large training set for speech problems, specifically trigger word detection
+* Using a spectrogram and optionally a 1D conv layer is a common pre-processing step prior to passing audio data to an RNN, GRU or LSTM
+* An end-to-end deep learning approach can be used to build a very effective trigger word detection system
