@@ -62,8 +62,17 @@
   * This formula is the reason why the Self-Attention is also called the scaled dot-product attention
 
 ### Multi-Head Attention
+* Each time you calculate the self-attention is called the head
+* With multi-head attention, you take the same set of [query, key, value] as input and calculate multiple self-attentions for the Attention (W<sup>Q1</sup>Q, W<sup>K1</sup>K, W<sup>V1V</sup>) (visite) to answer 'what's happened?'
+* Then, we repeat the process with a new set of W<sup>Q2</sup>, W<sup>K2</sup>, W<sup>V2</sup> values, to answer the question i.e, When?, and so on (Who, what,...)
+  * For each, we have a different attention for different word, like red for September (when), black for Jane (who),... and this time, we call it a head
+  * These heads are then concatentated together, and called Multi-Head Attention:
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/36da17c5-302e-47dd-b864-73e3c3257128.png" width="700" />
 
+* The Multi-Head Attention is calculated by:
+  * Multihead(Q,K,V) = concat(heads).W0
 
+### 
 
 
