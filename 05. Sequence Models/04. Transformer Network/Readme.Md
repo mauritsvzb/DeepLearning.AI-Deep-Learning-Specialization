@@ -74,4 +74,24 @@
   * Multihead(Q,K,V) = concat(heads).W0
 
 ### Transformer Network
+* We have a sentence with embeddings(also 2 tokens and at the start and end)
+* Transformer Network main idea:
+  * First, the embedding e are feed into the Encoder with Multi-Head Attention with Q, K, V, then go through a Feed-Forward Neural Network
+    * This Encoder block is repeated N times, with N is typically 6
+  * The Decoder block takes input from the first few words of whatever we've generated of the translation (in the beginning, the translation begin with token ), the feed to the Multi-Head Attention to generate Q matrix
+  * Then the Q matrix is combined with K and V from Encoder output and feed to the second Multi-Head Attention block
+  * The Q from the first block is what we've generated so far, combined with the K and Q from the original French words to decide what is the next word in the sequence to generate
+  * Finally, the out of the second block is feed to the Feed-Forward NN, and the Decoder block is also repeated N times, with the output of the Decoder block is feed to its input for another round of generating the most appropriate next (English) word.
 
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/86a10828-1d3b-4eca-9be9-e9da964bb900.png" width="700" />
+
+* Some techniques to make the Transformer even better:
+  * We can apply the Positional Encoding to encode the position of words within the sentence in the input of Encoder and Decoder blocks
+    * For example, the word embedding is a 4-value vector
+    * We create the position vector p with the same dimension, with the pos is the position, and i=0:3 is the index of p. The value inside p is identical and follows the sin/cos plot. Then, the value of p is the corresponded value at the pos in X-axis for each i.
+  * We can also apply
+    * The skip-connection to the Encoder/Decoder and Add & Norm block (similar to the batch norm) throughout the architecture
+    * A Linear and Softmax at the output of the Decoder block to predict the next one word at the time
+* The first Multi-Head Attention of the Decoder can be changed to the Masked Multi-Head Attention pretends the network had perfectly translated the first few words and hide the remaining words to see if given a perfect first part of the translation, whether the NN can predict the next word in the sentence accurately (mimic what the network will need to do during prediction
+
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6a57dc36-2bb0-487a-beae-b28bf1383e97.png" width="700" />
