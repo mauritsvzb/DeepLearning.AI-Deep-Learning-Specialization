@@ -38,7 +38,7 @@
     * It is simmilar to the Attention mechanism discussed in the previous week as applied for RNNs, but this time the model computes these representations in parallel for all five words in a sentence
 * Equation for A(q, k, v):
 
-      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e700d3ce-2329-426c-8632-e6f9d9da5ecb.png" width="350" />
+  <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e700d3ce-2329-426c-8632-e6f9d9da5ecb.png" width="350" />
 
   * For every word, we have 3 values: *query q<sup><i></sup>*, *key K<sup><i></sup>*, and *value V<sup><i></sup>*
     * q<sup><i></sup> lets you ask a question about that word i, like what's happening there?
