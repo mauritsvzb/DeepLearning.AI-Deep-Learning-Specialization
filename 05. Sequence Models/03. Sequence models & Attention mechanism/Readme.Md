@@ -345,7 +345,7 @@ Augment your sequence models using an attention mechanism, an algorithm that hel
 #### Neural Machine Translation with Attention
 * Machine translation models can be used to map from one sequence to another. They are useful not just for translating human languages (like French -> English) but also for tasks like date format translation.
 * An attention mechanism allows a network to focus on the most relevant parts of the input when producing a specific part of the output
-* A network using an attention mechanism can translate from inputs of length T<sup>x</sup> to outputs of length T<sup>y</sup>, where T<sup>x</sup> and T<sup>y</sup> can be different
+* A network using an attention mechanism can translate from inputs of length T<sub>x</sub> to outputs of length T<sub>y</sub>, where T<sub>x</sub> and T<sub>y</sub> can be different
 * You can visualize attention weights 𝛼<sup>⟨𝑡, 𝑡′⟩</sup> to see what the network is paying attention to while generating each output
 
 #### Trigger Word Detection
