@@ -38,16 +38,40 @@
     * It is simmilar to the Attention mechanism discussed in the previous week as applied for RNNs, but this time the model computes these representations in parallel for all five words in a sentence
 * Equation for A(q, k, v):
 
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/e700d3ce-2329-426c-8632-e6f9d9da5ecb.png" width="350" />
 
-  * For every word, we have 3 values query q<i>, key K<i>, and value V<i>
-    * q<i> let you ask a question about that word i, like what's happening there?
-    * K<i> help you figure out if this word gives the most relevant answer to that question, i.e. K<1> is a person, K<1> is an action
-    * V<i> determines this particular word i should be represented within the representation A<i>
-  * For calculate a representation A<3>:
+  * For every word, we have 3 values: *query q<sup><i></sup>*, *key K<sup><i></sup>*, and *value V<sup><i></sup>*
+    * q<sup><i></sup> lets you ask a question about that word i, like what's happening there?
+    * K<sup><i></sup> helps you figure out if this word gives the most relevant answer to that question, i.e. K<sup><1></sup> is a person, or an action
+    * V<sup><i></sup> determines if this particular word i should be represented within the representation A<sup><i></sup>
+  * To calculate a representation A<sup><3></sup>:
     * First:
-      * q<3> = Wq . x<3> (with Wq is a learned weight matrix)
-      * K<3> = WK . x<3>
-      * V<3> = WV . x<3>
-    * Second, we calculate the inner product between q<3> and other K<1:5> => how good is a word i.e. visite is an answer to the question of what happened in l'Afrique
-      * Then compute the Softmax for each (with the blue block (q<3>.K<2> has the largest value))
-    * Finally, we multiply with the corresponding V<i> and sum them up for A<3>
+      * q<sup><3></sup> = Wq . x<sup><3></sup> (with W<sub>q</sub> is a learned weight matrix)
+      * K<sup><3></sup> = WK . x<sup><3></sup>
+      * V<sup><3></sup> = WV . x<sup><3></sup>
+    * Second, we calculate the inner product between q<sup><3></sup> and other K<sup><1:5></sup> => how good is a word i.e. visite is an answer to the question of what happened in l'Afrique
+      * Then compute the Softmax for each (with the blue block (q<sup><3></sup>.K<sup><2></sup> has the largest value))
+    * Then, we multiply with the corresponding V<sup><i></sup> and sum them up to get A<sup><3></sup>
+
+      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/a2a7a7a4-ae69-46ca-927c-36120e65f228.png" width="700" />
+
+      * The key advantage of this computation is the word *'l'Afrique'* lets the self-attention mechanism realise that this word is the destination of a *'visite'*, rather than a fixed word embedding => enables compute richer, more useful representation of this word
+    * Eventualy, we do the same with other word representations
+* Finally, the Self-Attention is calculated by:
+  * `Attention(Q, K, V) = softmax(Q.dot(K.T)/sqrt(d_k)).V`
+  * This formula is the reason why the Self-Attention is also called the scaled dot-product attention
+
+### Multi-Head Attention
+* Each time you calculate the self-attention is called the head
+* With multi-head attention, you take the same set of [query, key, value] as input and calculate multiple self-attentions for the Attention (W<sup>Q1</sup>Q, W<sup>K1</sup>K, W<sup>V1V</sup>) (visite) to answer 'what's happened?'
+* Then, we repeat the process with a new set of W<sup>Q2</sup>, W<sup>K2</sup>, W<sup>V2</sup> values, to answer the question i.e, When?, and so on (Who, what,...)
+  * For each, we have a different attention for different word, like red for September (when), black for Jane (who),... and this time, we call it a head
+  * These heads are then concatentated together, and called Multi-Head Attention:
+
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/36da17c5-302e-47dd-b864-73e3c3257128.png" width="700" />
+
+* The Multi-Head Attention is calculated by:
+  * Multihead(Q,K,V) = concat(heads).W0
+
+### Transformer Network
+
