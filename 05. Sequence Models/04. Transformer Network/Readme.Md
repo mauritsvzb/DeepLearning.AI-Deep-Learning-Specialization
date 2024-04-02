@@ -40,7 +40,7 @@
 
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/066c0212-3646-4df3-869a-f188feb5750e.png" width="360" />
 
-  * For every word, we have 3 values: query q<sup><i></sup>, key K<sup><i></sup>, and value V<sup><i></sup>
+  * For every word, we have 3 values: *query q<sup><i></sup>*, *key K<sup><i></sup>*, and *value V<sup><i></sup>*
     * q<sup><i></sup> lets you ask a question about that word i, like what's happening there?
     * K<sup><i></sup> helps you figure out if this word gives the most relevant answer to that question, i.e. K<sup><1></sup> is a person, or an action
     * V<sup><i></sup> determines if this particular word i should be represented within the representation A<sup><i></sup>
