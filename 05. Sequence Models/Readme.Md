@@ -15,7 +15,7 @@ You will:
 * [Week 2 - PA 1 - Word Vector Representation and Debiasing](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/05.%20Sequence%20Models/02.%20Natural%20Language%20Processing%20%26%20Word%20Embeddings/Operations_on_word_vectors_v2a.ipynb)
 * [Week 2 - PA 2 - Emojify!](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/05.%20Sequence%20Models/02.%20Natural%20Language%20Processing%20%26%20Word%20Embeddings/Emoji_v3a.ipynb)
 * [Week 3 - PA 1 - Neural Machine Translation with Attention](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/05.%20Sequence%20Models/03.%20Sequence%20models%20&%20Attention%20mechanism/Neural_machine_translation_with_attention_v4a.ipynb)
-* Week 3 - PA 2 - Trigger Word Detection
+* [Week 3 - PA 2 - Trigger Word Detection](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/05.%20Sequence%20Models/03.%20Sequence%20models%20%26%20Attention%20mechanism/Trigger_word_detection_v2a%20(1).ipynb)
 * Week 4 - PA 1 - Transformer Network
 * Week 3 - PA 2 - Transformer Network Application: Named-Entity Recognition
 * Week 3 - PA 2 - Transformer Network Application: Question Answering
