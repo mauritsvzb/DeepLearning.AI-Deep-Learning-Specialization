@@ -94,4 +94,4 @@
     * A Linear and Softmax at the output of the Decoder block to predict the next one word at the time
 * The first Multi-Head Attention of the Decoder can be changed to the Masked Multi-Head Attention pretends the network had perfectly translated the first few words and hide the remaining words to see if given a perfect first part of the translation, whether the NN can predict the next word in the sentence accurately (mimic what the network will need to do during prediction
 
-      <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6a57dc36-2bb0-487a-beae-b28bf1383e97.png" width="700" />
+    <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6a57dc36-2bb0-487a-beae-b28bf1383e97.png" width="700" />
