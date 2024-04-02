@@ -40,4 +40,15 @@
 
   <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/066c0212-3646-4df3-869a-f188feb5750e.png" width="360" />
 
-  test test test
+  * For every word, we have 3 values query q<i>, key K<i>, and value V<i>
+    * q<i> let you ask a question about that word i, like what's happening there?
+    * K<i> help you figure out if this word gives the most relevant answer to that question, i.e. K<1> is a person, K<1> is an action
+    * V<i> determines this particular word i should be represented within the representation A<i>
+  * For calculate a representation A<3>:
+    * First:
+      * q<3> = Wq . x<3> (with Wq is a learned weight matrix)
+      * K<3> = WK . x<3>
+      * V<3> = WV . x<3>
+    * Second, we calculate the inner product between q<3> and other K<1:5> => how good is a word i.e. visite is an answer to the question of what happened in l'Afrique
+      * Then compute the Softmax for each (with the blue block (q<3>.K<2> has the largest value))
+    * Finally, we multiply with the corresponding V<i> and sum them up for A<3>
