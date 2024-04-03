@@ -95,3 +95,10 @@
 * The first Multi-Head Attention of the Decoder can be changed to the Masked Multi-Head Attention pretends the network had perfectly translated the first few words and hide the remaining words to see if given a perfect first part of the translation, whether the NN can predict the next word in the sentence accurately (mimic what the network will need to do during prediction
 
     <img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6a57dc36-2bb0-487a-beae-b28bf1383e97.png" width="700" />
+
+### What you should remember:
+* The combination of self-attention and convolutional network layers allows of parallelization of training and faster training
+* Self-attention is calculated using the generated query Q, key K, and value V matrices
+* Adding positional encoding to word embeddings is an effective way to include sequence information in self-attention calculations
+* Multi-head attention can help detect multiple features in your sentence
+* Masking stops the model from 'looking ahead' during training, or weighting zeroes too much when processing cropped sentences
