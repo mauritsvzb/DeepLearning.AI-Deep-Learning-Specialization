@@ -19,7 +19,7 @@ You will:
 * [Week 4 - PA 1 - Transformer Network](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/05.%20Sequence%20Models/04.%20Transformer%20Network/C5_W4_A1_Transformer_Subclass_v1.ipynb)
 * [Week 4 - PA 2_1 - Transformer Pre-processing](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/05.%20Sequence%20Models/04.%20Transformer%20Network/Embedding_plus_Positional_encoding.ipynb)
 * [Week 4 - PA 2_2 - Transformer Network Application: Named-Entity Recognition](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/05.%20Sequence%20Models/04.%20Transformer%20Network/Transformer_application_Named_Entity_Recognition.ipynb)
-* Week 4 - PA 2_3 - Transformer Network Application: Question Answering
+* [Week 4 - PA 2_3 - Transformer Network Application: Question Answering](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/blob/main/05.%20Sequence%20Models/04.%20Transformer%20Network/QA_dataset.ipynb)
 
 # 📄 References
 
