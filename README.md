@@ -39,5 +39,5 @@ Here are some references of lecture notes and reviews drawn by some communities,
 
 # 🏆 Certificates
 To verify the certificates, click the images to follow the links:
-
+[<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b53c1bf9-247c-4378-9c8a-a76108249779.png" width="700">](https://coursera.org/share/2def930bc9b721eb96723ddb0cbae170)
 
