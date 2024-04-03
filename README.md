@@ -19,7 +19,7 @@ This repository contains documentation and resources used to complete the certif
   * Use strategies for reducing errors in machine learning systems, understand complex machine learning settings, and apply end-to-end, transfer, and multi-task learning.
 * ✅ [04. Convolutional Neural Networks (CNNs)](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/tree/main/04.%20Convolutional%20Neural%20Networks%20(CNNs))
   * Build a convolutional neural network (CNN) and apply it to detection and recognition tasks, use neural style transfer to generate art, and apply algorithms to image and video data
-* [05. Sequence Models](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/tree/main/05.%20Sequence%20Models)
+* ✅ [05. Sequence Models](https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/tree/main/05.%20Sequence%20Models)
   * Build and train recurrent neural network (RNN), work with natural language processing (NLP) and Word Embeddings, and use HuggingFace tokenizers and transformer models to perform NER and Question Answering
 
 # 🛠️ Tools
