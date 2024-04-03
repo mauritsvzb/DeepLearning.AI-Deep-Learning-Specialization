@@ -40,7 +40,7 @@ Here are some references of lecture notes and reviews drawn by some communities,
   
 # 🏆 Certificates
 To verify the certificates, click the images to follow the links:
-[<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b53c1bf9-247c-4378-9c8a-a76108249779.png" width="700">](https://coursera.org/share/2def930bc9b721eb96723ddb0cbae170)
+[<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/b53c1bf9-247c-4378-9c8a-a76108249779.png" width="350">](https://coursera.org/share/2def930bc9b721eb96723ddb0cbae170)
 
-[<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6d3aef6a-a071-4b33-9241-e7eac77dd989.png" width="700">](https://www.credly.com/badges/fe1d6d80-d42b-4768-9772-b89498bcece7/public_url)
+[<img src="https://github.com/mauritsvzb/DeepLearning.AI-Deep-Learning-Specialization/assets/13508894/6d3aef6a-a071-4b33-9241-e7eac77dd989.png" width="350">](https://www.credly.com/badges/fe1d6d80-d42b-4768-9772-b89498bcece7/public_url)
 
